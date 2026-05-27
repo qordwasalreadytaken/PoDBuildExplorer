@@ -251,6 +251,11 @@ class BuildsHTMLGenerator:
             Builds are grouped by class and ordered from most popular to least popular.
             Each build expands to show the character names currently matching that definition.
         </p>
+        <p>
+            "Builds" are defined by sets of rules in json files that live here:
+            https://github.com/qordwasalreadytaken/PoDBuildExplorer/tree/main/scripts/modules/build_definitions. 
+            Feel free to contribute directly or reach out to Qord with feedback on how to improve the build definitions or this page!
+        </p>
         <div class="fun-facts-row">
             <div class="fun-facts-column">
                 <h3>Total Characters Checked: {summary_data.get('total_characters', 0):,}</h3>
