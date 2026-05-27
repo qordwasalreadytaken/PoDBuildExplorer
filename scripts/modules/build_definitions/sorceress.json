@@ -1,0 +1,517 @@
+[
+  {
+    "build_id": "sorc-blizzard",
+    "class_name": "Sorceress",
+    "label": "Blizzard",
+    "family": "Cold Sorceress",
+    "description": "Primary cold caster centered on Blizzard damage.",
+    "required_skills_all": [
+      {
+        "name": "Blizzard",
+        "minimum": 20,
+        "reason": "Blizzard is maxed or near-maxed"
+      }
+    ],
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Frigerate",
+          "minimum": 10,
+          "reason": "Cold synergy investment"
+        },
+        {
+          "name": "Glacial Spike",
+          "minimum": 10,
+          "reason": "Cold synergy investment"
+        },
+        {
+          "name": "Frozen Orb",
+          "minimum": 10,
+          "reason": "Secondary cold investment"
+        }
+      ]
+    ],
+    "signature_skills": [
+      {
+        "name": "Blizzard",
+        "minimum": 20,
+        "weight": 3.0
+      },
+      {
+        "name": "Frigerate",
+        "minimum": 10,
+        "weight": 1.5
+      },
+      {
+        "name": "Glacial Spike",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Teleport",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Static Field",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Freezing Pulse",
+        "minimum": 5,
+        "weight": 0.75
+      },
+      {
+        "name": "Warmth",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Hydra",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Fireball",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Lightning Surge",
+        "minimum": 15,
+        "weight": 1.0
+      }
+    ],
+    "notes": [
+      "Treats secondary cold investment as normal, but penalizes strong hybrid fire or lightning commitment."
+    ]
+  },
+  {
+    "build_id": "sorc-hydra-frozen-orb",
+    "class_name": "Sorceress",
+    "label": "Hydra / Frozen Orb",
+    "family": "Hybrid Sorceress",
+    "description": "Two-element Sorceress using Hydra and Frozen Orb together.",
+    "required_skills_all": [
+      {
+        "name": "Hydra",
+        "minimum": 20,
+        "reason": "Hydra is maxed or near-maxed"
+      },
+      {
+        "name": "Frozen Orb",
+        "minimum": 20,
+        "reason": "Frozen Orb is maxed or near-maxed"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Hydra",
+        "minimum": 20,
+        "weight": 2.5
+      },
+      {
+        "name": "Frozen Orb",
+        "minimum": 20,
+        "weight": 2.5
+      },
+      {
+        "name": "Teleport",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Static Field",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Warmth",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Fireball",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Glacial Spike",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Blizzard",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Lightning Surge",
+        "minimum": 15,
+        "weight": 1.0
+      }
+    ],
+    "notes": [
+      "This should remain overlap-friendly because some cold-heavy hybrids may still resemble Blizzard builds."
+    ]
+  },
+  {
+    "build_id": "sorc-fireball-high-fcr",
+    "class_name": "Sorceress",
+    "label": "High-FCR Fireball",
+    "family": "Fire Sorceress",
+    "description": "Fireball Sorceress distinguished partly by Faster Cast Rate investment.",
+    "required_skills_all": [
+      {
+        "name": "Fireball",
+        "minimum": 20,
+        "reason": "Fireball is maxed or near-maxed"
+      }
+    ],
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Meteor",
+          "minimum": 10,
+          "reason": "Common fire synergy"
+        },
+        {
+          "name": "Fire Bolt",
+          "minimum": 10,
+          "reason": "Common fire synergy"
+        }
+      ]
+    ],
+    "signature_skills": [
+      {
+        "name": "Fireball",
+        "minimum": 20,
+        "weight": 2.5
+      },
+      {
+        "name": "Meteor",
+        "minimum": 10,
+        "weight": 1.25
+      },
+      {
+        "name": "Fire Bolt",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Teleport",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "stat_requirements": [
+      {
+        "name": "FasterCastRate",
+        "minimum": 105,
+        "weight": 2.0,
+        "reason": "Reached a meaningful high-FCR breakpoint"
+      }
+    ],
+    "gear_text_any": [
+      {
+        "name": "faster cast rate",
+        "minimum": 1,
+        "weight": 0.5,
+        "reason": "Gear explicitly supports cast-speed stacking"
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Hydra",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Blizzard",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Frozen Orb",
+        "minimum": 15,
+        "weight": 1.0
+      }
+    ],
+    "notes": [
+      "The FCR gate is an example of using non-skill signals to split builds with similar skill trees."
+    ]
+  },
+  {
+    "build_id": "sorc-ball-lightning-ondal",
+    "class_name": "Sorceress",
+    "label": "Ball Lightning Ondal",
+    "family": "Lightning Sorceress",
+    "description": "Gear-defined lightning Sorceress using Ondal's Wisdom with Ball Lightning.",
+    "required_gear_rules_all": [
+      {
+        "title_contains": ["Ondal"],
+        "property_contains": ["Ball Lightning"],
+        "reason": "Ondal's Wisdom with Ball Lightning is equipped"
+      }
+    ],
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Lightning Surge",
+          "minimum": 10,
+          "reason": "Primary lightning skill investment is present"
+        },
+        {
+          "name": "Thunder Storm",
+          "minimum": 10,
+          "reason": "Primary lightning skill investment is present"
+        },
+        {
+          "name": "Telekinesis",
+          "minimum": 10,
+          "reason": "Lightning-caster support investment is present"
+        }
+      ]
+    ],
+    "signature_skills": [
+      {
+        "name": "Lightning Surge",
+        "minimum": 10,
+        "weight": 2.0
+      },
+      {
+        "name": "Thunder Storm",
+        "minimum": 10,
+        "weight": 1.5
+      },
+      {
+        "name": "Telekinesis",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Teleport",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "stat_requirements": [
+      {
+        "name": "FasterCastRate",
+        "minimum": 50,
+        "weight": 1.5,
+        "reason": "Reached the baseline cast-speed breakpoint for Ondal casting"
+      }
+    ],
+    "supporting_gear_rules": [
+      {
+        "title_contains": ["Arachnid Mesh"],
+        "property_contains": ["Faster Cast Rate"],
+        "weight": 0.75,
+        "reason": "Arachnid Mesh supports the Ball Lightning caster setup"
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Blizzard",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Hydra",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Frozen Orb",
+        "minimum": 15,
+        "weight": 1.0
+      }
+    ],
+    "notes": [
+      "This is a clear example of a gear-defined build where the weapon property matters as much as the skill tree."
+    ]
+  },
+  {
+    "build_id": "sorc-memory-es-caster",
+    "class_name": "Sorceress",
+    "label": "Memory ES Caster",
+    "family": "Energy Shield Sorceress",
+    "description": "Energy Shield Sorceress built around a self-wielded Memory staff.",
+    "required_skills_all": [
+      {
+        "name": "Telekinesis",
+        "minimum": 20,
+        "reason": "Telekinesis is maxed or near-maxed for Energy Shield support"
+      },
+      {
+        "name": "Energy Shield",
+        "minimum": 1,
+        "reason": "Energy Shield is active"
+      }
+    ],
+    "required_gear_rules_all": [
+      {
+        "title_contains": ["Memory"],
+        "property_contains": ["Energy Shield"],
+        "reason": "Memory staff with Energy Shield support is equipped"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Telekinesis",
+        "minimum": 20,
+        "weight": 2.0
+      },
+      {
+        "name": "Energy Shield",
+        "minimum": 1,
+        "weight": 1.5
+      },
+      {
+        "name": "Teleport",
+        "minimum": 1,
+        "weight": 0.75
+      },
+      {
+        "name": "Thunder Storm",
+        "minimum": 10,
+        "weight": 1.0
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Lightning Surge",
+        "minimum": 5,
+        "weight": 0.75
+      },
+      {
+        "name": "Static Field",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "stat_requirements": [
+      {
+        "name": "FasterCastRate",
+        "minimum": 50,
+        "weight": 1.25,
+        "reason": "Reached a usable cast-speed breakpoint for Memory ES play"
+      }
+    ],
+    "supporting_gear_rules": [
+      {
+        "title_contains": ["Arachnid Mesh"],
+        "property_contains": ["Faster Cast Rate"],
+        "weight": 0.75,
+        "reason": "Arachnid Mesh supports the Energy Shield caster setup"
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Blizzard",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Hydra",
+        "minimum": 15,
+        "weight": 1.0
+      }
+    ],
+    "notes": [
+      "This variant is intentionally gear-first: the Memory staff identifies the build more reliably than any one damage skill."
+    ]
+  },
+  {
+    "build_id": "sorc-warpspear-thunder-storm",
+    "class_name": "Sorceress",
+    "label": "Warpspear Thunder Storm",
+    "family": "Lightning Sorceress",
+    "description": "Thunder Storm Sorceress built around Warpspear's item-specific effect.",
+    "required_gear_rules_all": [
+      {
+        "title_contains": ["Warpspear"],
+        "property_contains": ["Thunder Storm"],
+        "reason": "Warpspear with the Thunder Storm modifier is equipped"
+      }
+    ],
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Thunder Storm",
+          "minimum": 20,
+          "reason": "Thunder Storm is a core skill investment"
+        },
+        {
+          "name": "Telekinesis",
+          "minimum": 10,
+          "reason": "The build has the typical lightning utility investment"
+        }
+      ]
+    ],
+    "signature_skills": [
+      {
+        "name": "Thunder Storm",
+        "minimum": 20,
+        "weight": 2.0
+      },
+      {
+        "name": "Telekinesis",
+        "minimum": 10,
+        "weight": 1.25
+      },
+      {
+        "name": "Energy Shield",
+        "minimum": 1,
+        "weight": 0.75
+      },
+      {
+        "name": "Teleport",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Lightning Surge",
+        "minimum": 10,
+        "weight": 0.75
+      },
+      {
+        "name": "Static Field",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Blizzard",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Hydra",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Frozen Orb",
+        "minimum": 15,
+        "weight": 1.0
+      }
+    ],
+    "notes": [
+      "This is another item-defined build where the weapon modifier creates the subtype more clearly than the rest of the gear."
+    ]
+  }
+]

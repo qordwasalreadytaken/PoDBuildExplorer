@@ -1,0 +1,885 @@
+[
+  {
+    "build_id": "amazon-bow-physical",
+    "class_name": "Amazon",
+    "label": "Physical Bow",
+    "family": "Bow Amazon",
+    "description": "Physical bow build centered on Multiple Shot or Strafe without major elemental commitment.",
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Multiple Shot",
+          "minimum": 15,
+          "reason": "Multiple Shot is a primary attack"
+        },
+        {
+          "name": "Strafe",
+          "minimum": 15,
+          "reason": "Strafe is a primary attack"
+        }
+      ]
+    ],
+    "signature_skills": [
+      {
+        "name": "Multiple Shot",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Strafe",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Penetrate",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Pierce",
+        "minimum": 5,
+        "weight": 0.75
+      },
+      {
+        "name": "Critical Strike",
+        "minimum": 1,
+        "weight": 0.75
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Guided Arrow",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Valkyrie",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Fire Arrow",
+        "minimum": 10,
+        "weight": 0.8
+      },
+      {
+        "name": "Exploding Arrow",
+        "minimum": 10,
+        "weight": 0.8
+      },
+      {
+        "name": "Immolation Arrow",
+        "minimum": 10,
+        "weight": 0.8
+      },
+      {
+        "name": "Cold Arrow",
+        "minimum": 10,
+        "weight": 0.8
+      },
+      {
+        "name": "Ice Arrow",
+        "minimum": 10,
+        "weight": 0.8
+      },
+      {
+        "name": "Freezing Arrow",
+        "minimum": 10,
+        "weight": 0.8
+      }
+    ],
+    "notes": [
+      "Keeps overlap-friendly scoring for bow Amazons while pushing heavy fire or cold investment into dedicated elemental builds."
+    ]
+  },
+  {
+    "build_id": "amazon-bow-fire",
+    "class_name": "Amazon",
+    "label": "Fire Bow",
+    "family": "Bow Amazon",
+    "description": "Elemental bow Amazon with sustained fire-arrow investment.",
+    "required_skills_all": [
+      {
+        "name": "Fire Arrow",
+        "minimum": 15,
+        "reason": "Fire Arrow is heavily invested"
+      },
+      {
+        "name": "Exploding Arrow",
+        "minimum": 15,
+        "reason": "Exploding Arrow is heavily invested"
+      },
+      {
+        "name": "Immolation Arrow",
+        "minimum": 15,
+        "reason": "Immolation Arrow is heavily invested"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Fire Arrow",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Exploding Arrow",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Immolation Arrow",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Pierce",
+        "minimum": 5,
+        "weight": 0.75
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Multiple Shot",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Strafe",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Valkyrie",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Cold Arrow",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Ice Arrow",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Freezing Arrow",
+        "minimum": 15,
+        "weight": 1.0
+      }
+    ]
+  },
+  {
+    "build_id": "amazon-bow-cold",
+    "class_name": "Amazon",
+    "label": "Cold Bow",
+    "family": "Bow Amazon",
+    "description": "Elemental bow Amazon with heavy cold-arrow investment.",
+    "required_skills_all": [
+      {
+        "name": "Cold Arrow",
+        "minimum": 15,
+        "reason": "Cold Arrow is heavily invested"
+      },
+      {
+        "name": "Ice Arrow",
+        "minimum": 15,
+        "reason": "Ice Arrow is heavily invested"
+      },
+      {
+        "name": "Freezing Arrow",
+        "minimum": 15,
+        "reason": "Freezing Arrow is heavily invested"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Cold Arrow",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Ice Arrow",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Freezing Arrow",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Pierce",
+        "minimum": 5,
+        "weight": 0.75
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Multiple Shot",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Strafe",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Valkyrie",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Fire Arrow",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Exploding Arrow",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Immolation Arrow",
+        "minimum": 15,
+        "weight": 1.0
+      }
+    ]
+  },
+  {
+    "build_id": "amazon-bow-hybrid",
+    "class_name": "Amazon",
+    "label": "Hybrid Bow",
+    "family": "Bow Amazon",
+    "description": "Bow Amazon mixing physical bow skills with meaningful elemental arrow investment.",
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Multiple Shot",
+          "minimum": 15,
+          "reason": "Multiple Shot is a primary attack"
+        },
+        {
+          "name": "Strafe",
+          "minimum": 15,
+          "reason": "Strafe is a primary attack"
+        }
+      ],
+      [
+        {
+          "name": "Fire Arrow",
+          "minimum": 10,
+          "reason": "Fire investment supports the hybrid pattern"
+        },
+        {
+          "name": "Exploding Arrow",
+          "minimum": 10,
+          "reason": "Fire investment supports the hybrid pattern"
+        },
+        {
+          "name": "Immolation Arrow",
+          "minimum": 10,
+          "reason": "Fire investment supports the hybrid pattern"
+        },
+        {
+          "name": "Cold Arrow",
+          "minimum": 10,
+          "reason": "Cold investment supports the hybrid pattern"
+        },
+        {
+          "name": "Ice Arrow",
+          "minimum": 10,
+          "reason": "Cold investment supports the hybrid pattern"
+        },
+        {
+          "name": "Freezing Arrow",
+          "minimum": 10,
+          "reason": "Cold investment supports the hybrid pattern"
+        }
+      ]
+    ],
+    "signature_skills": [
+      {
+        "name": "Multiple Shot",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Strafe",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Fire Arrow",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Exploding Arrow",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Immolation Arrow",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Cold Arrow",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Ice Arrow",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Freezing Arrow",
+        "minimum": 10,
+        "weight": 1.0
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Penetrate",
+        "minimum": 5,
+        "weight": 0.75
+      },
+      {
+        "name": "Pierce",
+        "minimum": 5,
+        "weight": 0.75
+      },
+      {
+        "name": "Valkyrie",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "notes": [
+      "This intentionally stays broad: a physical bow core plus at least one meaningful elemental branch."
+    ]
+  },
+  {
+    "build_id": "amazon-javelin-lightning",
+    "class_name": "Amazon",
+    "label": "Lightning Javazon",
+    "family": "Javelin Amazon",
+    "description": "Javelin Amazon with heavy investment in the core lightning package.",
+    "required_skills_all": [
+      {
+        "name": "Lightning Bolt",
+        "minimum": 15,
+        "reason": "Lightning Bolt is heavily invested"
+      },
+      {
+        "name": "Lightning Strike",
+        "minimum": 15,
+        "reason": "Lightning Strike is heavily invested"
+      },
+      {
+        "name": "Lightning Fury",
+        "minimum": 15,
+        "reason": "Lightning Fury is heavily invested"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Lightning Bolt",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Lightning Strike",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Lightning Fury",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Charged Strike",
+        "minimum": 1,
+        "weight": 0.75
+      },
+      {
+        "name": "Pierce",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Power Strike",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Valkyrie",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Poison Javelin",
+        "minimum": 15,
+        "weight": 0.8
+      },
+      {
+        "name": "Plague Javelin",
+        "minimum": 15,
+        "weight": 0.8
+      }
+    ]
+  },
+  {
+    "build_id": "amazon-javelin-poison",
+    "class_name": "Amazon",
+    "label": "Poison Javazon",
+    "family": "Javelin Amazon",
+    "description": "Javelin Amazon built around Poison Javelin and Plague Javelin.",
+    "required_skills_all": [
+      {
+        "name": "Poison Javelin",
+        "minimum": 15,
+        "reason": "Poison Javelin is heavily invested"
+      },
+      {
+        "name": "Plague Javelin",
+        "minimum": 15,
+        "reason": "Plague Javelin is heavily invested"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Poison Javelin",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Plague Javelin",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Pierce",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Jab",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Valkyrie",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Lightning Bolt",
+        "minimum": 15,
+        "weight": 0.7
+      },
+      {
+        "name": "Lightning Strike",
+        "minimum": 15,
+        "weight": 0.7
+      },
+      {
+        "name": "Lightning Fury",
+        "minimum": 15,
+        "weight": 0.7
+      }
+    ]
+  },
+  {
+    "build_id": "amazon-javelin-hybrid",
+    "class_name": "Amazon",
+    "label": "Hybrid Javazon",
+    "family": "Javelin Amazon",
+    "description": "Javelin Amazon combining poison commitment with a meaningful lightning package.",
+    "required_skills_all": [
+      {
+        "name": "Poison Javelin",
+        "minimum": 15,
+        "reason": "Poison Javelin is heavily invested"
+      },
+      {
+        "name": "Plague Javelin",
+        "minimum": 15,
+        "reason": "Plague Javelin is heavily invested"
+      }
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Lightning Bolt", "Lightning Strike", "Lightning Fury"],
+        "minimum_total": 40,
+        "reason": "Combined lightning investment reaches the hybrid threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Poison Javelin",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Plague Javelin",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Lightning Bolt",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Lightning Strike",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Lightning Fury",
+        "minimum": 10,
+        "weight": 1.0
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Charged Strike",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Pierce",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Valkyrie",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "notes": [
+      "Uses a real combined lightning threshold instead of forcing each lightning skill to be maxed."
+    ]
+  },
+  {
+    "build_id": "amazon-molten-strike",
+    "class_name": "Amazon",
+    "label": "Molten Strike",
+    "family": "Melee Amazon",
+    "description": "Amazon built around Molten Strike.",
+    "required_skills_all": [
+      {
+        "name": "Molten Strike",
+        "minimum": 15,
+        "reason": "Molten Strike is heavily invested"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Molten Strike",
+        "minimum": 15,
+        "weight": 3.0
+      },
+      {
+        "name": "Jab",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Critical Strike",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Valkyrie",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ]
+  },
+  {
+    "build_id": "amazon-fend",
+    "class_name": "Amazon",
+    "label": "Fend",
+    "family": "Melee Amazon",
+    "description": "Amazon built around Fend.",
+    "required_skills_all": [
+      {
+        "name": "Fend",
+        "minimum": 15,
+        "reason": "Fend is heavily invested"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Fend",
+        "minimum": 15,
+        "weight": 3.0
+      },
+      {
+        "name": "Critical Strike",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Penetrate",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Dodge",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Avoid",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Evade",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ]
+  },
+  {
+    "build_id": "amazon-summon",
+    "class_name": "Amazon",
+    "label": "Summon Amazon",
+    "family": "Passive Amazon",
+    "description": "Amazon centered on Valkyrie and the supporting summon-oriented passive package.",
+    "required_skill_sums": [
+      {
+        "names": ["Valkyrie", "Inner Sight", "Phase Run", "Decoy"],
+        "minimum_total": 40,
+        "reason": "Summon-focused passive skills reach the required combined threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Valkyrie",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Inner Sight",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Phase Run",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Decoy",
+        "minimum": 10,
+        "weight": 1.0
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Dodge",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Avoid",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Evade",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "supporting_gear_rules": [
+      {
+        "title_contains": ["eternity"],
+        "weight": 0.75,
+        "reason": "Eternity runeword supports a summon-oriented setup"
+      }
+    ],
+    "notes": [
+      "Uses the exact 40-point combined threshold across Valkyrie, Inner Sight, Phase Run, and Decoy."
+    ]
+  },
+  {
+    "build_id": "amazon-bearzon",
+    "class_name": "Amazon",
+    "label": "Bearzon",
+    "family": "Passive Amazon",
+    "description": "Amazon with heavy passive-and-magic investment and a Beast runeword weapon equipped.",
+    "required_skill_sums": [
+      {
+        "names": ["Critical Strike", "Penetrate", "Pierce", "Dodge", "Avoid", "Evade", "Inner Sight", "Phase Run", "Valkyrie", "Decoy"],
+        "minimum_total": 40,
+        "reason": "Passive and Magic investment reaches the required combined threshold"
+      }
+    ],
+    "required_gear_rules_all": [
+      {
+        "title_contains": ["beast"],
+        "property_contains": ["fanaticism aura when equipped"],
+        "worn_slots": ["weapon1", "weapon2", "sweapon1", "sweapon2"],
+        "reason": "Beast runeword weapon is equipped"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Penetrate",
+        "minimum": 10,
+        "weight": 1.5
+      },
+      {
+        "name": "Inner Sight",
+        "minimum": 5,
+        "weight": 1.5
+      },
+      {
+        "name": "Phase Run",
+        "minimum": 5,
+        "weight": 1.0
+      },
+      {
+        "name": "Valkyrie",
+        "minimum": 1,
+        "weight": 0.75
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Critical Strike",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Pierce",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Dodge",
+        "minimum": 1,
+        "weight": 0.4
+      },
+      {
+        "name": "Avoid",
+        "minimum": 1,
+        "weight": 0.4
+      },
+      {
+        "name": "Evade",
+        "minimum": 1,
+        "weight": 0.4
+      },
+      {
+        "name": "Valkyrie",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Decoy",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Multiple Shot",
+        "minimum": 15,
+        "weight": 0.2
+      },
+      {
+        "name": "Strafe",
+        "minimum": 15,
+        "weight": 0.2
+      },
+      {
+        "name": "Lightning Fury",
+        "minimum": 15,
+        "weight": 0.2
+      },
+      {
+        "name": "Lightning Strike",
+        "minimum": 15,
+        "weight": 0.2
+      },
+      {
+        "name": "Charged Strike",
+        "minimum": 15,
+        "weight": 0.2
+      },
+      {
+        "name": "Poison Javelin",
+        "minimum": 15,
+        "weight": 0.2
+      },
+      {
+        "name": "Plague Javelin",
+        "minimum": 15,
+        "weight": 0.2
+      },
+      {
+        "name": "Cold Arrow",
+        "minimum": 15,
+        "weight": 0.2
+      },
+      {
+        "name": "Ice Arrow",
+        "minimum": 15,
+        "weight": 0.2
+      },
+      {
+        "name": "Freezing Arrow",
+        "minimum": 15,
+        "weight": 0.2
+      },
+      {
+        "name": "Fire Arrow",
+        "minimum": 15,
+        "weight": 0.2
+      },
+      {
+        "name": "Exploding Arrow",
+        "minimum": 15,
+        "weight": 0.2
+      },
+      {
+        "name": "Immolation Arrow",
+        "minimum": 15,
+        "weight": 0.2
+      }
+    ],
+    "notes": [
+      "This requires a Beast-pattern weapon match, so it will stay empty until ladder data contains an Amazon actually using Beast."
+    ]
+  }
+]

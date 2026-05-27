@@ -1,0 +1,471 @@
+[
+  {
+    "build_id": "necro-hemo",
+    "class_name": "Necromancer",
+    "label": "Hemorrhage",
+    "family": "Curse Necromancer",
+    "description": "Necromancer centered on Hemorrhage and its curse support package.",
+    "required_skills_all": [
+      {
+        "name": "Hemorrhage",
+        "minimum": 15,
+        "reason": "Hemorrhage is heavily invested"
+      }
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Weaken", "Iron Maiden", "Life Tap", "Hemorrhage"],
+        "minimum_total": 50,
+        "reason": "Hemorrhage and core curse support reach the combined threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Hemorrhage",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Weaken",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Iron Maiden",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Life Tap",
+        "minimum": 15,
+        "weight": 1.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Dim Vision",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Convocation",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Poison Nova",
+        "minimum": 15,
+        "weight": 0.5
+      },
+      {
+        "name": "Corpse Explosion",
+        "minimum": 15,
+        "weight": 0.4
+      }
+    ]
+  },
+  {
+    "build_id": "necro-boner",
+    "class_name": "Necromancer",
+    "label": "Boner",
+    "family": "Bone Necromancer",
+    "description": "Necromancer centered on the bone spell package.",
+    "required_skill_sums": [
+      {
+        "names": ["Teeth", "Bone Spear", "Bone Spirit"],
+        "minimum_total": 45,
+        "reason": "Bone spell investment reaches the combined threshold"
+      }
+    ],
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Bone Spear",
+          "minimum": 15,
+          "reason": "A primary bone spell is heavily invested"
+        },
+        {
+          "name": "Bone Spirit",
+          "minimum": 15,
+          "reason": "A primary bone spell is heavily invested"
+        }
+      ]
+    ],
+    "signature_skills": [
+      {
+        "name": "Teeth",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Bone Spear",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Bone Spirit",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Bone Armor",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Bone Wall",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Raise Skeletal Mage",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Hemorrhage",
+        "minimum": 15,
+        "weight": 0.6
+      },
+      {
+        "name": "Poison Nova",
+        "minimum": 15,
+        "weight": 0.6
+      }
+    ]
+  },
+  {
+    "build_id": "necro-melee-bow",
+    "class_name": "Necromancer",
+    "label": "Melee / Bow",
+    "family": "Weapon Necromancer",
+    "description": "Necromancer using a primary bow, crossbow, or melee weapon, with Deadly Poison acting as the weapon-poison skill line.",
+    "required_gear_rule_groups_any": [
+      [
+        {
+          "tag_contains": ["bow"],
+          "worn_slots": ["weapon1"],
+          "reason": "Primary weapon is a bow"
+        },
+        {
+          "tag_contains": ["crossbow"],
+          "worn_slots": ["weapon1"],
+          "reason": "Primary weapon is a crossbow"
+        },
+        {
+          "tag_contains": ["sword"],
+          "worn_slots": ["weapon1"],
+          "reason": "Primary weapon is a melee weapon"
+        },
+        {
+          "tag_contains": ["axe"],
+          "worn_slots": ["weapon1"],
+          "reason": "Primary weapon is a melee weapon"
+        },
+        {
+          "tag_contains": ["mace"],
+          "worn_slots": ["weapon1"],
+          "reason": "Primary weapon is a melee weapon"
+        },
+        {
+          "tag_contains": ["club"],
+          "worn_slots": ["weapon1"],
+          "reason": "Primary weapon is a melee weapon"
+        },
+        {
+          "tag_contains": ["dagger"],
+          "worn_slots": ["weapon1"],
+          "reason": "Primary weapon is a melee weapon"
+        },
+        {
+          "tag_contains": ["knife"],
+          "worn_slots": ["weapon1"],
+          "reason": "Primary weapon is a melee weapon"
+        },
+        {
+          "tag_contains": ["scepter"],
+          "worn_slots": ["weapon1"],
+          "reason": "Primary weapon is a melee weapon"
+        }
+      ]
+    ],
+    "signature_skills": [
+      {
+        "name": "Deadly Poison",
+        "minimum": 1,
+        "weight": 1.0
+      },
+      {
+        "name": "Amplify Damage",
+        "minimum": 1,
+        "weight": 0.75
+      },
+      {
+        "name": "Decrepify",
+        "minimum": 1,
+        "weight": 0.75
+      },
+      {
+        "name": "Life Tap",
+        "minimum": 1,
+        "weight": 0.75
+      }
+    ],
+    "gear_text_any": [
+      {
+        "name": "increased attack speed",
+        "minimum": 1,
+        "weight": 0.75,
+        "reason": "Weapon setup includes attack-speed support"
+      },
+      {
+        "name": "life stolen per hit",
+        "minimum": 1,
+        "weight": 0.75,
+        "reason": "Weapon setup includes life leech support"
+      },
+      {
+        "name": "precision aura when equipped",
+        "minimum": 1,
+        "weight": 0.75,
+        "reason": "Bow setup includes a combat aura"
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Bone Armor",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Convocation",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ]
+  },
+  {
+    "build_id": "necro-poison-nova",
+    "class_name": "Necromancer",
+    "label": "Poison Nova",
+    "family": "Poison Necromancer",
+    "description": "Necromancer centered on Poison Nova and poison support skills.",
+    "required_skills_all": [
+      {
+        "name": "Poison Nova",
+        "minimum": 15,
+        "reason": "Poison Nova is heavily invested"
+      }
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Deadly Poison", "Desecrate", "Poison Nova"],
+        "minimum_total": 40,
+        "reason": "Poison spell investment reaches the combined threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Deadly Poison",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Desecrate",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Poison Nova",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Lower Resist",
+        "minimum": 1,
+        "weight": 0.75
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Convocation",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Hemorrhage",
+        "minimum": 15,
+        "weight": 0.5
+      },
+      {
+        "name": "Bone Spear",
+        "minimum": 15,
+        "weight": 0.4
+      }
+    ]
+  },
+  {
+    "build_id": "necro-corpse-explosion",
+    "class_name": "Necromancer",
+    "label": "Corpse Explosion",
+    "family": "CE Necromancer",
+    "description": "Necromancer centered on Corpse Explosion with teleport and golem support.",
+    "required_skills_all": [
+      {
+        "name": "Corpse Explosion",
+        "minimum": 15,
+        "reason": "Corpse Explosion is heavily invested"
+      }
+    ],
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Convocation",
+          "minimum": 10,
+          "reason": "Corpse Explosion setup invests in Convocation"
+        },
+        {
+          "name": "Fire Golem",
+          "minimum": 15,
+          "reason": "Corpse Explosion setup invests in Fire Golem support"
+        }
+      ]
+    ],
+    "signature_skills": [
+      {
+        "name": "Corpse Explosion",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Convocation",
+        "minimum": 10,
+        "weight": 1.25
+      },
+      {
+        "name": "Fire Golem",
+        "minimum": 15,
+        "weight": 1.25
+      },
+      {
+        "name": "Summon Mastery",
+        "minimum": 10,
+        "weight": 1.0
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Desecrate",
+        "minimum": 1,
+        "weight": 0.4
+      },
+      {
+        "name": "Lower Resist",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Hemorrhage",
+        "minimum": 15,
+        "weight": 0.5
+      },
+      {
+        "name": "Poison Nova",
+        "minimum": 15,
+        "weight": 0.4
+      }
+    ]
+  },
+  {
+    "build_id": "necro-summon",
+    "class_name": "Necromancer",
+    "label": "Summon",
+    "family": "Summon Necromancer",
+    "description": "Necromancer centered on skeletons, revives, and golem support.",
+    "required_skill_sums": [
+      {
+        "names": ["Raise Skeleton Warrior", "Raise Skeletal Mage", "Summon Mastery", "Revive", "Fire Golem", "Clay Golem", "Blood Golem", "Iron Golem"],
+        "minimum_total": 45,
+        "reason": "Summoning investment reaches the combined threshold"
+      }
+    ],
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Raise Skeleton Warrior",
+          "minimum": 15,
+          "reason": "Raise Skeleton Warrior is heavily invested"
+        },
+        {
+          "name": "Raise Skeletal Mage",
+          "minimum": 15,
+          "reason": "Raise Skeletal Mage is heavily invested"
+        },
+        {
+          "name": "Revive",
+          "minimum": 15,
+          "reason": "Revive is heavily invested"
+        },
+        {
+          "name": "Fire Golem",
+          "minimum": 15,
+          "reason": "Fire Golem is heavily invested"
+        }
+      ]
+    ],
+    "signature_skills": [
+      {
+        "name": "Raise Skeleton Warrior",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Raise Skeletal Mage",
+        "minimum": 15,
+        "weight": 1.25
+      },
+      {
+        "name": "Summon Mastery",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Revive",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Fire Golem",
+        "minimum": 15,
+        "weight": 1.25
+      },
+      {
+        "name": "Convocation",
+        "minimum": 10,
+        "weight": 1.0
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Corpse Explosion",
+        "minimum": 1,
+        "weight": 0.4
+      },
+      {
+        "name": "Desecrate",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ]
+  }
+]

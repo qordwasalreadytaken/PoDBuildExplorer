@@ -1,0 +1,508 @@
+[
+  {
+    "build_id": "assassin-fire-traps",
+    "class_name": "Assassin",
+    "label": "Fire Traps",
+    "family": "Trap Assassin",
+    "description": "Trap Assassin centered on the fire trap package.",
+    "required_skills_all": [
+      {
+        "name": "Wake of Fire",
+        "minimum": 15,
+        "reason": "Wake of Fire is heavily invested"
+      },
+      {
+        "name": "Wake of Inferno",
+        "minimum": 15,
+        "reason": "Wake of Inferno is heavily invested"
+      },
+      {
+        "name": "Fire Blast",
+        "minimum": 15,
+        "reason": "Fire Blast is heavily invested"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Wake of Fire",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Wake of Inferno",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Fire Blast",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Burst of Speed",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Cloak of Shadows",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Mind Blast",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Lightning Sentry",
+        "minimum": 15,
+        "weight": 0.8
+      },
+      {
+        "name": "Death Sentry",
+        "minimum": 15,
+        "weight": 0.8
+      },
+      {
+        "name": "Charged Bolt Sentry",
+        "minimum": 15,
+        "weight": 0.8
+      }
+    ]
+  },
+  {
+    "build_id": "assassin-lightning-traps",
+    "class_name": "Assassin",
+    "label": "Lightning Traps",
+    "family": "Trap Assassin",
+    "description": "Trap Assassin centered on the lightning trap package.",
+    "required_skills_all": [
+      {
+        "name": "Lightning Sentry",
+        "minimum": 15,
+        "reason": "Lightning Sentry is heavily invested"
+      },
+      {
+        "name": "Death Sentry",
+        "minimum": 1,
+        "reason": "Death Sentry is part of the lightning trap package"
+      },
+      {
+        "name": "Charged Bolt Sentry",
+        "minimum": 15,
+        "reason": "Charged Bolt Sentry is heavily invested"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Lightning Sentry",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Death Sentry",
+        "minimum": 1,
+        "weight": 1.5
+      },
+      {
+        "name": "Charged Bolt Sentry",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Blade Shield",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Burst of Speed",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Fade",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Wake of Fire",
+        "minimum": 15,
+        "weight": 0.8
+      },
+      {
+        "name": "Wake of Inferno",
+        "minimum": 15,
+        "weight": 0.8
+      },
+      {
+        "name": "Fire Blast",
+        "minimum": 15,
+        "weight": 0.8
+      }
+    ]
+  },
+  {
+    "build_id": "assassin-elemental-martial-arts",
+    "class_name": "Assassin",
+    "label": "Elemental Martial Arts",
+    "family": "Martial Arts Assassin",
+    "description": "Martial Arts Assassin built around the mixed elemental charge-up package.",
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Fists of Fire",
+          "minimum": 15,
+          "reason": "Elemental Martial Arts has at least one heavy elemental charge-up"
+        },
+        {
+          "name": "Claws of Thunder",
+          "minimum": 15,
+          "reason": "Elemental Martial Arts has at least one heavy elemental charge-up"
+        },
+        {
+          "name": "Blades of Ice",
+          "minimum": 15,
+          "reason": "Elemental Martial Arts has at least one heavy elemental charge-up"
+        }
+      ]
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Fists of Fire", "Claws of Thunder", "Blades of Ice", "Cobra Strike"],
+        "minimum_total": 40,
+        "reason": "Elemental Martial Arts investment reaches the combined threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Fists of Fire",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Claws of Thunder",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Blades of Ice",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Cobra Strike",
+        "minimum": 1,
+        "weight": 0.75
+      },
+      {
+        "name": "Claw Mastery",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Dragon Claw",
+        "minimum": 1,
+        "weight": 0.4
+      },
+      {
+        "name": "Dragon Flight",
+        "minimum": 1,
+        "weight": 0.4
+      },
+      {
+        "name": "Burst of Speed",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Dragon Talon",
+        "minimum": 15,
+        "weight": 0.6
+      },
+      {
+        "name": "Wake of Fire",
+        "minimum": 15,
+        "weight": 0.5
+      },
+      {
+        "name": "Lightning Sentry",
+        "minimum": 15,
+        "weight": 0.5
+      }
+    ]
+  },
+  {
+    "build_id": "assassin-kicksin",
+    "class_name": "Assassin",
+    "label": "Kicksin",
+    "family": "Martial Arts Assassin",
+    "description": "Martial Arts Assassin built around kick skills.",
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Dragon Talon",
+          "minimum": 15,
+          "reason": "Dragon Talon is a primary kick skill"
+        },
+        {
+          "name": "Dragon Flight",
+          "minimum": 15,
+          "reason": "Dragon Flight is a primary kick skill"
+        }
+      ]
+    ],
+    "signature_skills": [
+      {
+        "name": "Dragon Talon",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Dragon Flight",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Venom",
+        "minimum": 1,
+        "weight": 0.75
+      },
+      {
+        "name": "Fade",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Claw Mastery",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Burst of Speed",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Fists of Fire",
+        "minimum": 15,
+        "weight": 0.4
+      },
+      {
+        "name": "Claws of Thunder",
+        "minimum": 15,
+        "weight": 0.4
+      },
+      {
+        "name": "Blades of Ice",
+        "minimum": 15,
+        "weight": 0.4
+      }
+    ]
+  },
+  {
+    "build_id": "assassin-mind-blast",
+    "class_name": "Assassin",
+    "label": "Mind Blast",
+    "family": "Caster Assassin",
+    "description": "Assassin centered on Mind Blast and its psychic support skills.",
+    "required_skills_all": [
+      {
+        "name": "Mind Blast",
+        "minimum": 15,
+        "reason": "Mind Blast is heavily invested"
+      },
+      {
+        "name": "Psychic Hammer",
+        "minimum": 15,
+        "reason": "Psychic Hammer is heavily invested"
+      },
+      {
+        "name": "Cloak of Shadows",
+        "minimum": 15,
+        "reason": "Cloak of Shadows is heavily invested"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Mind Blast",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Psychic Hammer",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Cloak of Shadows",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Fade",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Shadow Master",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Burst of Speed",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ]
+  },
+  {
+    "build_id": "assassin-blade",
+    "class_name": "Assassin",
+    "label": "Blade Assassin",
+    "family": "Melee Assassin",
+    "description": "Assassin built around the blade skill package.",
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Blade Fury",
+          "minimum": 15,
+          "reason": "Blade Fury is heavily invested"
+        },
+        {
+          "name": "Blade Throw",
+          "minimum": 15,
+          "reason": "Blade Throw is heavily invested"
+        },
+        {
+          "name": "Blade Shield",
+          "minimum": 15,
+          "reason": "Blade Shield is heavily invested"
+        }
+      ]
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Blade Fury", "Blade Throw", "Blade Shield"],
+        "minimum_total": 30,
+        "reason": "Blade skills reach a meaningful combined threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Blade Fury",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Blade Throw",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Blade Shield",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Venom",
+        "minimum": 1,
+        "weight": 0.75
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Fade",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Burst of Speed",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Wake of Fire",
+        "minimum": 15,
+        "weight": 0.5
+      },
+      {
+        "name": "Lightning Sentry",
+        "minimum": 15,
+        "weight": 0.5
+      }
+    ]
+  },
+  {
+    "build_id": "assassin-summon",
+    "class_name": "Assassin",
+    "label": "Summon Assassin",
+    "family": "Shadow Assassin",
+    "description": "Assassin leaning heavily on shadow summons and self-buff support.",
+    "required_skill_sums": [
+      {
+        "names": ["Shadow Master", "Shadow Warrior", "Fade", "Burst of Speed", "Venom"],
+        "minimum_total": 40,
+        "reason": "Shadow and self-buff investment reaches the combined threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Shadow Master",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Shadow Warrior",
+        "minimum": 1,
+        "weight": 0.75
+      },
+      {
+        "name": "Fade",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Burst of Speed",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Venom",
+        "minimum": 15,
+        "weight": 1.0
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Cloak of Shadows",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Mind Blast",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ]
+  }
+]

@@ -1,0 +1,524 @@
+[
+  {
+    "build_id": "barb-singer",
+    "class_name": "Barbarian",
+    "label": "Singer",
+    "family": "Warcry Barbarian",
+    "description": "Barbarian centered on War Cry and the warcry support package.",
+    "required_skills_all": [
+      {
+        "name": "War Cry",
+        "minimum": 15,
+        "reason": "War Cry is heavily invested"
+      }
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["War Cry", "Shout", "Battle Cry", "Battle Orders"],
+        "minimum_total": 40,
+        "reason": "War Cry support investment reaches the combined threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "War Cry",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Shout",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Battle Cry",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Battle Orders",
+        "minimum": 10,
+        "weight": 1.0
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Battle Command",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Find Item",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Whirlwind",
+        "minimum": 15,
+        "weight": 0.6
+      },
+      {
+        "name": "Frenzy",
+        "minimum": 15,
+        "weight": 0.6
+      },
+      {
+        "name": "Cleave",
+        "minimum": 15,
+        "weight": 0.6
+      }
+    ]
+  },
+  {
+    "build_id": "barb-throw",
+    "class_name": "Barbarian",
+    "label": "Throw",
+    "family": "Throw Barbarian",
+    "description": "Barbarian using thrown weapons as the primary combat pattern.",
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Ethereal Throw",
+          "minimum": 15,
+          "reason": "Ethereal Throw is heavily invested"
+        },
+        {
+          "name": "Thrown Weapon Mastery",
+          "minimum": 15,
+          "reason": "Thrown Weapon Mastery is heavily invested"
+        }
+      ]
+    ],
+    "required_gear_rule_groups_any": [
+      [
+        {
+          "tag_contains": ["winged knife"],
+          "worn_slots": ["weapon1", "weapon2"],
+          "reason": "Thrown weapon equipped"
+        },
+        {
+          "tag_contains": ["winged axe"],
+          "worn_slots": ["weapon1", "weapon2"],
+          "reason": "Thrown weapon equipped"
+        },
+        {
+          "tag_contains": ["winged harpoon"],
+          "worn_slots": ["weapon1", "weapon2"],
+          "reason": "Thrown weapon equipped"
+        },
+        {
+          "tag_contains": ["throwing spear"],
+          "worn_slots": ["weapon1", "weapon2"],
+          "reason": "Thrown weapon equipped"
+        },
+        {
+          "tag_contains": ["balanced knife"],
+          "worn_slots": ["weapon1", "weapon2"],
+          "reason": "Thrown weapon equipped"
+        },
+        {
+          "tag_contains": ["balanced axe"],
+          "worn_slots": ["weapon1", "weapon2"],
+          "reason": "Thrown weapon equipped"
+        },
+        {
+          "tag_contains": ["glaive"],
+          "worn_slots": ["weapon1", "weapon2"],
+          "reason": "Thrown weapon equipped"
+        },
+        {
+          "tag_contains": ["spiculum"],
+          "worn_slots": ["weapon1", "weapon2"],
+          "reason": "Thrown weapon equipped"
+        },
+        {
+          "title_contains": ["warshrike"],
+          "worn_slots": ["weapon1", "weapon2"],
+          "reason": "Warshrike equipped"
+        },
+        {
+          "title_contains": ["lacerator"],
+          "worn_slots": ["weapon1", "weapon2"],
+          "reason": "Lacerator equipped"
+        }
+      ]
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Ethereal Throw", "Thrown Weapon Mastery", "Whirling Axes"],
+        "minimum_total": 30,
+        "reason": "Throw skill investment reaches the combined threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Ethereal Throw",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Thrown Weapon Mastery",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Whirling Axes",
+        "minimum": 10,
+        "weight": 1.0
+      }
+    ],
+    "gear_text_any": [
+      {
+        "name": "piercing attack",
+        "minimum": 1,
+        "weight": 0.5,
+        "reason": "Thrown setup has ranged pierce support"
+      },
+      {
+        "name": "repairs 1 durability",
+        "minimum": 1,
+        "weight": 0.5,
+        "reason": "Thrown weapon has self-repair support"
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Battle Orders",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Whirlwind",
+        "minimum": 15,
+        "weight": 0.5
+      },
+      {
+        "name": "Frenzy",
+        "minimum": 15,
+        "weight": 0.5
+      }
+    ]
+  },
+  {
+    "build_id": "barb-leap",
+    "class_name": "Barbarian",
+    "label": "Leap",
+    "family": "Leap Barbarian",
+    "description": "Barbarian centered on Leap Slam as the primary attack pattern.",
+    "required_skills_all": [
+      {
+        "name": "Leap Slam",
+        "minimum": 15,
+        "reason": "Leap Slam is heavily invested"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Leap Slam",
+        "minimum": 15,
+        "weight": 3.0
+      },
+      {
+        "name": "Stun",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Bash",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Battle Orders",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Natural Resistance",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Cleave",
+        "minimum": 15,
+        "weight": 1.4
+      },
+      {
+        "name": "Whirlwind",
+        "minimum": 15,
+        "weight": 0.5
+      },
+      {
+        "name": "Frenzy",
+        "minimum": 15,
+        "weight": 0.5
+      }
+    ]
+  },
+  {
+    "build_id": "barb-whirlwind",
+    "class_name": "Barbarian",
+    "label": "Whirlwind",
+    "family": "Melee Barbarian",
+    "description": "Barbarian centered on Whirlwind.",
+    "required_skills_all": [
+      {
+        "name": "Whirlwind",
+        "minimum": 15,
+        "reason": "Whirlwind is heavily invested"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Whirlwind",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Whirling Axes",
+        "minimum": 10,
+        "weight": 0.75
+      },
+      {
+        "name": "Battle Orders",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Edged Weapon Mastery",
+        "minimum": 1,
+        "weight": 0.4
+      },
+      {
+        "name": "Pole Weapon Mastery",
+        "minimum": 1,
+        "weight": 0.4
+      },
+      {
+        "name": "Blunt Weapon Mastery",
+        "minimum": 1,
+        "weight": 0.4
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Cleave",
+        "minimum": 15,
+        "weight": 0.5
+      },
+      {
+        "name": "Frenzy",
+        "minimum": 15,
+        "weight": 0.5
+      },
+      {
+        "name": "Leap Slam",
+        "minimum": 15,
+        "weight": 0.4
+      }
+    ]
+  },
+  {
+    "build_id": "barb-cleave",
+    "class_name": "Barbarian",
+    "label": "Cleave",
+    "family": "Melee Barbarian",
+    "description": "Barbarian centered on Cleave.",
+    "required_skills_all": [
+      {
+        "name": "Cleave",
+        "minimum": 15,
+        "reason": "Cleave is heavily invested"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Cleave",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Bash",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Concentrate",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Grim Ward",
+        "minimum": 10,
+        "weight": 0.75
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Battle Orders",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Edged Weapon Mastery",
+        "minimum": 10,
+        "weight": 0.5
+      },
+      {
+        "name": "Pole Weapon Mastery",
+        "minimum": 1,
+        "weight": 0.4
+      },
+      {
+        "name": "Blunt Weapon Mastery",
+        "minimum": 1,
+        "weight": 0.4
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Whirlwind",
+        "minimum": 15,
+        "weight": 0.5
+      },
+      {
+        "name": "Frenzy",
+        "minimum": 15,
+        "weight": 0.5
+      }
+    ]
+  },
+  {
+    "build_id": "barb-frenzy",
+    "class_name": "Barbarian",
+    "label": "Frenzy",
+    "family": "Melee Barbarian",
+    "description": "Barbarian centered on Frenzy.",
+    "required_skills_all": [
+      {
+        "name": "Frenzy",
+        "minimum": 15,
+        "reason": "Frenzy is heavily invested"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Frenzy",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Double Swing",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Increased Speed",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Battle Orders",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Natural Resistance",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Whirlwind",
+        "minimum": 15,
+        "weight": 0.5
+      },
+      {
+        "name": "Cleave",
+        "minimum": 15,
+        "weight": 0.5
+      }
+    ]
+  },
+  {
+    "build_id": "barb-wolfbarb",
+    "class_name": "Barbarian",
+    "label": "Wolfbarb",
+    "family": "Shapeshift Barbarian",
+    "description": "Barbarian using Wolfhowl to fight in werewolf form.",
+    "required_gear_rules_all": [
+      {
+        "title_contains": ["wolfhowl"],
+        "worn_slots": ["helmet"],
+        "reason": "Wolfhowl is equipped"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Frenzy",
+        "minimum": 1,
+        "weight": 0.75
+      },
+      {
+        "name": "Cleave",
+        "minimum": 1,
+        "weight": 0.75
+      },
+      {
+        "name": "Whirlwind",
+        "minimum": 1,
+        "weight": 0.75
+      },
+      {
+        "name": "Battle Orders",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "gear_text_any": [
+      {
+        "name": "wearwolf",
+        "minimum": 1,
+        "weight": 1.0,
+        "reason": "Wolfhowl grants werewolf form"
+      },
+      {
+        "name": "shape shifting",
+        "minimum": 1,
+        "weight": 0.75,
+        "reason": "Wolfhowl grants shapeshifting support"
+      },
+      {
+        "name": "feral rage",
+        "minimum": 1,
+        "weight": 0.75,
+        "reason": "Wolfhowl grants feral rage support"
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Natural Resistance",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Iron Skin",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ]
+  }
+]

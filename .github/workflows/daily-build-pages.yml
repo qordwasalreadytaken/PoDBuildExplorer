@@ -1,0 +1,43 @@
+name: Daily Build Page Generation
+
+on:
+  schedule:
+    - cron: '15 7 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-pages:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate softcore and hardcore pages
+        run: |
+          python3 scripts/modules/builds_page.py sc_ladder.json
+          python3 scripts/modules/builds_page.py hc_ladder.json --hc
+
+      - name: Commit generated pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Builds.html hcBuilds.html
+
+          if git diff --staged --quiet; then
+            echo "No generated page changes to commit"
+            exit 0
+          fi
+
+          git commit -m "Automated daily page generation"
+          git push origin HEAD:${{ github.ref_name }}

@@ -1,0 +1,475 @@
+[
+  {
+    "build_id": "paladin-foh-holy-bolt",
+    "class_name": "Paladin",
+    "label": "FoH / Holy Bolt",
+    "family": "Caster Paladin",
+    "description": "Paladin centered on Fist of the Heavens and Holy Bolt as the core attack package.",
+    "required_skills_all": [
+      {
+        "name": "Fist of the Heavens",
+        "minimum": 15,
+        "reason": "Fist of the Heavens is heavily invested"
+      },
+      {
+        "name": "Holy Bolt",
+        "minimum": 15,
+        "reason": "Holy Bolt is heavily invested"
+      }
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Fist of the Heavens", "Holy Bolt", "Holy Shock", "Sanctuary", "Conviction"],
+        "minimum_total": 45,
+        "reason": "Lightning and holy caster investment reaches the combined threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Fist of the Heavens",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Holy Bolt",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Holy Shock",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Sanctuary",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Conviction",
+        "minimum": 5,
+        "weight": 0.75
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Holy Shield",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Redemption",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Dashing Strike",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Blessed Hammer",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Smite",
+        "minimum": 15,
+        "weight": 0.8
+      },
+      {
+        "name": "Charge",
+        "minimum": 10,
+        "weight": 0.5
+      }
+    ]
+  },
+  {
+    "build_id": "paladin-hammerdin",
+    "class_name": "Paladin",
+    "label": "Hammerdin",
+    "family": "Caster Paladin",
+    "description": "Paladin centered on Blessed Hammer with the classic hammer support package.",
+    "required_skills_all": [
+      {
+        "name": "Blessed Hammer",
+        "minimum": 15,
+        "reason": "Blessed Hammer is heavily invested"
+      }
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Blessed Hammer", "Blessed Aim", "Vigor", "Concentration"],
+        "minimum_total": 45,
+        "reason": "Hammer support investment reaches the combined threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Blessed Hammer",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Blessed Aim",
+        "minimum": 10,
+        "weight": 1.5
+      },
+      {
+        "name": "Vigor",
+        "minimum": 10,
+        "weight": 1.25
+      },
+      {
+        "name": "Concentration",
+        "minimum": 10,
+        "weight": 1.25
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Holy Bolt",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Fist of the Heavens",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Smite",
+        "minimum": 15,
+        "weight": 0.8
+      },
+      {
+        "name": "Charge",
+        "minimum": 10,
+        "weight": 0.5
+      }
+    ]
+  },
+  {
+    "build_id": "paladin-smiter",
+    "class_name": "Paladin",
+    "label": "Smiter",
+    "family": "Melee Paladin",
+    "description": "Paladin centered on Smite with Holy Shield and the defensive melee package.",
+    "required_skills_all": [
+      {
+        "name": "Smite",
+        "minimum": 15,
+        "reason": "Smite is heavily invested"
+      },
+      {
+        "name": "Holy Shield",
+        "minimum": 15,
+        "reason": "Holy Shield is heavily invested"
+      }
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Smite", "Holy Shield", "Fanaticism", "Defiance", "Absolution"],
+        "minimum_total": 45,
+        "reason": "Smite support investment reaches the combined threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Smite",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Holy Shield",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Fanaticism",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Defiance",
+        "minimum": 10,
+        "weight": 1.0
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Absolution",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Charge",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Blessed Hammer",
+        "minimum": 15,
+        "weight": 0.9
+      },
+      {
+        "name": "Fist of the Heavens",
+        "minimum": 15,
+        "weight": 0.9
+      },
+      {
+        "name": "Charge",
+        "minimum": 10,
+        "weight": 0.4
+      }
+    ]
+  },
+  {
+    "build_id": "paladin-zealer",
+    "class_name": "Paladin",
+    "label": "Zealer",
+    "family": "Melee Paladin",
+    "description": "Paladin using Zeal as the core attack pattern, usually backed by Fanaticism and Sacrifice.",
+    "required_skills_all": [
+      {
+        "name": "Fanaticism",
+        "minimum": 15,
+        "reason": "Fanaticism is heavily invested"
+      }
+    ],
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Zeal",
+          "minimum": 8,
+          "reason": "Zeal is materially invested"
+        },
+        {
+          "name": "Sacrifice",
+          "minimum": 15,
+          "reason": "Sacrifice is heavily invested for Zeal damage"
+        }
+      ]
+    ],
+    "signature_skills": [
+      {
+        "name": "Zeal",
+        "minimum": 8,
+        "weight": 2.0
+      },
+      {
+        "name": "Sacrifice",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Fanaticism",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Holy Shield",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Charge",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Smite",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Blessed Hammer",
+        "minimum": 15,
+        "weight": 0.8
+      },
+      {
+        "name": "Fist of the Heavens",
+        "minimum": 15,
+        "weight": 0.8
+      },
+      {
+        "name": "Charge",
+        "minimum": 10,
+        "weight": 0.4
+      }
+    ]
+  },
+  {
+    "build_id": "paladin-charger",
+    "class_name": "Paladin",
+    "label": "Charger",
+    "family": "Melee Paladin",
+    "description": "Paladin using Charge as the primary attack pattern.",
+    "required_skills_all": [
+      {
+        "name": "Charge",
+        "minimum": 10,
+        "reason": "Charge is materially invested"
+      }
+    ],
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Vigor",
+          "minimum": 10,
+          "reason": "Vigor is heavily invested for Charge support"
+        },
+        {
+          "name": "Fanaticism",
+          "minimum": 10,
+          "reason": "Fanaticism is materially invested for Charge support"
+        }
+      ]
+    ],
+    "signature_skills": [
+      {
+        "name": "Charge",
+        "minimum": 10,
+        "weight": 2.5
+      },
+      {
+        "name": "Vigor",
+        "minimum": 10,
+        "weight": 1.25
+      },
+      {
+        "name": "Fanaticism",
+        "minimum": 10,
+        "weight": 1.25
+      },
+      {
+        "name": "Dashing Strike",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Holy Shield",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Smite",
+        "minimum": 15,
+        "weight": 0.9
+      },
+      {
+        "name": "Blessed Hammer",
+        "minimum": 15,
+        "weight": 0.8
+      },
+      {
+        "name": "Fist of the Heavens",
+        "minimum": 15,
+        "weight": 0.8
+      }
+    ]
+  },
+  {
+    "build_id": "paladin-foh-hammer-hybrid",
+    "class_name": "Paladin",
+    "label": "FoH / Hammer Hybrid",
+    "family": "Hybrid Paladin",
+    "description": "Paladin materially investing in both Fist of the Heavens and Blessed Hammer.",
+    "required_skills_all": [
+      {
+        "name": "Fist of the Heavens",
+        "minimum": 15,
+        "reason": "Fist of the Heavens is heavily invested"
+      },
+      {
+        "name": "Blessed Hammer",
+        "minimum": 15,
+        "reason": "Blessed Hammer is heavily invested"
+      }
+    ],
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Holy Bolt",
+          "minimum": 10,
+          "reason": "Holy Bolt supports the FoH side"
+        },
+        {
+          "name": "Blessed Aim",
+          "minimum": 10,
+          "reason": "Blessed Aim supports the hammer side"
+        },
+        {
+          "name": "Vigor",
+          "minimum": 10,
+          "reason": "Vigor supports the hammer side"
+        }
+      ]
+    ],
+    "signature_skills": [
+      {
+        "name": "Fist of the Heavens",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Blessed Hammer",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Holy Bolt",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Blessed Aim",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Vigor",
+        "minimum": 10,
+        "weight": 1.0
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Holy Shock",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Concentration",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Smite",
+        "minimum": 15,
+        "weight": 0.7
+      },
+      {
+        "name": "Charge",
+        "minimum": 10,
+        "weight": 0.5
+      }
+    ]
+  }
+]

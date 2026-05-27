@@ -1,0 +1,895 @@
+[
+  {
+    "build_id": "druid-summon",
+    "class_name": "Druid",
+    "label": "Summon",
+    "family": "Summon Druid",
+    "description": "Druid centered on the summon package with wolves, grizzly, and spirit support.",
+    "required_skill_sums": [
+      {
+        "names": ["Summon Spirit Wolf", "Summon Dire Wolf", "Summon Grizzly", "Oak Sage", "Heart of Wolverine", "Raven"],
+        "minimum_total": 50,
+        "reason": "Summoning investment reaches the combined threshold"
+      }
+    ],
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Summon Dire Wolf",
+          "minimum": 15,
+          "reason": "Summon Dire Wolf is heavily invested"
+        },
+        {
+          "name": "Summon Grizzly",
+          "minimum": 15,
+          "reason": "Summon Grizzly is heavily invested"
+        },
+        {
+          "name": "Summon Spirit Wolf",
+          "minimum": 15,
+          "reason": "Summon Spirit Wolf is heavily invested"
+        }
+      ]
+    ],
+    "signature_skills": [
+      {
+        "name": "Summon Spirit Wolf",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Summon Dire Wolf",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Summon Grizzly",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Oak Sage",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Heart of Wolverine",
+        "minimum": 10,
+        "weight": 1.0
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Raven",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Poison Creeper",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Spirit of Barbs",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Rabies",
+        "minimum": 15,
+        "weight": 0.7
+      },
+      {
+        "name": "Maul",
+        "minimum": 15,
+        "weight": 0.7
+      },
+      {
+        "name": "Shock Wave",
+        "minimum": 15,
+        "weight": 0.7
+      },
+      {
+        "name": "Hurricane",
+        "minimum": 15,
+        "weight": 0.7
+      }
+    ]
+  },
+  {
+    "build_id": "druid-werewolf",
+    "class_name": "Druid",
+    "label": "Werewolf",
+    "family": "Shapeshift Druid",
+    "description": "Druid fighting in werewolf form, usually built around Fury with Lycanthropy support.",
+    "required_skills_all": [
+      {
+        "name": "Lycanthropy",
+        "minimum": 15,
+        "reason": "Lycanthropy is heavily invested"
+      },
+      {
+        "name": "Werewolf",
+        "minimum": 1,
+        "reason": "Werewolf form is allocated"
+      }
+    ],
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Fury",
+          "minimum": 15,
+          "reason": "Fury is heavily invested"
+        },
+        {
+          "name": "Feral Rage",
+          "minimum": 10,
+          "reason": "Feral Rage is heavily invested"
+        }
+      ]
+    ],
+    "signature_skills": [
+      {
+        "name": "Lycanthropy",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Fury",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Feral Rage",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Poison Creeper",
+        "minimum": 10,
+        "weight": 0.5
+      },
+      {
+        "name": "Summon Dire Wolf",
+        "minimum": 10,
+        "weight": 0.5
+      },
+      {
+        "name": "Oak Sage",
+        "minimum": 10,
+        "weight": 0.5
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Rabies",
+        "minimum": 15,
+        "weight": 1.2
+      },
+      {
+        "name": "Werebear",
+        "minimum": 15,
+        "weight": 0.9
+      },
+      {
+        "name": "Maul",
+        "minimum": 15,
+        "weight": 0.7
+      },
+      {
+        "name": "Shock Wave",
+        "minimum": 15,
+        "weight": 0.7
+      },
+      {
+        "name": "Hurricane",
+        "minimum": 15,
+        "weight": 0.7
+      }
+    ]
+  },
+  {
+    "build_id": "druid-rabies",
+    "class_name": "Druid",
+    "label": "Rabies",
+    "family": "Shapeshift Druid",
+    "description": "Druid centered on Rabies with poison and werewolf support.",
+    "required_skills_all": [
+      {
+        "name": "Rabies",
+        "minimum": 15,
+        "reason": "Rabies is heavily invested"
+      }
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Rabies", "Poison Creeper", "Summon Dire Wolf", "Lycanthropy"],
+        "minimum_total": 45,
+        "reason": "Rabies support investment reaches the combined threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Rabies",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Poison Creeper",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Summon Dire Wolf",
+        "minimum": 15,
+        "weight": 1.25
+      },
+      {
+        "name": "Lycanthropy",
+        "minimum": 10,
+        "weight": 1.0
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Werewolf",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Oak Sage",
+        "minimum": 10,
+        "weight": 0.5
+      },
+      {
+        "name": "Feral Rage",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Fury",
+        "minimum": 15,
+        "weight": 0.6
+      },
+      {
+        "name": "Maul",
+        "minimum": 15,
+        "weight": 0.9
+      },
+      {
+        "name": "Shock Wave",
+        "minimum": 15,
+        "weight": 0.9
+      },
+      {
+        "name": "Hurricane",
+        "minimum": 15,
+        "weight": 0.7
+      },
+      {
+        "name": "Armageddon",
+        "minimum": 15,
+        "weight": 0.7
+      }
+    ]
+  },
+  {
+    "build_id": "druid-shockwave",
+    "class_name": "Druid",
+    "label": "Shockwave",
+    "family": "Shapeshift Druid",
+    "description": "Werebear Druid centered on Shock Wave with the usual shapeshift support package.",
+    "required_skills_all": [
+      {
+        "name": "Werebear",
+        "minimum": 1,
+        "reason": "Werebear form is allocated"
+      },
+      {
+        "name": "Shock Wave",
+        "minimum": 15,
+        "reason": "Shock Wave is heavily invested"
+      }
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Shock Wave", "Werebear", "Lycanthropy", "Maul", "Hunger"],
+        "minimum_total": 40,
+        "reason": "Shock Wave support investment reaches the combined threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Shock Wave",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Werebear",
+        "minimum": 1,
+        "weight": 1.0
+      },
+      {
+        "name": "Lycanthropy",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Maul",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Hunger",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Summon Grizzly",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Heart of Wolverine",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Maul",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Rabies",
+        "minimum": 15,
+        "weight": 0.9
+      },
+      {
+        "name": "Fury",
+        "minimum": 15,
+        "weight": 0.9
+      },
+      {
+        "name": "Hurricane",
+        "minimum": 15,
+        "weight": 0.7
+      }
+    ]
+  },
+  {
+    "build_id": "druid-maul",
+    "class_name": "Druid",
+    "label": "Maul",
+    "family": "Shapeshift Druid",
+    "description": "Werebear Druid centered on Maul with heavy melee shapeshift investment.",
+    "required_skills_all": [
+      {
+        "name": "Werebear",
+        "minimum": 1,
+        "reason": "Werebear form is allocated"
+      },
+      {
+        "name": "Maul",
+        "minimum": 15,
+        "reason": "Maul is heavily invested"
+      }
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Maul", "Werebear", "Lycanthropy", "Hunger", "Shock Wave"],
+        "minimum_total": 40,
+        "reason": "Maul support investment reaches the combined threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Maul",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Werebear",
+        "minimum": 1,
+        "weight": 1.0
+      },
+      {
+        "name": "Lycanthropy",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Hunger",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Shock Wave",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Summon Grizzly",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Heart of Wolverine",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Shock Wave",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Rabies",
+        "minimum": 15,
+        "weight": 0.9
+      },
+      {
+        "name": "Fury",
+        "minimum": 15,
+        "weight": 0.9
+      },
+      {
+        "name": "Hurricane",
+        "minimum": 15,
+        "weight": 0.7
+      }
+    ]
+  },
+  {
+    "build_id": "druid-flamedash",
+    "class_name": "Druid",
+    "label": "Flamedash",
+    "family": "Elemental Druid",
+    "description": "Elemental Druid centered on Flame Dash with the Molten Boulder and Firestorm support package.",
+    "required_skills_all": [
+      {
+        "name": "Flame Dash",
+        "minimum": 15,
+        "reason": "Flame Dash is heavily invested"
+      }
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Flame Dash", "Molten Boulder", "Firestorm"],
+        "minimum_total": 40,
+        "reason": "Flame Dash fire support investment reaches the combined threshold"
+      }
+    ],
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Molten Boulder",
+          "minimum": 15,
+          "reason": "Molten Boulder is heavily invested"
+        },
+        {
+          "name": "Firestorm",
+          "minimum": 15,
+          "reason": "Firestorm is heavily invested"
+        }
+      ]
+    ],
+    "signature_skills": [
+      {
+        "name": "Flame Dash",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Molten Boulder",
+        "minimum": 15,
+        "weight": 1.75
+      },
+      {
+        "name": "Firestorm",
+        "minimum": 15,
+        "weight": 1.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Fissure",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Armageddon",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Oak Sage",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "gear_text_any": [
+      {
+        "name": "reduced skill cooldown",
+        "weight": 1.0,
+        "reason": "Gear includes reduced skill cooldown for Flame Dash"
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Tornado",
+        "minimum": 10,
+        "weight": 0.6
+      },
+      {
+        "name": "Hurricane",
+        "minimum": 15,
+        "weight": 0.9
+      },
+      {
+        "name": "Rabies",
+        "minimum": 15,
+        "weight": 0.7
+      },
+      {
+        "name": "Maul",
+        "minimum": 15,
+        "weight": 0.7
+      },
+      {
+        "name": "Shock Wave",
+        "minimum": 15,
+        "weight": 0.7
+      }
+    ]
+  },
+  {
+    "build_id": "druid-avatar",
+    "class_name": "Druid",
+    "label": "Avatar",
+    "family": "Elemental Druid",
+    "description": "Elemental Druid hybrid centered on Flame Dash, Molten Boulder, and Hurricane with wind support.",
+    "required_skills_all": [
+      {
+        "name": "Flame Dash",
+        "minimum": 15,
+        "reason": "Flame Dash is heavily invested"
+      },
+      {
+        "name": "Molten Boulder",
+        "minimum": 15,
+        "reason": "Molten Boulder is heavily invested"
+      },
+      {
+        "name": "Hurricane",
+        "minimum": 15,
+        "reason": "Hurricane is heavily invested"
+      }
+    ],
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Tornado",
+          "minimum": 10,
+          "reason": "Tornado is heavily invested"
+        },
+        {
+          "name": "Cyclone Armor",
+          "minimum": 10,
+          "reason": "Cyclone Armor is heavily invested"
+        }
+      ]
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Flame Dash", "Molten Boulder", "Hurricane", "Tornado", "Cyclone Armor"],
+        "minimum_total": 70,
+        "reason": "Avatar fire and wind investment reaches the combined threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Flame Dash",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Molten Boulder",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Hurricane",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Tornado",
+        "minimum": 10,
+        "weight": 1.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Cyclone Armor",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Twister",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Armageddon",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Oak Sage",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "gear_text_any": [
+      {
+        "name": "reduced skill cooldown",
+        "weight": 0.75,
+        "reason": "Gear includes reduced skill cooldown for Avatar"
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Rabies",
+        "minimum": 15,
+        "weight": 0.7
+      },
+      {
+        "name": "Maul",
+        "minimum": 15,
+        "weight": 0.7
+      },
+      {
+        "name": "Shock Wave",
+        "minimum": 15,
+        "weight": 0.7
+      }
+    ]
+  },
+  {
+    "build_id": "druid-armageddon",
+    "class_name": "Druid",
+    "label": "Armageddon",
+    "family": "Elemental Druid",
+    "description": "Elemental Druid centered on Armageddon with the fire support package.",
+    "required_skills_all": [
+      {
+        "name": "Armageddon",
+        "minimum": 15,
+        "reason": "Armageddon is heavily invested"
+      }
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Armageddon", "Molten Boulder", "Firestorm", "Fissure", "Volcano", "Flame Dash"],
+        "minimum_total": 45,
+        "reason": "Fire skill investment reaches the combined threshold"
+      }
+    ],
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Molten Boulder",
+          "minimum": 15,
+          "reason": "Molten Boulder is heavily invested"
+        },
+        {
+          "name": "Firestorm",
+          "minimum": 15,
+          "reason": "Firestorm is heavily invested"
+        },
+        {
+          "name": "Flame Dash",
+          "minimum": 15,
+          "reason": "Flame Dash is heavily invested"
+        }
+      ]
+    ],
+    "signature_skills": [
+      {
+        "name": "Armageddon",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Molten Boulder",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Firestorm",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Fissure",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Volcano",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Flame Dash",
+        "minimum": 10,
+        "weight": 1.0
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Oak Sage",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Hurricane",
+        "minimum": 15,
+        "weight": 0.8
+      },
+      {
+        "name": "Rabies",
+        "minimum": 15,
+        "weight": 0.7
+      },
+      {
+        "name": "Maul",
+        "minimum": 15,
+        "weight": 0.7
+      },
+      {
+        "name": "Shock Wave",
+        "minimum": 15,
+        "weight": 0.7
+      },
+      {
+        "name": "Hurricane",
+        "minimum": 15,
+        "weight": 0.9
+      },
+      {
+        "name": "Flame Dash",
+        "minimum": 15,
+        "weight": 0.8
+      }
+    ]
+  },
+  {
+    "build_id": "druid-hurricane",
+    "class_name": "Druid",
+    "label": "Hurricane",
+    "family": "Elemental Druid",
+    "description": "Elemental Druid centered on Hurricane with the Wind support package.",
+    "required_skills_all": [
+      {
+        "name": "Hurricane",
+        "minimum": 15,
+        "reason": "Hurricane is heavily invested"
+      }
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Hurricane", "Tornado", "Twister", "Cyclone Armor"],
+        "minimum_total": 45,
+        "reason": "Wind skill investment reaches the combined threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Hurricane",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Tornado",
+        "minimum": 10,
+        "weight": 1.5
+      },
+      {
+        "name": "Twister",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Cyclone Armor",
+        "minimum": 10,
+        "weight": 1.0
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Arctic Blast",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Raven",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Rabies",
+        "minimum": 15,
+        "weight": 0.8
+      },
+      {
+        "name": "Maul",
+        "minimum": 15,
+        "weight": 0.8
+      },
+      {
+        "name": "Shock Wave",
+        "minimum": 15,
+        "weight": 0.8
+      },
+      {
+        "name": "Summon Dire Wolf",
+        "minimum": 15,
+        "weight": 0.5
+      },
+      {
+        "name": "Summon Grizzly",
+        "minimum": 15,
+        "weight": 0.5
+      },
+      {
+        "name": "Armageddon",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Flame Dash",
+        "minimum": 15,
+        "weight": 0.8
+      },
+      {
+        "name": "Molten Boulder",
+        "minimum": 15,
+        "weight": 0.3
+      },
+      {
+        "name": "Flame Dash",
+        "minimum": 15,
+        "weight": 0.4
+      },
+      {
+        "name": "Firestorm",
+        "minimum": 15,
+        "weight": 0.6
+      },
+      {
+        "name": "Tornado",
+        "minimum": 10,
+        "weight": 0.8
+      }
+    ]
+  }
+]
