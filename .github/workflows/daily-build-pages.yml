@@ -6,22 +6,24 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: daily-build-pages
+  group: pages
   cancel-in-progress: false
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   generate-pages:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -33,32 +35,14 @@ jobs:
           python3 scripts/modules/builds_page.py sc_ladder.json
           python3 scripts/modules/builds_page.py hc_ladder.json --hc
 
-      - name: Commit generated pages
-        run: |
-          branch="${{ github.ref_name }}"
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add Builds.html hcBuilds.html
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
 
-          if git diff --staged --quiet; then
-            echo "No generated page changes to commit"
-            exit 0
-          fi
-
-          git commit -m "Automated daily page generation"
-
-          git pull --rebase origin "$branch"
-
-          for attempt in 1 2 3; do
-            if git push origin HEAD:"$branch"; then
-              exit 0
-            fi
-
-            echo "Push attempt $attempt failed, refreshing from origin and retrying"
-            git fetch origin "$branch"
-            git rebase "origin/$branch"
-          done
-
-          echo "Push failed after 3 attempts"
-          exit 1
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
