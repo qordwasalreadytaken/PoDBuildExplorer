@@ -471,8 +471,8 @@ def _load_characters_from_json(json_file_path: Path) -> List[Dict[str, Any]]:
 
 def _default_output_path(input_path: Path, is_hardcore: bool) -> Path:
     if is_hardcore:
-        return input_path / "hcBuilds.html"
-    return input_path / "Builds.html"
+        return input_path.parent / "hcBuilds.html"
+    return input_path.parent / "Builds.html"
 
 
 def main(argv: Optional[Sequence[str]] = None) -> int:
