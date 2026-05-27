@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PoD Twitch Armory</title>
+    <link rel="stylesheet" type="text/css" href="./css/pod.css" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+
+</head>
+<body style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+    <div id="alertBanner" style="display: none; padding: 10px; background-color: #ffcc00; color: #333;">
+        No ladder snapshot was found for this character.
+    </div>
+    <div id="app" class="full-height"></div>
+<!--    <button onclick="retrieveCharacterData()" >Click me!</button> -->
+    <div id="main">
+        <div class="scroll"> 
+
+<!--         <div class="arrow animated bounce"></div>-->
+            <div id="hover-wrapper">
+               <div id="hover-container"></div>
+            </div>
+            <div id="items">
+                <div id="hover-container-weapon1" class="itemhover">
+                    <!-- Tooltip will be appended by JavaScript here -->
+                </div>
+                <div id="hover-container-helmet" class="itemhover">
+                    <!-- Tooltip will be appended by JavaScript here -->
+                    
+                </div>
+                <div id="hover-container-amulet" class="itemhover">
+                    <!-- Tooltip will be appended by JavaScript here -->
+                    
+                </div>
+                <div id="hover-container-ring1" class="itemhover">
+                    <!-- Tooltip will be appended by JavaScript here -->
+                    
+                </div>
+                <div id="hover-container-ring2" class="itemhover">
+                    <!-- Tooltip will be appended by JavaScript here -->
+                    
+                </div>
+                <div id="hover-container-body" class="itemhover">
+                    <!-- Tooltip will be appended by JavaScript here -->
+                    
+                </div>
+                <div id="hover-container-belt" class="itemhover">
+                    <!-- Tooltip will be appended by JavaScript here -->
+                    
+                </div>
+                <div id="hover-container-gloves" class="itemhover">
+                    <!-- Tooltip will be appended by JavaScript here -->
+                    
+                </div>
+                <div id="hover-container-boots" class="itemhover">
+                    <!-- Tooltip will be appended by JavaScript here -->
+                    
+                </div>
+                <div id="hover-container-weapon2" class="itemhover">
+                    <!-- Tooltip will be appended by JavaScript here -->
+                    
+                </div>
+                <div id="hover-container-charms">
+                    <!-- 10x4 grid of charm slots -->
+                    <div id="charm-0-0" class="charm-slot"></div><div id="charm-1-0" class="charm-slot"></div><div id="charm-2-0" class="charm-slot"></div><div id="charm-3-0" class="charm-slot"></div><div id="charm-4-0" class="charm-slot"></div><div id="charm-5-0" class="charm-slot"></div><div id="charm-6-0" class="charm-slot"></div><div id="charm-7-0" class="charm-slot"></div><div id="charm-8-0" class="charm-slot"></div><div id="charm-9-0" class="charm-slot"></div>
+                    <div id="charm-0-1" class="charm-slot"></div><div id="charm-1-1" class="charm-slot"></div><div id="charm-2-1" class="charm-slot"></div><div id="charm-3-1" class="charm-slot"></div><div id="charm-4-1" class="charm-slot"></div><div id="charm-5-1" class="charm-slot"></div><div id="charm-6-1" class="charm-slot"></div><div id="charm-7-1" class="charm-slot"></div><div id="charm-8-1" class="charm-slot"></div><div id="charm-9-1" class="charm-slot"></div>
+                    <div id="charm-0-2" class="charm-slot"></div><div id="charm-1-2" class="charm-slot"></div><div id="charm-2-2" class="charm-slot"></div><div id="charm-3-2" class="charm-slot"></div><div id="charm-4-2" class="charm-slot"></div><div id="charm-5-2" class="charm-slot"></div><div id="charm-6-2" class="charm-slot"></div><div id="charm-7-2" class="charm-slot"></div><div id="charm-8-2" class="charm-slot"></div><div id="charm-9-2" class="charm-slot"></div>
+                    <div id="charm-0-3" class="charm-slot"></div><div id="charm-1-3" class="charm-slot"></div><div id="charm-2-3" class="charm-slot"></div><div id="charm-3-3" class="charm-slot"></div><div id="charm-4-3" class="charm-slot"></div><div id="charm-5-3" class="charm-slot"></div><div id="charm-6-3" class="charm-slot"></div><div id="charm-7-3" class="charm-slot"></div><div id="charm-8-3" class="charm-slot"></div><div id="charm-9-3" class="charm-slot"></div>
+                </div>
+            </div>
+            <div id="info">
+                <div id="info-line1">
+                    <span id="title"></span> <span id="name"></span> <span id="dead"></span>
+                </div>
+                <div id="info-line2">
+                    <span id="expansion"></span> <span id="mode"></span> <span id="ladder"></span>
+                </div>
+                <div id="info-line3">
+                    <span id="level-label"></span><span id="level"></span> <span id="class"></span>
+                </div>
+            </div>
+            <div id="stats">
+                <div id="resistances">
+                    <div class="line-wrapper">
+                        <div id="fire-label" class="resistances-label">Fire Resistance</div><div id="fire" class="resistances-value"></div>
+                    </div>
+                    <div class="line-wrapper">
+                        <div id="cold-label" class="resistances-label">Cold Resistance</div><div id="cold" class="resistances-value"></div>
+                    </div>
+                    <div class="line-wrapper">
+                        <div id="lightning-label" class="resistances-label">Lightning Resistance</div><div id="lightning" class="resistances-value"></div>
+                    </div>
+                    <div class="line-wrapper">
+                        <div id="poison-label" class="resistances-label">Poison Resistance</div><div id="poison" class="resistances-value"></div>
+                    </div>
+                </div>
+                <div id="attributes">
+                    <div class="line-wrapper">
+                        <div id="strength-label" class="attributes-label">Strength</div><div id="strength" class="attributes-value"></div>
+                    </div>
+                    <div class="line-wrapper">
+                        <div id="dexterity-label" class="attributes-label">Dexterity</div><div id="dexterity" class="attributes-value"></div>
+                    </div>
+                    <div class="line-wrapper">
+                        <div id="vitality-label" class="attributes-label">Vitality</div><div id="vitality" class="attributes-value"></div>
+                    </div>
+                    <div class="line-wrapper">
+                        <div id="energy-label" class="attributes-label">Energy</div><div id="energy" class="attributes-value"></div>
+                    </div>
+                </div>
+            </div>
+        <div id="lifemana">
+            <div id="life-orb" class="orb">
+                <div id="life" class="orb-text"></div>
+            </div>
+            <span class="lifemana-text">Life</span>
+            <div id="mana-orb" class="orb">
+                <div id="mana" class="orb-text"></div>
+            </div>
+            <span class="lifemana-text">Mana</span>
+        </div> 
+        <div id="skills"></div>
+        <div id="merc">
+            <div id="merc-hover-wrapper">
+                <div id="merc-hover-container"></div>
+            </div>
+            <div id="merc-items" style="position: relative;">
+                <div id="merc-hover-container-weapon1" class="itemhover">
+                    <div class="itemhover-box" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); background-color: black; color: #c0a080; padding: 10px; border-radius: 6px; font-size: 14px; border: 2px solid #c0a080; max-width: 580px; text-align: center; z-index: 1000; visibility: hidden; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">                </div>
+                </div>
+                    <div id="merc-hover-container-helmet" class="itemhover">
+                    <div class="itemhover-box" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); background-color: black; color: #c0a080; padding: 10px; border-radius: 6px; font-size: 14px; border: 2px solid #c0a080; max-width: 580px; text-align: center; z-index: 1000; visibility: hidden; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">                </div>
+                </div>
+                <div id="merc-hover-container-body" class="itemhover">
+                    <div class="itemhover-box" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); background-color: black; color: #c0a080; padding: 10px; border-radius: 6px; font-size: 14px; border: 2px solid #c0a080; max-width: 580px; text-align: center; z-index: 1000; visibility: hidden; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">                </div>
+                </div>
+                <div id="merc-hover-container-weapon2" class="itemhover">
+                    <div class="itemhover-box" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); background-color: black; color: #c0a080; padding: 10px; border-radius: 6px; font-size: 14px; border: 2px solid #c0a080; max-width: 580px; text-align: center; z-index: 1000; visibility: hidden; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;">                </div>
+                </div>
+            </div>
+            <br><br><br>
+            <div id="merc-line1">
+                <span id="merc-name"></span>
+            </div>
+            <div id="merc-line2">
+                <span id="merc-level-label"></span><span id="merc-level"></span> <span id="merc-type"></span>
+                <br><br><br>
+            </div>
+        </div>
+            <div class="arrow animated bounce">
+                <div class="scrolltooltip">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <!--<div title="Scroll down for stats, skills, and Merc info">&#160;&#160;&#160;&#160;&#160;</div>-->
+                    <span class="scrolltooltiptext">Scroll down for more stats, skills, and Merc info</span>
+                </div>
+            </div>
+<!--        <div id="future">
+            <br><br><br>
+            <div class="footer"><img src="./img/pod-bottom.png" alt="Path of Diablo"></div>
+            <br>
+            <div>FUTURE</div>
+            <div>FUTURE</div>
+            <div>FUTURE</div>
+            <div>FUTURE</div>
+            <div>FUTURE</div>
+            <div>FUTURE</div>
+            <div>FUTURE</div>
+            <div>FUTURE</div>
+        </div> -->
+    </div> 
+</div>
+
+<!--<script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>-->
+<script src="./jquery-3.3.1.min.js" type="text/javascript"></script>
+<!--<script src="./viewer.js" type="text/javascript"></script>-->
+<script>
+    //let token = '';
+//let tuid = '';
+
+$(document).ready(function() {
+    console.log("(document).ready worked");
+
+    // Extract character name from URL if available
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    let characterName = getQueryParam("charName");
+
+    if (characterName) {
+        console.log("Character Name from URL:", characterName);
+        
+        // Fetch character data and process it
+        try {
+            fetchCharacterData(characterName);
+        } catch (error) {
+            console.error("Error during API calls:", error);
+        }
+    } else {
+        console.warn("Character Name is not set in the URL.");
+        document.getElementById("alertBanner").style.display = "block";
+    }
+
+    // Scroll event listeners
+    $(window).scroll(function() {
+        const scroll = $(window).scrollTop();
+        $('.arrow').toggleClass('fade', scroll >= 1);
+    });
+
+    $('#main').scroll(function() {
+        const scroll = $('#main').scrollTop();
+        $('.arrow').toggleClass('fade', scroll >= 1);
+    });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    initializeCharacterSections();
+});
+
+function initializeCharacterSections() {
+    const characterSections = document.querySelectorAll(".character-section");
+
+    characterSections.forEach(section => {
+        const characterName = section.getAttribute("data-character-name");
+        console.log("Initializing character:", characterName);
+
+        if (characterName) {
+            fetchCharacterData(characterName);
+        } else {
+            console.warn("Character Name is not set in the configuration for a section.");
+            section.querySelector("#alertBanner").style.display = "block";
+        }
+    });
+}
+
+function showAlert(message) {
+    const banner = document.getElementById("alertBanner");
+    if (!banner) {
+        return;
+    }
+
+    banner.textContent = message;
+    banner.style.display = "block";
+}
+
+function normalizeCharacterName(value) {
+    return String(value || "").trim().toLowerCase();
+}
+
+function ladderSnapshotPath() {
+    const mode = (getQueryParam("mode") || "sc").toLowerCase();
+    return mode === "hc" ? "../hc_ladder.json" : "../sc_ladder.json";
+}
+
+async function fetchCharacterData(characterName) {
+    const snapshotPath = ladderSnapshotPath();
+    const modeLabel = snapshotPath.includes("hc_") ? "hardcore" : "softcore";
+
+    try {
+        const response = await fetch(snapshotPath, { cache: "force-cache" });
+        if (!response.ok) {
+            throw new Error(`Snapshot load failed with status: ${response.status}`);
+        }
+
+        const ladderCharacters = await response.json();
+        const match = Array.isArray(ladderCharacters)
+            ? ladderCharacters.find(character => normalizeCharacterName(character["Name"]) === normalizeCharacterName(characterName))
+            : null;
+
+        if (!match) {
+            throw new Error(`Character ${characterName} was not found in the ${modeLabel} ladder snapshot.`);
+        }
+
+        document.getElementById("alertBanner").style.display = "none";
+        processCharacterData(match);
+    } catch (error) {
+        console.error("Error fetching character data:", error);
+        showAlert(`No ${modeLabel} ladder snapshot was found for ${characterName}.`);
+    }
+}
+
+
+
+// Function to process characterData after it's fetched
+async function processCharacterData(characterData) {
+  if (!characterData || typeof characterData !== 'object') {
+      console.error("Invalid characterData:", characterData);
+      return;
+  }
+  console.log("Character Data fetched:", characterData);
+  updatePODComponent(characterData);  // Process and update UI after retrieval
+}
+   
+function updatePODComponent(data) {
+  if (data && data.Stats) {
+  // Character information
+  $("#title").text(data["Title"]);
+  $("#name").text(data["Name"]);
+  
+  if(data["IsHardcore"] === true) {
+    $("#mode").text("Hardcore");
+    } else {
+      $("#mode").text("Softcore");
+    }
+  
+  $("#expansion").text("Expansion");
+  
+  if(data["IsLadder"] === true) {
+    $("#ladder").text("Ladder");
+  } else {
+    $("#ladder").text("");
+  }
+  
+  if(data["IsDead"] === true && data["IsHardcore"] === true) {
+    $("#dead").text("(Dead)");
+  } else {
+    $("#dead").text("");
+  }
+  
+  $("#level").text("Level " + data["Stats"]["Level"]);
+  $("#class").text(data["Class"]);
+  
+  // Items
+  var wornItems = findWornItems(data["Equipped"]);
+  
+  // Store all weapon data globally for weapon swap functionality
+  window.weaponData = {
+    weapon1: wornItems["weapon1"] || null,
+    weapon2: wornItems["weapon2"] || null,
+    sweapon1: wornItems["sweapon1"] || null,
+    sweapon2: wornItems["sweapon2"] || null
+  };
+  
+  // Track weapon swap state (false = primary weapons, true = swap weapons)
+  // Both weapons swap together
+  window.weaponSwapState = false;
+  
+  /*
+  if ("weapon1" in wornItems) {
+    // Only append the image without the tooltip
+    $("#hover-container-weapon1").append(createImageHTML(wornItems["weapon1"], "hover-container"));
+}
+
+if ("helmet" in wornItems) {
+    // Only append the image without the tooltip
+    $("#hover-container-helmet").append(createImageHTML(wornItems["helmet"], "hover-container"));
+}
+
+if ("amulet" in wornItems) {
+    // Only append the image without the tooltip
+    $("#hover-container-amulet").append(createImageHTML(wornItems["amulet"], "hover-container"));
+}
+
+if ("ring1" in wornItems) {
+    // Only append the image without the tooltip
+    $("#hover-container-ring1").append(createImageHTML(wornItems["ring1"], "hover-container"));
+}
+
+if ("ring2" in wornItems) {
+    // Only append the image without the tooltip
+    $("#hover-container-ring2").append(createImageHTML(wornItems["ring2"], "hover-container"));
+}
+
+if ("body" in wornItems) {
+    // Only append the image without the tooltip
+    $("#hover-container-body").append(createImageHTML(wornItems["body"], "hover-container"));
+}
+
+if ("belt" in wornItems) {
+    // Only append the image without the tooltip
+    $("#hover-container-belt").append(createImageHTML(wornItems["belt"], "hover-container"));
+}
+
+if ("gloves" in wornItems) {
+    // Only append the image without the tooltip
+    $("#hover-container-gloves").append(createImageHTML(wornItems["gloves"], "hover-container"));
+}
+
+if ("boots" in wornItems) {
+    // Only append the image without the tooltip
+    $("#hover-container-boots").append(createImageHTML(wornItems["boots"], "hover-container"));
+}
+
+if ("weapon2" in wornItems) {
+    // Only append the image without the tooltip
+    $("#hover-container-weapon2").append(createImageHTML(wornItems["weapon2"], "hover-container"));
+}
+*/
+  if ("weapon1" in wornItems) $("#hover-container-weapon1").append(createImageHTML(wornItems["weapon1"], "hover-container-weapon1"));
+  if ("helmet" in wornItems) $("#hover-container-helmet").append(createImageHTML(wornItems["helmet"], "hover-container-helmet"));
+  if ("amulet" in wornItems) $("#hover-container-amulet").append(createImageHTML(wornItems["amulet"], "hover-container-amulet"));
+  if ("ring1" in wornItems) $("#hover-container-ring1").append(createImageHTML(wornItems["ring1"], "hover-container-ring1"));
+  if ("ring2" in wornItems) $("#hover-container-ring2").append(createImageHTML(wornItems["ring2"], "hover-container-ring2"));
+  if ("body" in wornItems) $("#hover-container-body").append(createImageHTML(wornItems["body"], "hover-container-body"));
+  if ("belt" in wornItems) $("#hover-container-belt").append(createImageHTML(wornItems["belt"], "hover-container-belt"));
+  if ("gloves" in wornItems) $("#hover-container-gloves").append(createImageHTML(wornItems["gloves"], "hover-container-gloves"));
+  if ("boots" in wornItems) $("#hover-container-boots").append(createImageHTML(wornItems["boots"], "hover-container-boots"));
+  if ("weapon2" in wornItems) $("#hover-container-weapon2").append(createImageHTML(wornItems["weapon2"], "hover-container-weapon2"));
+  
+  // Setup weapon swap click handlers
+  setupWeaponSwapHandlers();
+  
+  // Render charms from Inventory (not Equipped)
+  if (data["Inventory"]) {
+    renderCharms(data["Inventory"]);
+  }
+  
+  // Merc Items
+  var mercWornItems = findWornItems(data["MercenaryEquipped"]);
+  
+  if ("weapon1" in mercWornItems) $("#merc-hover-container-weapon1").append(createImageHTML(mercWornItems["weapon1"], "merc-hover-container-weapon1"));
+  if ("helmet" in mercWornItems) $("#merc-hover-container-helmet").append(createImageHTML(mercWornItems["helmet"], "merc-hover-container-helmet"));
+  if ("body" in mercWornItems) $("#merc-hover-container-body").append(createImageHTML(mercWornItems["body"], "merc-hover-container-body"));
+  if ("weapon2" in mercWornItems) $("#merc-hover-container-weapon2").append(createImageHTML(mercWornItems["weapon2"], "merc-hover-container-weapon2"));
+  
+  // Life, Stats
+  $("#life").text(data["Stats"]["Life"]);
+  $("#mana").text(data["Stats"]["Mana"]);
+  if(data["Bonus"]["Strength"] > 0) {
+    $("#strength").addClass("has-bonus");
+    $("#strength").text(data["Stats"]["Strength"] + data["Bonus"]["Strength"]);
+  } else {
+    $("#strength").text(data["Stats"]["Strength"]);
+  }
+  $("#dexterity").text(data["Stats"]["Dexterity"]);
+  $("#vitality").text(data["Stats"]["Vitality"]);
+  $("#energy").text(data["Stats"]["Energy"]);
+  $("#fire").text(data["Bonus"]["FireResistance"] + "%");
+  $("#cold").text(data["Bonus"]["ColdResistance"] + "%");
+  $("#lightning").text(data["Bonus"]["LightningResistance"] + "%");
+  $("#poison").text(data["Bonus"]["PoisonResistance"] + "%");
+  
+    // Skills
+    // Clear the skills container
+    $("#skills").empty();
+
+    // Loop through and add categories and skills
+    data["SkillTabs"].forEach(category => {
+        if (category["Total"] > 0) {
+            $("#skills").append("<div id='skill-" + category["Name"].replace(/\s+/g, '-').toLowerCase() + "'><div class='skill-category'>" + category["Name"] + "</div></div>");
+        
+            category["Skills"].forEach(skill => {
+                $("#skill-" + category["Name"].replace(/\s+/g, '-').toLowerCase())
+//                    .append("<div class='skill-icon' id='skill-" + skill["Name"].replace(/\s+/g, '-').toLowerCase() + "'><div class='skill-tooltip' id='tooltip-" + skill["Name"].replace(/\s+/g, '-').toLowerCase() + "'>" + skill["Name"] + "</div><img src='https://pathofdiablo.com/p/armory/img/skills/" + data["Class"].toLowerCase() + "/" + skill["Name"].replace(/\s+/g, '_').toLowerCase() + ".png' /><div class='skill-level'>" + skill["Level"] + "</div></div>")
+                    .append("<div class='skill-icon' id='skill-" + skill["Name"].replace(/\s+/g, '-').toLowerCase() + "'><div class='skill-tooltip' id='tooltip-" + skill["Name"].replace(/\s+/g, '-').toLowerCase() + "'>" + skill["Name"] + "</div><img src='https://beta.pathofdiablo.com/armory-assets/img/skills/" + data["Class"].toLowerCase() + "/" + skill["Name"].replace(/\s+/g, '_').toLowerCase() + ".png' /><div class='skill-level'>" + skill["Level"] + "</div></div>")
+                    .ready(function() {
+                        $("#skill-" + skill["Name"].replace(/\s+/g, '-').toLowerCase()).hover(function() {
+                            $("#tooltip-" + skill["Name"].replace(/\s+/g, '-').toLowerCase()).fadeIn(0);
+                        }, function() {
+                            $("#tooltip-" + skill["Name"].replace(/\s+/g, '-').toLowerCase()).fadeOut(0);
+                            });
+                        });
+                });
+        }
+    });
+
+    // Merc
+    // check if no merc, hide
+    if(data["MercenaryName"].length == 0) {
+      $("#merc").hide();
+    } else {
+      $("#merc-name").text(data["MercenaryName"]);
+      $("#merc-level").text(data["MercenaryLevel"]);
+      $("#merc-type").text(data["MercenaryType"]);
+    }
+  }
+  else {
+    console.error("Data or Stats is undefined in updatePODComponent.");
+    }
+}    
+
+function findWornItems(equippedItems) {
+    var result = {};
+    equippedItems.forEach((item) => {
+      if(item["Worn"] !== "") {
+        result[item["Worn"]] = item;
+      }
+    })
+    return result;
+}
+  
+function createItemHTML(itemObject) {
+    let itemStr = "";
+
+    // Title with special handling for "Delerium"
+    if (itemObject["Title"] === "2693") {
+        itemStr += `<div class='item-title title-${itemObject["QualityCode"]}'>Delerium</div>`;
+    } else {
+        itemStr += `<div class='item-title title-${itemObject["QualityCode"]}'>${itemObject["Title"]}</div>`;
+    }
+
+    // Quality tag
+    if (itemObject["QualityCode"] !== "q_normal") {
+        itemStr += `<div class='item-tag tag-${itemObject["QualityCode"]}'>${itemObject["Tag"]}</div>`;
+    }
+
+    // Rune tag, if applicable
+    if ("RuneTag" in itemObject && itemObject["QualityCode"] === "q_runeword") {
+        itemStr += `<div class='item-runetag title-q_runeword'>${itemObject["RuneTag"]}</div>`;
+    }
+
+    // Defense and block (only show what's present)
+    let defenseBlock = [];
+    if ("Defense" in itemObject) {
+        defenseBlock.push(`Defense: ${itemObject["Defense"]}`);
+    }
+    if ("Block" in itemObject) {
+        defenseBlock.push(`Chance to Block: ${itemObject["Block"]}`);
+    }
+    if (defenseBlock.length > 0) {
+        itemStr += `<div class='item-defense-block'>${defenseBlock.join(" | ")}</div>`;
+    }
+
+    // Weapon damage
+    let minmaxDamage = [];
+    if ("DamageMinimum" in itemObject) {
+        minmaxDamage.push(`Damage: ${itemObject["DamageMinimum"]} - ${itemObject["DamageMaximum"]}`);
+    }
+    if (minmaxDamage.length > 0) {
+        itemStr += `<div class='item-damage'>${minmaxDamage.join(" | ")}</div>`;
+    }
+
+        // Item level and durability
+    let levelDurability = [];
+    if ("ItemLevel" in itemObject) {
+        levelDurability.push(`Item Level: ${itemObject["ItemLevel"]}`);
+    }
+    if ("Durability" in itemObject) {
+        levelDurability.push(`Durability: ${itemObject["Durability"]}/${itemObject["DurabilityMaximum"]}`);
+    }
+    if (levelDurability.length > 0) {
+        itemStr += `<div class='item-level-durability'>${levelDurability.join(" | ")}</div>`;
+    }
+
+    // Property list (handling "Corrupted" specifically)
+    itemObject["PropertyList"].forEach(property => {
+        if (/corrupted/i.test(property)) {
+            itemStr += `<div class='item-corrupted'>Corrupted</div>`;
+        } else {
+            // ✅ Remove "-Up" if the property ends with "when you Level-Up"
+            const cleanedProperty = property.replace(/(when you Level)-Up$/, "$1");
+            itemStr += `<div class='item-property'>${cleanedProperty}</div>`;
+        }
+    });
+
+
+    // ✅ Display socketed items if present and not a runeword
+    if (
+        itemObject["QualityCode"] !== "q_runeword" &&
+        itemObject["Sockets"] &&
+        typeof itemObject["Sockets"] === "object"
+    ) {
+        const socketNameCounts = {};
+
+        Object.values(itemObject["Sockets"]).forEach(socketedItem => {
+            if (socketedItem?.Title) {
+                // ✅ Label Rare Jewels properly
+                let displayName = socketedItem.Title;
+                if (socketedItem.Quality === "Rare" && /jewel/i.test(socketedItem.Tag || "")) {
+                    displayName = `Misc. Rare Jewel`;
+                }
+                if (socketedItem.Quality === "Magic" && /jewel/i.test(socketedItem.Tag || "")) {
+                    displayName = `Misc. Magic Jewel`;
+                }
+
+                socketNameCounts[displayName] = (socketNameCounts[displayName] || 0) + 1;
+            }
+        });
+
+        const socketedSummary = Object.entries(socketNameCounts)
+            .map(([name, count]) => (count > 1 ? `${name} x${count}` : name))
+            .join("<br> ");
+
+        if (socketedSummary) {
+            itemStr += `<div class='item-sockets'><strong>Socketed With:</strong><br> ${socketedSummary}</div>`;
+        }
+    }
+
+
+
+    console.log("Tooltip content for item:", itemStr);
+    return itemStr;
+}
+
+     
+function createImageHTML(itemObject, hoverContainerId) {
+    // Generate tooltip content
+    const tooltipContent = createItemHTML(itemObject);
+        
+    // Determine tooltip styling based on content size
+    const propertySize = itemObject["PropertyList"].length;
+    const maxCharWidth = Math.max.apply(Math, itemObject["PropertyList"].map(x => x.length));
+    const tooltipClass = propertySize > 10 || maxCharWidth > 40 ? "itemhover-box itemhover-box-small" : "itemhover-box";
+        
+    // Append the tooltip content directly to the specified container
+    $("#" + hoverContainerId).append(`
+        <div class="${tooltipClass}" id="${hoverContainerId}-${itemObject["Worn"]}-hover">
+            ${tooltipContent}
+        </div>
+    `);
+        
+    // Generate and return the image HTML
+    let imageHTML = "";
+    console.log("Tooltip appended with content:", tooltipContent);  // Debugging check
+    if (itemObject["TextTag"] == "ring") {
+//        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://pathofdiablo.com/p/armory/img/items/ring2.gif" width="80%" height="80%" />`;
+        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://beta.pathofdiablo.com/images/d2/ring2.gif" width="80%" height="80%" />`;
+    }
+    else if (itemObject["TextTag"] == "amulet") {
+//        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://pathofdiablo.com/p/armory/img/items/amulet2.gif" width="80%" height="80%" />`;
+        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://beta.pathofdiablo.com/images/d2/amulet2.gif" width="80%" height="80%" />`;
+    }
+//    else if (itemObject["Tag"] === "Bone Wand") {
+//    else if (/wand/i.test(itemObject["Tag"])) {
+//        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://pathofdiablo.com/p/armory/img/items/${itemObject["Tag"].toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="45vw" height="auto" />`;
+    else if (["Polished Wand", "Ghost Wand", "Lich Wand", "Unearthed Wand", "Petrified Wand", "Tomb Wand", "Grave Wand", "Bone Wand", "Grim Wand"].includes(itemObject["Tag"].replace(/^Synthesized /, ""))) {
+//        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://beta.pathofdiablo.com/images/d2/${itemObject["Tag"].toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="45vw" height="auto" />`;
+        let baseTag = itemObject["Tag"].replace(/^Synthesized /, "");
+        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://beta.pathofdiablo.com/images/d2/${baseTag.toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="45vw" height="auto" />`;    
+} 
+    else if (
+        (itemObject["Worn"] === "weapon1" || itemObject["Worn"] === "weapon2") &&
+        itemObject["Size"]["invheight"] < 5 && itemObject["Size"]["invwidth"] < 2
+    ) {
+        let imageName;
+        if (itemObject["TextTag"] && itemObject["TextTag"].startsWith("Synthesized ")) {
+            imageName = itemObject["Title"];
+        } else if (itemObject["Quality"] === "Unique" || itemObject["Quality"] === "Set") {
+            imageName = itemObject["Title"];
+        } else {
+            imageName = itemObject["Tag"].replace(/^Synthesized /, "");
+        }
+        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://beta.pathofdiablo.com/images/d2/${imageName.toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="45vw" height="auto" />`;
+    }
+    else if (itemObject["Worn"] === "weapon1" && itemObject["Quality"] === "Unique" && itemObject["Size"]["invheight"] < 5 && itemObject["Size"]["invwidth"] < 2) {
+//        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://pathofdiablo.com/p/armory/img/items/${itemObject["Title"].toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="55vw" height="auto" />`;
+        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://beta.pathofdiablo.com/images/d2/${itemObject["Title"].toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="55vw" height="auto" />`;
+    } 
+    else if (itemObject["Worn"] === "weapon1" && itemObject["Quality"] === "Set") {
+//        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://pathofdiablo.com/p/armory/img/items/${itemObject["Title"].toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="55vw" height="auto" />`;
+        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://beta.pathofdiablo.com/images/d2/${itemObject["Title"].toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="55vw" height="auto" />`;
+    } 
+    else if (["Minion Skull", "Overseer Skull", "Succubae Skull", "Bloodlord Skull", "Hellspawn Skull", "Mummified Trophy", "Fetish Trophy", "Sexton Trophy", "Cantor Trophy", "Hierophant Trophy", "Preserved Head", "Zombie Head", "Unraveller Head", "Gargoyle Head", "Demon Head"].includes(itemObject["Tag"])) {
+        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://pathofdiablo.com/p/armory/img/items/homunculus.gif" width="80vw" height="auto" />`;
+    } 
+    else if (itemObject["Tag"] === "Blade Talons") {
+        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://pathofdiablo.com/p/armory/img/items/${itemObject["Tag"].toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="55vw" height="auto" />`;
+    } 
+    else if (itemObject["Quality"] === "Magic") {
+//        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://pathofdiablo.com/p/armory/img/items/${itemObject["Tag"].toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="100vw" height="auto" />`;
+        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://beta.pathofdiablo.com/images/d2/${itemObject["Tag"].toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="100vw" height="auto" />`;
+    } 
+//    else if (itemObject["Tag"] === "Shako") {
+//        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://pathofdiablo.com/p/armory/img/items/${itemObject["Title"].toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="55vw" height="auto" />`;
+//    } 
+    else if (itemObject["Title"] === "Crown of Thieves") {
+        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://pathofdiablo.com/p/armory/img/items/${itemObject["Title"].toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="65vw" height="auto" />`;
+    } 
+//    else if (itemObject["Title"] === "Steelrend") {
+//        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://pathofdiablo.com/p/armory/img/items/war_gauntlets.gif" width="65vw" height="auto" />`;
+//    } 
+    else if (itemObject["Quality"] === "Unique") {
+//        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://pathofdiablo.com/p/armory/img/items/${itemObject["Title"].toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="90vw" height="auto" />`;
+        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://beta.pathofdiablo.com/images/d2/${itemObject["Title"].toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="90vw" height="auto" />`;
+    } 
+    else if (itemObject["Quality"] === "Set") {
+//        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://pathofdiablo.com/p/armory/img/items/${itemObject["Title"].toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="90vw" height="auto" />`;
+        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://beta.pathofdiablo.com/images/d2/${itemObject["Title"].toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="90vw" height="auto" />`;
+    } 
+    else if (itemObject["Quality"] === "Rare") {
+//        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://pathofdiablo.com/p/armory/img/items/${itemObject["Tag"].toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="100vw" height="auto" />`;
+        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://beta.pathofdiablo.com/images/d2/${itemObject["Tag"].toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="100vw" height="auto" />`;
+    } 
+    else if (itemObject["Quality"] === "Craft") {
+//        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://pathofdiablo.com/p/armory/img/items/${itemObject["Tag"].toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="100vw" height="auto" />`;
+        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://beta.pathofdiablo.com/images/d2/${itemObject["Tag"].toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="100vw" height="auto" />`;
+    } 
+    else if (itemObject["QualityCode"] === "q_runeword") {
+//        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://pathofdiablo.com/p/armory/img/items/${itemObject["TextTag"].toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="100vw" height="auto" />`;
+        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://beta.pathofdiablo.com/images/d2/${itemObject["TextTag"].toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="90vw" height="auto" />`;
+    } 
+    else if (itemObject["Worn"] === "helmet") {
+        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://pathofdiablo.com/p/armory/img/items/${itemObject["Title"].toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="85vw" max-width="90%" height="auto" />`;
+    } 
+    else if (itemObject["Worn"] === "weapon1") {
+        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://pathofdiablo.com/p/armory/img/items/${itemObject["TextTag"].toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="70vw" height="auto" />`;
+    } else {  
+        imageHTML = `<img id="${hoverContainerId}-${itemObject["Worn"]}-img" src="https://pathofdiablo.com/p/armory/img/items/${itemObject["Title"].toLowerCase().replace(/ /g, "_").replace(/'/g, "%27")}.gif" width="90%" height="auto" />`;
+    }
+    console.log("Tooltip appended with content:", imageHTML);  // Debugging check
+
+    return imageHTML;  
+    //console.log("Tooltip appended with content:", imageHTML);  // Debugging check
+} 
+    //console.log("Image url2:", imageHTML);  // Debugging check
+
+function renderCharms(inventoryItems) {
+    // Clear any existing charms from all predefined slots
+    for (let y = 0; y < 4; y++) {
+        for (let x = 0; x < 10; x++) {
+            $(`#charm-${x}-${y}`).empty().removeClass('charm-occupied');
+        }
+    }
+    
+    // Filter for charms only in the bottom 4 rows (y >= 5, which are rows 5,6,7,8)
+    const charms = inventoryItems.filter(item => {
+        const isCharm = item["TextTag"] && item["TextTag"].toLowerCase().includes("charm");
+        const position = item["Position"];
+        const inBottomRows = position && position.y >= 5 && position.y <= 8;
+        return isCharm && inBottomRows;
+    });
+    
+    console.log("Found charms in bottom 4 rows:", charms.length);
+    
+    // Place charms in their slots
+    charms.forEach((charm, index) => {
+        const position = charm["Position"];
+        const size = charm["Size"];
+        
+        if (!position || !size) {
+            console.warn("Charm missing position or size data:", charm);
+            return;
+        }
+        
+        // Adjust y position to be relative to the charm inventory (row 5 becomes 0)
+        const gridX = position.x;
+        const gridY = position.y - 5;
+        
+        // Find the slot for this charm
+        const slotId = `charm-${gridX}-${gridY}`;
+        const slot = $(`#${slotId}`);
+        
+        if (slot.length === 0) {
+            console.warn("Slot not found for charm:", slotId);
+            return;
+        }
+        
+        // Create charm content (image + tooltip)
+        const charmContent = createCharmContent(charm, index, size);
+        slot.append(charmContent);
+        
+        // If charm spans multiple cells, mark those cells as occupied
+        if (size.invwidth > 1 || size.invheight > 1) {
+            for (let dy = 0; dy < size.invheight; dy++) {
+                for (let dx = 0; dx < size.invwidth; dx++) {
+                    if (dx === 0 && dy === 0) continue; // Skip the main cell
+                    const occupiedSlotId = `charm-${gridX + dx}-${gridY + dy}`;
+                    $(`#${occupiedSlotId}`).addClass('charm-occupied');
+                }
+            }
+        }
+    });
+}
+
+function createCharmContent(charmObject, index, size) {
+    // Determine charm image based on Tag field
+    let charmImage = "";
+    const tag = charmObject["Tag"].toLowerCase();
+    const title = charmObject["Title"] ? charmObject["Title"].toLowerCase() : "";
+    
+    // Check for unique charms first
+    if (tag === "large charm" && title.includes("hellfire torch")) {
+        charmImage = "torch.png";
+    } else if (tag === "small charm" && title.includes("annihilus")) {
+        charmImage = "anni.png";
+    } else if (tag === "small charm") {
+        charmImage = "charms.png";
+    } else if (tag === "large charm") {
+        charmImage = "charml.png";
+    } else if (tag === "grand charm") {
+        charmImage = "charmg.png";
+    } else {
+        charmImage = "charms.png";
+    }
+    
+    const imageUrl = `./img/${charmImage}`;
+    
+    // Calculate exact pixel size for multi-cell charms (95% of cell size)
+    const cellWidth = 59;
+    const cellHeight = 58;
+    const width = size.invwidth * cellWidth * 0.95;
+    const height = size.invheight * cellHeight * 0.95;
+    
+    // Generate tooltip content
+    const tooltipContent = createItemHTML(charmObject);
+    const propertySize = charmObject["PropertyList"].length;
+    const maxCharWidth = Math.max.apply(Math, charmObject["PropertyList"].map(x => x.length));
+    const tooltipClass = propertySize > 10 || maxCharWidth > 40 ? "itemhover-box itemhover-box-small" : "itemhover-box";
+    
+    return `
+        <div class="charm-hover-wrapper" style="
+            width: ${width}px;
+            height: ${height}px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        ">
+            <img src="${imageUrl}" style="
+                width: 100%;
+                height: 100%;
+                display: block;
+                pointer-events: none;
+            " />
+            <div class="${tooltipClass}">
+                ${tooltipContent}
+            </div>
+        </div>
+    `;
+}
+
+// Setup weapon swap click handlers
+function setupWeaponSwapHandlers() {
+    // Add click handler for weapon1 slot
+    $("#hover-container-weapon1").off('click').on('click', function(e) {
+        e.stopPropagation();
+        toggleWeaponSwap();
+    });
+    
+    // Add click handler for weapon2 slot
+    $("#hover-container-weapon2").off('click').on('click', function(e) {
+        e.stopPropagation();
+        toggleWeaponSwap();
+    });
+}
+
+// Toggle between primary and swap weapons (both weapons swap together)
+function toggleWeaponSwap() {
+    console.log("Toggling weapon swap");
+    
+    // Check if swap weapons exist
+    if (!window.weaponData.sweapon1 && !window.weaponData.sweapon2) {
+        console.log("No swap weapons available");
+        return;
+    }
+    
+    // Toggle the swap state for both weapons
+    window.weaponSwapState = !window.weaponSwapState;
+    const isSwapped = window.weaponSwapState;
+    
+    // Update weapon1
+    const $container1 = $("#hover-container-weapon1");
+    $container1.empty();
+    const weaponToDisplay1 = isSwapped ? window.weaponData.sweapon1 : window.weaponData.weapon1;
+    if (weaponToDisplay1) {
+        $container1.append(createImageHTML(weaponToDisplay1, "hover-container-weapon1"));
+        if (isSwapped) {
+            $container1.addClass('swapped');
+        } else {
+            $container1.removeClass('swapped');
+        }
+    }
+    
+    // Update weapon2
+    const $container2 = $("#hover-container-weapon2");
+    $container2.empty();
+    const weaponToDisplay2 = isSwapped ? window.weaponData.sweapon2 : window.weaponData.weapon2;
+    if (weaponToDisplay2) {
+        $container2.append(createImageHTML(weaponToDisplay2, "hover-container-weapon2"));
+        if (isSwapped) {
+            $container2.addClass('swapped');
+        } else {
+            $container2.removeClass('swapped');
+        }
+    }
+    
+    console.log("Swapped to " + (isSwapped ? "swap" : "primary") + " weapons");
+}
+
+});
+
+</script>
+</body>
+</html>

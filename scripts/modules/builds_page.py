@@ -34,6 +34,23 @@ CLASS_ORDER = [
     "Sorceress",
 ]
 
+POPUP_SLOT_ORDER = {
+    "helm": 0,
+    "helmet": 0,
+    "amulet": 1,
+    "armor": 2,
+    "body": 2,
+    "weapon": 3,
+    "weapon1": 3,
+    "weapon2": 4,
+    "shield": 5,
+    "gloves": 6,
+    "belt": 7,
+    "ring1": 8,
+    "ring2": 9,
+    "boots": 10,
+}
+
 
 def _builds_page_javascript() -> str:
     return """
@@ -237,15 +254,18 @@ class BuildsHTMLGenerator:
     """Generate a standalone builds overview page."""
 
     @staticmethod
-    def generate_full_builds_page(summary_data: Dict[str, Any], timestamp: str, is_hardcore: bool = False) -> str:
+    def generate_full_builds_page(
+        summary_data: Dict[str, Any],
+        timestamp: str,
+        is_hardcore: bool = False,
+    ) -> str:
         mode_title = "Hardcore" if is_hardcore else "Softcore"
         content_html = "".join(
             BuildsHTMLGenerator._generate_class_section(section)
             for section in summary_data.get("class_sections", [])
         )
-
         overview_html = f"""
-        <h1>PoD Build Explorer</h1>
+        <h1>PoD Build Explorer Beta</h1>
         <h2>{mode_title} Build Matches</h2>
         <p>
             Builds are grouped by class and ordered from most popular to least popular.
@@ -253,7 +273,9 @@ class BuildsHTMLGenerator:
         </p>
         <p>
             "Builds" are defined by sets of rules in json files that live here:
-            https://github.com/qordwasalreadytaken/PoDBuildExplorer/tree/main/scripts/modules/build_definitions. 
+            <a href="https://github.com/qordwasalreadytaken/PoDBuildExplorer/tree/main/scripts/modules/build_definitions" target="_blank">Build Definitions</a>.<br>
+        </p>
+        <p>
             Feel free to contribute directly or reach out to Qord with feedback on how to improve the build definitions or this page!
         </p>
         <div class="fun-facts-row">
@@ -421,7 +443,11 @@ def generate_builds_page(all_characters, timestamp: Optional[str] = None, is_har
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     summary_data = summarize_builds_by_class(all_characters)
-    return BuildsHTMLGenerator.generate_full_builds_page(summary_data, timestamp, is_hardcore=is_hardcore)
+    return BuildsHTMLGenerator.generate_full_builds_page(
+        summary_data,
+        timestamp,
+        is_hardcore=is_hardcore,
+    )
 
 
 def _character_summary(character: Dict[str, Any], match: BuildMatch) -> Dict[str, Any]:
@@ -443,6 +469,89 @@ def _unmatched_character_summary(character: Dict[str, Any]) -> Dict[str, Any]:
 
 def _slugify(value: str) -> str:
     return "".join(char.lower() if char.isalnum() else "-" for char in value).strip("-")
+
+
+def _build_popup_character_index(all_characters: Sequence[Dict[str, Any]]) -> Dict[str, Any]:
+    popup_index: Dict[str, Any] = {}
+    for character in all_characters:
+        if not isinstance(character, dict):
+            continue
+        name = str(character.get("Name", "")).strip()
+        if not name or name in popup_index:
+            continue
+
+        popup_index[name] = {
+            "name": name,
+            "title": str(character.get("Title", "") or "").strip(),
+            "class_name": str(character.get("Class", "Unknown") or "Unknown"),
+            "level": int(character.get("Stats", {}).get("Level", 0) or 0),
+            "is_dead": bool(character.get("IsDead")),
+            "equipped": [_popup_item_summary(item) for item in _sorted_popup_items(character.get("Equipped", []))],
+            "mercenary": _popup_mercenary_summary(character),
+        }
+
+    return popup_index
+
+
+def _popup_mercenary_summary(character: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    mercenary_items = [_popup_item_summary(item) for item in _sorted_popup_items(character.get("MercenaryEquipped", []))]
+    mercenary_name = str(character.get("MercenaryName", "") or "").strip()
+    mercenary_type = str(character.get("MercenaryType", "") or "").strip()
+    mercenary_level = int(character.get("MercenaryLevel", 0) or 0)
+
+    if not mercenary_items and not mercenary_name and not mercenary_type and not mercenary_level:
+        return None
+
+    return {
+        "name": mercenary_name,
+        "type": mercenary_type,
+        "level": mercenary_level,
+        "equipped": mercenary_items,
+    }
+
+
+def _sorted_popup_items(items: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    normalized_items = [item for item in items if isinstance(item, dict)]
+    return sorted(
+        normalized_items,
+        key=lambda item: (
+            POPUP_SLOT_ORDER.get(str(item.get("Worn", "")).strip().lower(), 99),
+            str(item.get("Worn", "")).strip().lower(),
+            str(item.get("Title", "")).strip().lower(),
+        ),
+    )
+
+
+def _popup_item_summary(item: Dict[str, Any]) -> Dict[str, Any]:
+    socket_lines: List[str] = []
+    for socket in item.get("Sockets", []):
+        if not isinstance(socket, dict):
+            continue
+        socket_title = str(socket.get("Title", "") or "").strip()
+        if socket_title:
+            socket_lines.append(f"Socketed: {socket_title}")
+        socket_lines.extend(_clean_popup_text(prop) for prop in socket.get("PropertyList", []) if _clean_popup_text(prop))
+
+    properties = [_clean_popup_text(prop) for prop in item.get("PropertyList", []) if _clean_popup_text(prop)]
+    properties.extend(socket_lines)
+
+    return {
+        "slot": _format_popup_slot(item.get("Worn", "")),
+        "title": str(item.get("Title", "Unknown") or "Unknown").strip(),
+        "tag": str(item.get("Tag", "") or "").strip(),
+        "properties": properties,
+    }
+
+
+def _format_popup_slot(value: Any) -> str:
+    raw_value = str(value or "").strip()
+    if not raw_value:
+        return "Unknown Slot"
+    return raw_value.replace("_", " ").title()
+
+
+def _clean_popup_text(value: Any) -> str:
+    return str(value or "").replace("ÿ", "").strip()
 
 
 __all__ = [

@@ -1,0 +1,863 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*, *::after, *::before {
+	-webkit-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-app-region: no-drag;
+    cursor: url("../img/default.png"), pointer;
+}
+
+.container {
+    max-width: 100vw; /* Prevents the container from exceeding the viewport width */
+    overflow-x: auto;
+    overflow-x: hodden;
+    padding-left: 0;  /* Adjust if padding is causing overflow */
+    padding-right: 0;
+    margin: 0 auto;  /* Center container without overflow */
+}
+
+html {
+    font-family: "AvQest";
+    src: url("../font/avqest.ttf") format("truetype");
+    height: 100%;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+}
+
+html, body {
+    max-width: 100%;
+    background: #000;
+/*    padding: 5px; */
+/*    overflow: hidden; */
+    overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
+}
+
+body {
+    height: 100%;
+    overflow: hidden;
+    -ms-overflow-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none;
+}
+
+div, span {
+    box-sizing: border-box;
+    /* border: 1px solid #333; */
+}
+
+.scroll {
+    max-width: 100%;
+}
+
+#scroll span {
+    position: absolute;
+    top: 92%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    border-left: 7px solid #fff;
+    border-bottom: 7px solid #fff;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    box-sizing: border-box;
+    z-index: 1000;
+    overflow: auto;
+}
+
+
+#nav a {
+    color: #fff;
+}
+
+#hover-wrapper, #merc-hover-wrapper {
+    height: 0px;
+    max-width: 100%;
+    text-align: center;
+}
+
+#hover-container, #merc-hover-container {
+    max-width: 100%;
+    color: #fff;
+}
+
+#merc-hover-container-weapon1, #merc-hover-container-helmet, #merc-hover-container-body, #merc-hover-container-weapon2 {
+    position: relative;
+}
+
+#merc-hover-container {
+    margin-bottom: 10px;
+} 
+
+/* Positioning of the tooltip container */
+.itemhover {
+    position: relative;
+    display: inline-block;
+}
+
+/* General tooltip style - 20px below the top of the page */
+.itemhover-box {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: #c0a080;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 16px;
+    border: 2px solid #c0a080;
+    max-width: 580px;
+    text-align: center;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* Tooltip style for #merc-items - aligned with the top of #merc-items */
+#merc-items {
+    position: relative;
+}
+
+.merc-tooltip {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: #c0a080;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    border: 2px solid #c0a080;
+    max-width: 580px;
+    text-align: center;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* Show tooltips on hover */
+.itemhover:hover .itemhover-box,
+.itemhover:hover .merc-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.itemhover-box-small {
+    font-size: 18px !important;
+    line-height: 20px !important;
+}
+
+.title-q_magic {
+    color: #8484f0;
+}
+
+.title-q_unique {
+    color: #c0a080;
+}
+
+.title-q_runeword {
+    color: #c0a080;
+}
+
+.title-q_set {
+    color: #18fc00;
+}
+
+.title-q_socketed {
+    color: gray;
+}
+
+.title-q_rare{
+    color: #fce874;
+}
+
+.title-q_crafted{
+    color: orange;
+}
+
+.tag-q_magic {
+    color: #8484f0;
+}
+
+.tag-q_unique {
+    color: #c0a080;
+}
+
+.tag-q_runeword {
+    color: gray;
+}
+
+.tag-q_set {
+    color: #18fc00;
+}
+
+.tag-q_socketed {
+    color: gray;
+}
+
+.tag-q_rare{
+    color: #fce874;
+}
+
+.tag-q_crafted{
+    color: orange;
+}
+
+.item-corrupted {
+    color: rgb(150, 0, 0);
+}
+
+.item-property {
+    color: #8484f0;
+}
+
+.item-durability, .item-block, .item-defense, .item-level, .item-defense-block, .item-level-durability, .item-damage {
+    color: white;
+}
+
+.active {
+    display: inline-block !important;
+}
+
+#main {
+    max-width: 100%;
+    font-family: "AvQest";
+    src: url("../font/avqest.ttf") format("truetype");
+    font-size: 32px;
+    height: 100%;
+    overflow-y: auto;
+    color: #fff;
+}
+
+#main > div {
+    background: #000;
+}
+
+img {
+    position: absolute;
+    object-fit: contain;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#items {
+    max-max-width: 100%;
+    position: relative;
+    top: 0;
+    height: 480px;
+    margin-bottom: 10px;
+}
+
+#merc-items {
+    max-max-width: 100%;
+    position: relative;
+    top: 0;
+    height: 235px;
+    margin: 10px 0px;
+}
+
+#info {
+    max-max-width: 100%;
+    position: relative;
+    top: 0;
+    text-align: center;
+    line-height: 20px;
+    border-top: 2px solid #312a1e;
+    border-bottom: 2px solid #312a1e;
+    padding: 5px 0px;
+}
+
+#info > div {
+    padding: 6px 0px;
+}
+
+#info-line1 {
+    font-size: 30px;
+    padding-bottom: 30px;
+}
+
+#info-line2 {
+    font-size: 24px;
+    padding-bottom: 30px;
+}
+
+#info-line3 {
+    font-size: 24px;
+}
+
+#merc {
+    max-width: 100%;
+    position: relative;
+    text-align: center;
+    line-height: 24px;
+    font-size: 30px;
+    height: 400px;
+    border-bottom: 2px solid #312a1e;
+    padding: 5px; 
+}
+
+#merc-line1 {
+    padding-bottom: 10px;
+}
+
+#merc-line2 {
+    font-size: 24px;
+    padding-bottom: 15px;
+}
+
+#merc-hover-container-weapon1 {
+    top: 40px !important;
+    left: 50px !important;
+}
+
+#merc-hover-container-helmet {
+    left: 232px !important;
+}
+
+#merc-hover-container-body {
+    top: 116px !important;
+}
+
+#merc-hover-container-weapon2 {
+    top: 40px !important;
+    left: 398px !important;
+}
+
+#title {
+    color: #bb955e;
+}
+
+#mode, #expansion, #ladder {
+    color: #454545;
+}
+
+#level-label, #level, #class, #merc-level-label, #merc-level, #merc-type {
+    color: #66a;
+}
+
+#name, #merc-name {
+    color: #bb955e;
+}
+
+#dead {
+    color: rgba(150,0,0,1);
+}
+    
+#stats {
+    max-max-width: 100%;
+    position: relative;
+    top: 0;
+    border-bottom: 2px solid #312a1e;
+    padding: 0px 0px;
+}
+
+#lifemana {
+    text-align: center;
+    border-bottom: 2px solid #312a1e;
+}
+
+.orb {
+    background-size: cover;
+    height: 128px;
+    width: 128px;
+    display: inline-block;
+}
+
+.orb-text {
+    font-size: 28px;
+    height: 128px;
+    width: 128px;
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+    line-height: 128px;
+    color: #fafafa;
+}
+
+.lifemana-text {
+    font-size: 34px;
+    color: #a99877;
+    padding-right: 30px;
+}
+
+#life-orb {
+    background-image: url("https://pathofdiablo.com/p/armory/img/orb-health.png");
+}
+
+#mana-orb {
+    background-image: url("https://pathofdiablo.com/p/armory/img/orb-mana.png");
+}
+
+.line-wrapper {
+    width: 100%;
+    height: 42px;
+}
+
+#attributes, #resistances {
+    font-size: 24px;
+    padding: 0px 0px;
+}
+
+.attributes-label, .attributes-value, .resistances-label, .resistances-value {
+    padding: 0px 15px;
+    display: inline-block;
+}
+
+.attributes-label, .resistances-label {
+    text-align: left;
+    width: 70%;
+    color: #a99877;
+}
+
+.attributes-value, .resistances-value {
+    text-align: right;
+    width: 30%;
+    color: #f3e6d0;
+}
+
+.has-bonus {
+    color: #66a !important;
+}
+
+#fire {
+    color: #b04434;
+}
+
+#cold {
+    color: #5050ac;
+}
+
+#lightning {
+    color: #d8b864;
+}
+
+#poison {
+    color: #287c14;
+}
+
+#items > div, #merc-items > div {
+    display: inline-block;
+    white-space: nowrap;
+    position: absolute;
+}
+
+#hover-container-weapon1 {
+    background-image: url("https://beta.pathofdiablo.com/armory-assets/img/invslot-weapon-1.png");
+    background-size: 100% 100%;
+    width: 118px;
+    height: 232px;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    transition: background-image 0.3s ease;
+}
+
+#hover-container-weapon1.swapped {
+    background-image: url("https://beta.pathofdiablo.com/armory-assets/img/invslot-weapon-2.png");
+}
+
+#merc-hover-container-weapon1 {
+    background-image: url("https://pathofdiablo.com/p/armory/img/invslot-weapon.png");
+    background-size: 100% 100%;
+    width: 118px;
+    height: 232px;
+    top: 0;
+    left: 0;
+}
+
+#hover-container-helmet, #merc-hover-container-helmet {
+    background-image: url("https://pathofdiablo.com/p/armory/img/invslot-helmet.png");
+    background-size: 100% 100%;
+    width: 112px;
+    height: 114px;
+    top: 0;
+    left: 120px;
+}
+
+#hover-container-amulet {
+    background-image: url("https://pathofdiablo.com/p/armory/img/invslot-amulet.png");
+    background-size: 100% 100%;
+    width: 54px;
+    height: 56px;
+    top: 116px;
+    left: 148px;
+}
+
+#hover-container-ring1 {
+    background-image: url("https://pathofdiablo.com/p/armory/img/invslot-ring.png");
+    background-size: 100% 100%;
+    width: 54px;
+    height: 56px;
+    top: 176px;
+    left: 120px;
+}
+
+#hover-container-ring2 {
+    background-image: url("https://pathofdiablo.com/p/armory/img/invslot-ring.png");
+    background-size: 100% 100%;
+    width: 54px;
+    height: 56px;
+    top: 176px;
+    left: 176px;
+}
+
+#hover-container-body, #merc-hover-container-body {
+    background-image: url("https://pathofdiablo.com/p/armory/img/invslot-body.png");
+    background-size: 100% 100%;
+    width: 114px;
+    height: 174px;
+    top: 0;
+    left: 232px;
+}
+
+#hover-container-belt {
+    background-image: url("https://pathofdiablo.com/p/armory/img/invslot-belt.png");
+    background-size: 100% 100%;
+    width: 114px;
+    height: 56px;
+    top: 176px;
+    left: 232px;
+}
+
+#hover-container-gloves {
+    background-image: url("https://pathofdiablo.com/p/armory/img/invslot-gloves.png");
+    background-size: 100% 100%;
+    width: 116px;
+    height: 116px;
+    top: 0;
+    left: 348px;
+}
+
+#hover-container-boots {
+    background-image: url("https://pathofdiablo.com/p/armory/img/invslot-boots.png");
+    background-size: 100% 100%;
+    width: 116px;
+    height: 116px;
+    top: 116px;
+    left: 348px;
+}
+
+#hover-container-weapon2 {
+    background-image: url("https://beta.pathofdiablo.com/armory-assets/img/invslot-weapon-1.png");
+    background-size: 100% 100%;
+    width: 126px;
+    height: 232px;
+    top: 0;
+    left: 466px;
+    cursor: pointer;
+    transition: background-image 0.3s ease;
+}
+
+#hover-container-weapon2.swapped {
+    background-image: url("https://beta.pathofdiablo.com/armory-assets/img/invslot-weapon-2.png");
+}
+
+#merc-hover-container-weapon2 {
+    background-image: url("https://pathofdiablo.com/p/armory/img/invslot-weapon.png");
+    background-size: 100% 100%;
+    width: 126px;
+    height: 232px;
+    top: 0;
+    left: 466px;
+}
+
+#hover-container-charms {
+    background-image: url("../img/charm_inventory.png");
+    background-size: 100% 100%;
+    width: 590px;
+    height: 232px;
+    top: 240px;
+    left: 5px;
+    position: relative;
+}
+
+/* Define all 40 charm inventory cells (10 columns x 4 rows) */
+.charm-slot {
+    position: absolute;
+    width: 59px;
+    height: 58px;
+    cursor: pointer;
+    overflow: visible;
+}
+
+.charm-slot.charm-occupied {
+    pointer-events: none;
+}
+
+.charm-slot img {
+    pointer-events: none;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    position: absolute !important;
+    object-fit: fill !important;
+    top: 0;
+    left: 0;
+}
+
+/* Charm hover wrapper - each charm gets its own hover container */
+.charm-hover-wrapper {
+    position: relative;
+}
+
+.charm-hover-wrapper:hover .itemhover-box {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Row 0 */
+#charm-0-0 { left: 11px; top: 7px; }
+#charm-1-0 { left: 68px; top: 7px; }
+#charm-2-0 { left: 126px; top: 7px; }
+#charm-3-0 { left: 184px; top: 7px; }
+#charm-4-0 { left: 242px; top: 7px; }
+#charm-5-0 { left: 297px; top: 7px; }
+#charm-6-0 { left: 354px; top: 7px; }
+#charm-7-0 { left: 413px; top: 7px; }
+#charm-8-0 { left: 470px; top: 7px; }
+#charm-9-0 { left: 527px; top: 7px; }
+
+/* Row 1 */
+#charm-0-1 { left: 11px; top: 61px; }
+#charm-1-1 { left: 68px; top: 61px; }
+#charm-2-1 { left: 126px; top: 61px; }
+#charm-3-1 { left: 184px; top: 61px; }
+#charm-4-1 { left: 242px; top: 61px; }
+#charm-5-1 { left: 297px; top: 61px; }
+#charm-6-1 { left: 354px; top: 61px; }
+#charm-7-1 { left: 413px; top: 61px; }
+#charm-8-1 { left: 470px; top: 61px; }
+#charm-9-1 { left: 527px; top: 61px; }
+
+/* Row 2 */
+#charm-0-2 { left: 11px; top: 115px; }
+#charm-1-2 { left: 68px; top: 115px; }
+#charm-2-2 { left: 126px; top: 115px; }
+#charm-3-2 { left: 184px; top: 115px; }
+#charm-4-2 { left: 242px; top: 115px; }
+#charm-5-2 { left: 297px; top: 115px; }
+#charm-6-2 { left: 354px; top: 115px; }
+#charm-7-2 { left: 413px; top: 115px; }
+#charm-8-2 { left: 470px; top: 115px; }
+#charm-9-2 { left: 527px; top: 115px; }
+
+/* Row 3 */
+#charm-0-3 { left: 11px; top: 171px; }
+#charm-1-3 { left: 68px; top: 171px; }
+#charm-2-3 { left: 126px; top: 171px; }
+#charm-3-3 { left: 184px; top: 171px; }
+#charm-4-3 { left: 242px; top: 171px; }
+#charm-5-3 { left: 297px; top: 171px; }
+#charm-6-3 { left: 354px; top: 171px; }
+#charm-7-3 { left: 413px; top: 171px; }
+#charm-8-3 { left: 470px; top: 171px; }
+#charm-9-3 { left: 527px; top: 171px; }
+
+#skills {
+    color: #a99877;
+    max-max-width: 100%;
+    position: relative;
+    top: 0;
+    font-size: 30px;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #312a1e;
+}
+
+.skill-icon {
+    position: relative;
+    width: 104px !important;
+    height: 104px !important;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.skill-icon > img {
+    width: 104px !important;
+    height: 104px !important;
+}
+
+
+.skill-icon > img:before {
+    content: " ";
+    display: block;
+  
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url("https://pathofdiablo.com/p/armory/img/skills/unknown.png");
+    background-color: #000;
+    background-size: 100% 100%;
+}
+
+.skill-level {
+    font-size: 24px;
+    color: #f3e6d0;
+    position: absolute;
+    bottom: 4px;
+    right: 0;
+    text-align: center;
+    width: 40px;
+}
+
+.skill-tooltip {
+    position: absolute;
+    display: none;
+    z-index: 1000;
+    background: black;
+    border: 1px solid #f3e6d0;
+    color: #f3e6d0;
+    top: 110px;
+    font-family: "AvQest";
+    src: url("../font/avqest.ttf") format("truetype");
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    padding: 5px;
+    width: auto;
+}
+
+#headtext {
+    padding: 0px; 
+    text-align: center;
+    color: #c0a080;
+}
+
+.headtext2 {
+    text-align: center;
+    color: red;
+    font-size: 16px;
+    padding: 5px;
+}
+
+@-moz-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      -moz-transform: translateY(0);
+      transform: translateY(0);
+    }
+    40% {
+      -moz-transform: translateY(-30px);
+      transform: translateY(-30px);
+    }
+    60% {
+      -moz-transform: translateY(-15px);
+      transform: translateY(-15px);
+    }
+  }
+  @-webkit-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    40% {
+      -webkit-transform: translateY(-30px);
+      transform: translateY(-30px);
+    }
+    60% {
+      -webkit-transform: translateY(-15px);
+      transform: translateY(-15px);
+    }
+  }
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    40% {
+      -moz-transform: translateY(-30px);
+      -ms-transform: translateY(-30px);
+      -webkit-transform: translateY(-30px);
+      transform: translateY(-30px);
+    }
+    60% {
+      -moz-transform: translateY(-15px);
+      -ms-transform: translateY(-15px);
+      -webkit-transform: translateY(-15px);
+      transform: translateY(-15px);
+    }
+  }
+
+  .arrow {
+    position: fixed;
+    bottom: 10%;
+    left: 50%; /* Center arrow horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    width: 40px;
+    height: 40px;
+    background-image: url("../img/podarrowdown.png");
+    background-size: contain;
+}
+
+.scrolltooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* Optional styling */
+}
+
+/* Tooltip text */
+.scrolltooltip .scrolltooltiptext {
+    visibility: hidden;
+    width: 284px;
+    background-color: black;
+    color: #c0a080;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    font-size: 14px;
+    border-style: solid;
+    border-color: #c0a080;
+    border-width: 2px;
+    position: absolute;
+    z-index: 1;
+    top: 105%;
+    left: 50%; /* Position tooltip in the center of the arrow */
+    transform: translateX(-50%); /* Center tooltip horizontally */
+}
+
+/* Show tooltip on hover */
+.scrolltooltip:hover .scrolltooltiptext {
+    visibility: visible;
+}
+
+  .bounce {
+    -moz-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+  }
+  
+  .fade {
+    opacity:0;
+    transition: 1s all ease-out;
+  }
+  
+  .footer {
+    margin-left: 10px;
+    position: relative;
+  }

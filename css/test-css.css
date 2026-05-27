@@ -902,6 +902,83 @@
         display: block !important;
     }
 
+    .popup-card {
+        color: #f5f5f5;
+        font-family: 'armory', sans-serif;
+    }
+
+    .popup-header {
+        border-bottom: 1px solid #5a5f66;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+    }
+
+    .popup-title {
+        font-family: 'd2', sans-serif;
+        font-size: 20px;
+        color: #d5f2e3;
+    }
+
+    .popup-meta {
+        color: #c8c8c8;
+        margin-top: 4px;
+    }
+
+    .popup-section {
+        margin-bottom: 14px;
+    }
+
+    .popup-section h4 {
+        margin: 0 0 8px 0;
+        color: #d6a69f;
+        font-family: 'd2', sans-serif;
+        font-size: 16px;
+    }
+
+    .popup-item {
+        background-color: #30353a;
+        border-radius: 6px;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+
+    .popup-item-head {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: baseline;
+        margin-bottom: 6px;
+    }
+
+    .popup-slot {
+        background-color: #444b52;
+        border-radius: 999px;
+        color: #d5f2e3;
+        font-size: 12px;
+        letter-spacing: 0.04em;
+        padding: 2px 8px;
+        text-transform: uppercase;
+    }
+
+    .popup-tag {
+        color: #c8c8c8;
+        font-size: 13px;
+    }
+
+    .popup-props {
+        margin: 0;
+        padding-left: 18px;
+    }
+
+    .popup-props li {
+        margin-bottom: 4px;
+    }
+
+    .popup-empty {
+        color: #c8c8c8;
+        font-style: italic;
+    }
+
     .class-intro {
         background-color: #3a3f44;  
         padding-right: 20px;     
