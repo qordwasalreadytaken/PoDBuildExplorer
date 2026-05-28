@@ -453,6 +453,111 @@
     ]
   },
   {
+    "build_id": "assassin-bowsin",
+    "class_name": "Assassin",
+    "label": "Bow Sin",
+    "family": "Weapon Assassin",
+    "description": "Assassin using a primary bow or crossbow, with Venom acting as the defining weapon buff.",
+    "required_skills_all": [
+      {
+        "name": "Venom",
+        "minimum": 15,
+        "reason": "Venom is heavily invested"
+      }
+    ],
+    "required_gear_rule_groups_any": [
+      [
+        {
+          "tag_contains": ["bow"],
+          "worn_slots": ["weapon1", "sweapon1"],
+          "reason": "Primary weapon is a bow"
+        },
+        {
+          "tag_contains": ["crossbow"],
+          "worn_slots": ["weapon1", "sweapon1"],
+          "reason": "Primary weapon is a crossbow"
+        }
+      ]
+    ],
+    "signature_skills": [
+      {
+        "name": "Venom",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Burst of Speed",
+        "minimum": 1,
+        "weight": 0.75
+      },
+      {
+        "name": "Fade",
+        "minimum": 1,
+        "weight": 0.75
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Cloak of Shadows",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Mind Blast",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Shadow Master",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Blade Shield",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "gear_text_any": [
+      {
+        "name": "increased attack speed",
+        "minimum": 1,
+        "weight": 0.75,
+        "reason": "Bow setup includes attack-speed support"
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Wake of Fire",
+        "minimum": 15,
+        "weight": 0.75
+      },
+      {
+        "name": "Lightning Sentry",
+        "minimum": 15,
+        "weight": 0.75
+      },
+      {
+        "name": "Dragon Talon",
+        "minimum": 15,
+        "weight": 0.75
+      },
+      {
+        "name": "Blade Fury",
+        "minimum": 15,
+        "weight": 0.5
+      },
+      {
+        "name": "Blade Throw",
+        "minimum": 15,
+        "weight": 0.5
+      }
+    ],
+    "notes": [
+      "Use this for Assassins whose primary weapon is a bow or crossbow and whose main identity is a Venom-based ranged setup rather than traps, kicks, or a full blade package."
+    ]
+  },
+  {
     "build_id": "assassin-summon",
     "class_name": "Assassin",
     "label": "Summon Assassin",

@@ -319,14 +319,14 @@
         "name": "Lycanthropy",
         "minimum": 10,
         "weight": 1.0
-      },
-      {
-        "name": "Maul",
-        "minimum": 1,
-        "weight": 0.5
       }
     ],
     "supporting_skills": [
+      {
+        "name": "Maul",
+        "minimum": 1,
+        "weight": 0.25
+      },
       {
         "name": "Hunger",
         "minimum": 1,
@@ -347,7 +347,7 @@
       {
         "name": "Maul",
         "minimum": 15,
-        "weight": 1.0
+        "weight": 2.0
       },
       {
         "name": "Rabies",
@@ -371,7 +371,7 @@
     "class_name": "Druid",
     "label": "Maul",
     "family": "Shapeshift Druid",
-    "description": "Werebear Druid centered on Maul with heavy melee shapeshift investment.",
+    "description": "Werebear Druid centered on Maul with heavy melee shapeshift investment and without a major Fire Claws package.",
     "required_skills_all": [
       {
         "name": "Werebear",
@@ -386,7 +386,7 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Maul", "Werebear", "Lycanthropy", "Hunger", "Shock Wave"],
+        "names": ["Maul", "Werebear", "Lycanthropy", "Hunger", "Heart of Wolverine"],
         "minimum_total": 40,
         "reason": "Maul support investment reaches the combined threshold"
       }
@@ -415,11 +415,6 @@
     ],
     "supporting_skills": [
       {
-        "name": "Shock Wave",
-        "minimum": 1,
-        "weight": 0.25
-      },
-      {
         "name": "Summon Grizzly",
         "minimum": 1,
         "weight": 0.25
@@ -432,9 +427,14 @@
     ],
     "penalty_skills": [
       {
-        "name": "Shock Wave",
+        "name": "Fire Claws",
         "minimum": 15,
         "weight": 1.0
+      },
+      {
+        "name": "Shock Wave",
+        "minimum": 15,
+        "weight": 3.0
       },
       {
         "name": "Rabies",
@@ -451,6 +451,242 @@
         "minimum": 15,
         "weight": 0.7
       }
+    ],
+    "notes": [
+      "Use this for physical werebears whose main attack is Maul. Druids with heavy Fire Claws investment should land in Fireclaw instead."
+    ]
+  },
+  {
+    "build_id": "druid-fireclaw",
+    "class_name": "Druid",
+    "label": "Fireclaw",
+    "family": "Shapeshift Druid",
+    "description": "Werebear Druid centered on Fire Claws with meaningful fire-synergy investment.",
+    "required_skills_all": [
+      {
+        "name": "Werebear",
+        "minimum": 1,
+        "reason": "Werebear form is allocated"
+      },
+      {
+        "name": "Fire Claws",
+        "minimum": 15,
+        "reason": "Fire Claws is heavily invested"
+      }
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Fire Claws", "Firestorm", "Molten Boulder", "Volcano", "Armageddon"],
+        "minimum_total": 40,
+        "reason": "Fire Claws and its fire support package reach a meaningful combined threshold"
+      }
+    ],
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Firestorm",
+          "minimum": 15,
+          "reason": "Firestorm is heavily invested"
+        },
+        {
+          "name": "Molten Boulder",
+          "minimum": 15,
+          "reason": "Molten Boulder is heavily invested"
+        },
+        {
+          "name": "Volcano",
+          "minimum": 15,
+          "reason": "Volcano is heavily invested"
+        },
+        {
+          "name": "Armageddon",
+          "minimum": 15,
+          "reason": "Armageddon is heavily invested"
+        }
+      ]
+    ],
+    "signature_skills": [
+      {
+        "name": "Fire Claws",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Werebear",
+        "minimum": 1,
+        "weight": 1.0
+      },
+      {
+        "name": "Molten Boulder",
+        "minimum": 15,
+        "weight": 1.25
+      },
+      {
+        "name": "Firestorm",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Volcano",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Armageddon",
+        "minimum": 15,
+        "weight": 1.0
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Lycanthropy",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Maul",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Shock Wave",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Oak Sage",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Rabies",
+        "minimum": 15,
+        "weight": 0.9
+      },
+      {
+        "name": "Fury",
+        "minimum": 15,
+        "weight": 0.8
+      },
+      {
+        "name": "Shock Wave",
+        "minimum": 15,
+        "weight": 0.8
+      },
+      {
+        "name": "Hurricane",
+        "minimum": 15,
+        "weight": 0.7
+      }
+    ],
+    "notes": [
+      "Use this for werebears whose main attack is Fire Claws and who also invest meaningfully in the fire support package."
+    ]
+  },
+  {
+    "build_id": "druid-firestorm",
+    "class_name": "Druid",
+    "label": "Firestorm",
+    "family": "Elemental Druid",
+    "description": "Elemental Druid centered on the core fire caster package without relying on Flame Dash as the main identity.",
+    "required_skills_all": [
+      {
+        "name": "Firestorm",
+        "minimum": 10,
+        "reason": "Firestorm is heavily invested"
+      }
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Firestorm", "Molten Boulder", "Fissure", "Volcano", "Armageddon"],
+        "minimum_total": 55,
+        "reason": "Fire caster investment reaches the combined threshold"
+      }
+    ],
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Molten Boulder",
+          "minimum": 15,
+          "reason": "Molten Boulder is heavily invested"
+        },
+        {
+          "name": "Fissure",
+          "minimum": 15,
+          "reason": "Fissure is heavily invested"
+        },
+        {
+          "name": "Volcano",
+          "minimum": 15,
+          "reason": "Volcano is heavily invested"
+        }
+      ]
+    ],
+    "signature_skills": [
+      {
+        "name": "Firestorm",
+        "minimum": 10,
+        "weight": 2.5
+      },
+      {
+        "name": "Molten Boulder",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Fissure",
+        "minimum": 15,
+        "weight": 1.25
+      },
+      {
+        "name": "Volcano",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Armageddon",
+        "minimum": 15,
+        "weight": 0.75
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Oak Sage",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Flame Dash",
+        "minimum": 15,
+        "weight": 1.25
+      },
+      {
+        "name": "Hurricane",
+        "minimum": 15,
+        "weight": 0.8
+      },
+      {
+        "name": "Rabies",
+        "minimum": 15,
+        "weight": 0.7
+      },
+      {
+        "name": "Maul",
+        "minimum": 15,
+        "weight": 0.7
+      },
+      {
+        "name": "Shock Wave",
+        "minimum": 15,
+        "weight": 0.7
+      }
+    ],
+    "notes": [
+      "Use this for non-dash fire elemental Druids built around the broader fire caster package. Heavy Flame Dash builds should land in Flamedash instead."
     ]
   },
   {
@@ -666,117 +902,6 @@
         "name": "Shock Wave",
         "minimum": 15,
         "weight": 0.7
-      }
-    ]
-  },
-  {
-    "build_id": "druid-armageddon",
-    "class_name": "Druid",
-    "label": "Armageddon",
-    "family": "Elemental Druid",
-    "description": "Elemental Druid centered on Armageddon with the fire support package.",
-    "required_skills_all": [
-      {
-        "name": "Armageddon",
-        "minimum": 15,
-        "reason": "Armageddon is heavily invested"
-      }
-    ],
-    "required_skill_sums": [
-      {
-        "names": ["Armageddon", "Molten Boulder", "Firestorm", "Fissure", "Volcano", "Flame Dash"],
-        "minimum_total": 45,
-        "reason": "Fire skill investment reaches the combined threshold"
-      }
-    ],
-    "required_skill_groups_any": [
-      [
-        {
-          "name": "Molten Boulder",
-          "minimum": 15,
-          "reason": "Molten Boulder is heavily invested"
-        },
-        {
-          "name": "Firestorm",
-          "minimum": 15,
-          "reason": "Firestorm is heavily invested"
-        },
-        {
-          "name": "Flame Dash",
-          "minimum": 15,
-          "reason": "Flame Dash is heavily invested"
-        }
-      ]
-    ],
-    "signature_skills": [
-      {
-        "name": "Armageddon",
-        "minimum": 15,
-        "weight": 2.5
-      },
-      {
-        "name": "Molten Boulder",
-        "minimum": 15,
-        "weight": 1.5
-      },
-      {
-        "name": "Firestorm",
-        "minimum": 10,
-        "weight": 1.0
-      },
-      {
-        "name": "Fissure",
-        "minimum": 10,
-        "weight": 1.0
-      },
-      {
-        "name": "Volcano",
-        "minimum": 10,
-        "weight": 1.0
-      },
-      {
-        "name": "Flame Dash",
-        "minimum": 10,
-        "weight": 1.0
-      }
-    ],
-    "supporting_skills": [
-      {
-        "name": "Oak Sage",
-        "minimum": 1,
-        "weight": 0.25
-      }
-    ],
-    "penalty_skills": [
-      {
-        "name": "Hurricane",
-        "minimum": 15,
-        "weight": 0.8
-      },
-      {
-        "name": "Rabies",
-        "minimum": 15,
-        "weight": 0.7
-      },
-      {
-        "name": "Maul",
-        "minimum": 15,
-        "weight": 0.7
-      },
-      {
-        "name": "Shock Wave",
-        "minimum": 15,
-        "weight": 0.7
-      },
-      {
-        "name": "Hurricane",
-        "minimum": 15,
-        "weight": 0.9
-      },
-      {
-        "name": "Flame Dash",
-        "minimum": 15,
-        "weight": 0.8
       }
     ]
   },

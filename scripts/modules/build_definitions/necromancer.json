@@ -248,6 +248,114 @@
         "minimum": 1,
         "weight": 0.25
       }
+    ],
+    "notes": [
+      "Use this for weapon Necromancers using a primary bow, crossbow, or melee weapon when they are not better identified by a more specific weapon-based bucket like Charger."
+    ]
+  },
+  {
+    "build_id": "necro-charger",
+    "class_name": "Necromancer",
+    "label": "Charger",
+    "family": "Weapon Necromancer",
+    "description": "Weapon Necromancer using Templar's Might and a poison package, with Charge acting as the defining gear-granted attack.",
+    "required_gear_rules_all": [
+      {
+        "title_contains": ["Templar's Might"],
+        "worn_slots": ["body"],
+        "reason": "Templar's Might is equipped"
+      }
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Deadly Poison", "Desecrate", "Poison Nova"],
+        "minimum_total": 35,
+        "reason": "Poison investment reaches the Charger threshold"
+      }
+    ],
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Deadly Poison",
+          "minimum": 10,
+          "reason": "Deadly Poison is meaningfully invested"
+        },
+        {
+          "name": "Desecrate",
+          "minimum": 10,
+          "reason": "Desecrate is meaningfully invested"
+        },
+        {
+          "name": "Poison Nova",
+          "minimum": 10,
+          "reason": "Poison Nova is meaningfully invested"
+        }
+      ]
+    ],
+    "signature_skills": [
+      {
+        "name": "Deadly Poison",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Desecrate",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Poison Nova",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Lower Resist",
+        "minimum": 1,
+        "weight": 0.75
+      }
+    ],
+    "supporting_gear_rules": [
+      {
+        "property_contains": ["increased attack speed"],
+        "worn_slots": ["weapon1"],
+        "weight": 0.75,
+        "reason": "Weapon setup includes attack speed for Charge"
+      },
+      {
+        "property_contains": ["life stolen per hit"],
+        "worn_slots": ["weapon1", "ring1", "ring2", "helm", "gloves", "belt", "boots", "amulet"],
+        "weight": 0.5,
+        "reason": "Weapon setup includes life leech support"
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Bone Armor",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Convocation",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_gear_rules": [
+      {
+        "tag_contains": ["bow"],
+        "worn_slots": ["weapon1"],
+        "weight": 1.0,
+        "reason": "Primary bow users fit the Melee / Bow bucket instead"
+      },
+      {
+        "tag_contains": ["crossbow"],
+        "worn_slots": ["weapon1"],
+        "weight": 1.0,
+        "reason": "Primary crossbow users fit the Melee / Bow bucket instead"
+      }
+    ],
+    "notes": [
+      "Use this for poison-invested weapon Necromancers wearing Templar's Might. Bow and crossbow users should still land in Melee / Bow instead."
     ]
   },
   {
@@ -299,11 +407,36 @@
         "weight": 0.25
       }
     ],
+    "penalty_gear_rules": [
+      {
+        "tag_contains": ["bow"],
+        "worn_slots": ["weapon1"],
+        "weight": 2.0,
+        "reason": "Primary bow users fit the Melee / Bow bucket instead"
+      },
+      {
+        "tag_contains": ["crossbow"],
+        "worn_slots": ["weapon1"],
+        "weight": 2.0,
+        "reason": "Primary crossbow users fit the Melee / Bow bucket instead"
+      },
+      {
+        "title_contains": ["Templar's Might"],
+        "worn_slots": ["body"],
+        "weight": 1.5,
+        "reason": "Templar's Might poison weapon users fit Charger instead"
+      }
+    ],
     "penalty_skills": [
       {
         "name": "Hemorrhage",
         "minimum": 15,
         "weight": 0.5
+      },
+      {
+        "name": "Corpse Explosion",
+        "minimum": 15,
+        "weight": 0.75
       },
       {
         "name": "Bone Spear",
@@ -336,6 +469,11 @@
           "name": "Fire Golem",
           "minimum": 15,
           "reason": "Corpse Explosion setup invests in Fire Golem support"
+        },
+        {
+          "name": "Desecrate",
+          "minimum": 15,
+          "reason": "Corpse Explosion setup invests in Desecrate support"
         }
       ]
     ],
@@ -359,13 +497,18 @@
         "name": "Summon Mastery",
         "minimum": 10,
         "weight": 1.0
+      },
+      {
+        "name": "Desecrate",
+        "minimum": 15,
+        "weight": 1.0
       }
     ],
     "supporting_skills": [
       {
         "name": "Desecrate",
         "minimum": 1,
-        "weight": 0.4
+        "weight": 0.25
       },
       {
         "name": "Lower Resist",
@@ -378,11 +521,6 @@
         "name": "Hemorrhage",
         "minimum": 15,
         "weight": 0.5
-      },
-      {
-        "name": "Poison Nova",
-        "minimum": 15,
-        "weight": 0.4
       }
     ]
   },
