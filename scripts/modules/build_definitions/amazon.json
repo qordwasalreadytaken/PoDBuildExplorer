@@ -4,46 +4,61 @@
     "class_name": "Amazon",
     "label": "Physical Bow",
     "family": "Bow Amazon",
-    "description": "Physical bow build centered on Multiple Shot or Strafe without major elemental commitment.",
+    "description": "Physical bow build centered on a physical bow core, including phys-first variants that carry an elemental utility skill for immunes or single-target damage.",
     "required_skill_groups_any": [
       [
         {
           "name": "Multiple Shot",
-          "minimum": 15,
+          "minimum": 10,
           "reason": "Multiple Shot is a primary attack"
         },
         {
           "name": "Strafe",
-          "minimum": 15,
+          "minimum": 10,
           "reason": "Strafe is a primary attack"
+        },
+        {
+          "name": "Guided Arrow",
+          "minimum": 10,
+          "reason": "Guided Arrow is a primary physical attack"
         }
       ]
     ],
     "signature_skills": [
       {
         "name": "Multiple Shot",
-        "minimum": 15,
+        "minimum": 10,
         "weight": 2.0
       },
       {
         "name": "Strafe",
-        "minimum": 15,
+        "minimum": 10,
         "weight": 2.0
+      },
+      {
+        "name": "Guided Arrow",
+        "minimum": 10,
+        "weight": 1.5
       },
       {
         "name": "Penetrate",
         "minimum": 10,
-        "weight": 1.0
+        "weight": 1.25
       },
       {
         "name": "Pierce",
         "minimum": 5,
-        "weight": 0.75
+        "weight": 1.0
       },
       {
         "name": "Critical Strike",
         "minimum": 1,
         "weight": 0.75
+      },
+      {
+        "name": "Lethal Strike",
+        "minimum": 9,
+        "weight": 2.0
       }
     ],
     "supporting_skills": [
@@ -55,43 +70,83 @@
       {
         "name": "Valkyrie",
         "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Avoid",
+        "minimum": 3,
         "weight": 0.25
+      },
+      {
+        "name": "Dodge",
+        "minimum": 3,
+        "weight": 0.25
+      },
+      {
+        "name": "Magic Arrow",
+        "minimum": 10,
+        "weight": 0.75
+      },
+      {
+        "name": "Inner Sight",
+        "minimum": 10,
+        "weight": 0.75
+      }
+    ],
+    "supporting_gear_rules": [
+      {
+        "title_contains": ["Fortitude"],
+        "worn_slots": ["body"],
+        "weight": 0.5,
+        "reason": "Fortitude is a strong phys-first gear tell"
+      },
+      {
+        "title_contains": ["Faith"],
+        "worn_slots": ["weapon1", "sweapon1"],
+        "weight": 0.5,
+        "reason": "Faith is a strong phys-first bow tell"
+      },
+      {
+        "property_contains": ["maximum damage"],
+        "worn_slots": ["weapon2", "sweapon2", "ring1", "ring2"],
+        "weight": 0.25,
+        "reason": "Equipped gear includes direct maximum damage scaling"
       }
     ],
     "penalty_skills": [
       {
         "name": "Fire Arrow",
         "minimum": 10,
-        "weight": 0.8
+        "weight": 0.25
       },
       {
         "name": "Exploding Arrow",
         "minimum": 10,
-        "weight": 0.8
+        "weight": 0.25
       },
       {
         "name": "Immolation Arrow",
         "minimum": 10,
-        "weight": 0.8
+        "weight": 0.25
       },
       {
         "name": "Cold Arrow",
         "minimum": 10,
-        "weight": 0.8
+        "weight": 1.0
       },
       {
         "name": "Ice Arrow",
         "minimum": 10,
-        "weight": 0.8
+        "weight": 1.0
       },
       {
         "name": "Freezing Arrow",
         "minimum": 10,
-        "weight": 0.8
+        "weight": 1.0
       }
     ],
     "notes": [
-      "Keeps overlap-friendly scoring for bow Amazons while pushing heavy fire or cold investment into dedicated elemental builds."
+      "Keeps overlap-friendly scoring for bow Amazons while letting strong physical gear tells outweigh a single heavy elemental side skill."
     ]
   },
   {
@@ -185,16 +240,27 @@
         "name": "Cold Arrow",
         "minimum": 15,
         "reason": "Cold Arrow is heavily invested"
-      },
+      }
+    ],
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Ice Arrow",
+          "minimum": 15,
+          "reason": "Ice Arrow is heavily invested"
+        },
+        {
+          "name": "Freezing Arrow",
+          "minimum": 15,
+          "reason": "Freezing Arrow is heavily invested"
+        }
+      ]
+    ],
+    "required_skill_sums": [
       {
-        "name": "Ice Arrow",
-        "minimum": 15,
-        "reason": "Ice Arrow is heavily invested"
-      },
-      {
-        "name": "Freezing Arrow",
-        "minimum": 15,
-        "reason": "Freezing Arrow is heavily invested"
+        "names": ["Cold Arrow", "Ice Arrow", "Freezing Arrow"],
+        "minimum_total": 35,
+        "reason": "Cold bow package reaches the combined threshold"
       }
     ],
     "signature_skills": [
@@ -210,8 +276,8 @@
       },
       {
         "name": "Freezing Arrow",
-        "minimum": 15,
-        "weight": 2.0
+        "minimum": 10,
+        "weight": 1.5
       },
       {
         "name": "Pierce",
@@ -238,6 +304,16 @@
     ],
     "penalty_skills": [
       {
+        "name": "Multiple Shot",
+        "minimum": 15,
+        "weight": 0.8
+      },
+      {
+        "name": "Strafe",
+        "minimum": 15,
+        "weight": 0.8
+      },
+      {
         "name": "Fire Arrow",
         "minimum": 15,
         "weight": 1.0
@@ -259,7 +335,7 @@
     "class_name": "Amazon",
     "label": "Hybrid Bow",
     "family": "Bow Amazon",
-    "description": "Bow Amazon mixing physical bow skills with meaningful elemental arrow investment.",
+    "description": "Bow Amazon mixing a physical bow core with meaningful investment in both the fire and cold arrow branches.",
     "required_skill_groups_any": [
       [
         {
@@ -288,7 +364,9 @@
           "name": "Immolation Arrow",
           "minimum": 10,
           "reason": "Fire investment supports the hybrid pattern"
-        },
+        }
+      ],
+      [
         {
           "name": "Cold Arrow",
           "minimum": 10,
@@ -305,6 +383,18 @@
           "reason": "Cold investment supports the hybrid pattern"
         }
       ]
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Fire Arrow", "Exploding Arrow", "Immolation Arrow"],
+        "minimum_total": 25,
+        "reason": "Fire branch reaches the hybrid threshold"
+      },
+      {
+        "names": ["Cold Arrow", "Ice Arrow", "Freezing Arrow"],
+        "minimum_total": 20,
+        "reason": "Cold branch reaches the hybrid threshold"
+      }
     ],
     "signature_skills": [
       {
@@ -363,10 +453,404 @@
         "name": "Valkyrie",
         "minimum": 1,
         "weight": 0.25
+      },
+      {
+        "name": "Lethal Strike",
+        "minimum": 10,
+        "weight": 0.5
       }
     ],
     "notes": [
-      "This intentionally stays broad: a physical bow core plus at least one meaningful elemental branch."
+      "Use this for physical bow Amazons that also commit meaningfully to both the fire and cold arrow branches."
+    ]
+  },
+  {
+    "build_id": "amazon-bow-physical-fire",
+    "class_name": "Amazon",
+    "label": "Hybrid Phys + Fire Bow",
+    "family": "Bow Amazon",
+    "description": "Bow Amazon combining a physical bow attack core with a meaningful fire arrow package.",
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Multiple Shot",
+          "minimum": 7,
+          "reason": "Multiple Shot is a primary physical attack"
+        },
+        {
+          "name": "Strafe",
+          "minimum": 7,
+          "reason": "Strafe is a primary physical attack"
+        }
+      ],
+      [
+        {
+          "name": "Fire Arrow",
+          "minimum": 10,
+          "reason": "Fire Arrow supports the fire hybrid pattern"
+        },
+        {
+          "name": "Exploding Arrow",
+          "minimum": 10,
+          "reason": "Exploding Arrow supports the fire hybrid pattern"
+        },
+        {
+          "name": "Immolation Arrow",
+          "minimum": 10,
+          "reason": "Immolation Arrow supports the fire hybrid pattern"
+        }
+      ]
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Fire Arrow", "Exploding Arrow", "Immolation Arrow"],
+        "minimum_total": 25,
+        "reason": "Fire bow package reaches the physical-fire hybrid threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Multiple Shot",
+        "minimum": 7,
+        "weight": 1.5
+      },
+      {
+        "name": "Strafe",
+        "minimum": 7,
+        "weight": 1.5
+      },
+      {
+        "name": "Fire Arrow",
+        "minimum": 8,
+        "weight": 1.25
+      },
+      {
+        "name": "Exploding Arrow",
+        "minimum": 8,
+        "weight": 1.25
+      },
+      {
+        "name": "Immolation Arrow",
+        "minimum": 10,
+        "weight": 1.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Penetrate",
+        "minimum": 5,
+        "weight": 0.75
+      },
+      {
+        "name": "Pierce",
+        "minimum": 5,
+        "weight": 0.75
+      },
+      {
+        "name": "Valkyrie",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Lethal Strike",
+        "minimum": 10,
+        "weight": 0.5
+      }
+    ],
+    "supporting_gear_rules": [
+      {
+        "title_contains": ["Windforce"],
+        "worn_slots": ["weapon1", "sweapon1"],
+        "weight": 1.0,
+        "reason": "Windforce is a strong phys-first bow tell"
+      },
+      {
+        "title_contains": ["Fortitude"],
+        "worn_slots": ["body"],
+        "weight": 0.75,
+        "reason": "Fortitude reinforces a phys-first bow setup"
+      },
+      {
+        "title_contains": ["Razortail"],
+        "worn_slots": ["belt"],
+        "weight": 0.75,
+        "reason": "Razortail is a common pierce-based physical bow tell"
+      },
+      {
+        "title_contains": ["War Traveler"],
+        "worn_slots": ["boots"],
+        "weight": 0.5,
+        "reason": "War Traveler adds direct weapon damage support"
+      },
+      {
+        "property_contains": ["maximum damage"],
+        "worn_slots": ["weapon2", "sweapon2", "belt"],
+        "weight": 0.75,
+        "reason": "Equipped arrows or belt include direct maximum damage scaling"
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Cold Arrow",
+        "minimum": 10,
+        "weight": 0.8
+      },
+      {
+        "name": "Ice Arrow",
+        "minimum": 10,
+        "weight": 0.8
+      },
+      {
+        "name": "Freezing Arrow",
+        "minimum": 10,
+        "weight": 0.8
+      }
+    ],
+    "notes": [
+      "Use this for physical bow Amazons with a real fire bow side package but without a meaningful cold branch."
+    ]
+  },
+  {
+    "build_id": "amazon-bow-physical-cold",
+    "class_name": "Amazon",
+    "label": "Hybrid Phys + Cold Bow",
+    "family": "Bow Amazon",
+    "description": "Bow Amazon combining a physical bow attack core with a meaningful cold arrow package.",
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Multiple Shot",
+          "minimum": 15,
+          "reason": "Multiple Shot is a primary physical attack"
+        },
+        {
+          "name": "Strafe",
+          "minimum": 15,
+          "reason": "Strafe is a primary physical attack"
+        }
+      ],
+      [
+        {
+          "name": "Cold Arrow",
+          "minimum": 10,
+          "reason": "Cold Arrow supports the cold hybrid pattern"
+        },
+        {
+          "name": "Ice Arrow",
+          "minimum": 10,
+          "reason": "Ice Arrow supports the cold hybrid pattern"
+        },
+        {
+          "name": "Freezing Arrow",
+          "minimum": 10,
+          "reason": "Freezing Arrow supports the cold hybrid pattern"
+        }
+      ]
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Cold Arrow", "Ice Arrow", "Freezing Arrow"],
+        "minimum_total": 25,
+        "reason": "Cold bow package reaches the physical-cold hybrid threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Multiple Shot",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Strafe",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Cold Arrow",
+        "minimum": 10,
+        "weight": 1.25
+      },
+      {
+        "name": "Ice Arrow",
+        "minimum": 10,
+        "weight": 1.25
+      },
+      {
+        "name": "Freezing Arrow",
+        "minimum": 10,
+        "weight": 1.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Penetrate",
+        "minimum": 5,
+        "weight": 0.75
+      },
+      {
+        "name": "Pierce",
+        "minimum": 5,
+        "weight": 0.75
+      },
+      {
+        "name": "Valkyrie",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Fire Arrow",
+        "minimum": 10,
+        "weight": 0.8
+      },
+      {
+        "name": "Exploding Arrow",
+        "minimum": 10,
+        "weight": 0.8
+      },
+      {
+        "name": "Immolation Arrow",
+        "minimum": 10,
+        "weight": 0.8
+      }
+    ],
+    "notes": [
+      "Use this for physical bow Amazons with a real cold bow side package but without a meaningful fire branch."
+    ]
+  },
+  {
+    "build_id": "amazon-bow-elemental",
+    "class_name": "Amazon",
+    "label": "Elemental Bow",
+    "family": "Bow Amazon",
+    "description": "Bow Amazon combining meaningful fire and cold arrow investment without a physical bow attack core.",
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Fire Arrow",
+          "minimum": 15,
+          "reason": "Fire Arrow is heavily invested"
+        },
+        {
+          "name": "Exploding Arrow",
+          "minimum": 15,
+          "reason": "Exploding Arrow is heavily invested"
+        },
+        {
+          "name": "Immolation Arrow",
+          "minimum": 15,
+          "reason": "Immolation Arrow is heavily invested"
+        }
+      ],
+      [
+        {
+          "name": "Cold Arrow",
+          "minimum": 15,
+          "reason": "Cold Arrow is heavily invested"
+        },
+        {
+          "name": "Ice Arrow",
+          "minimum": 15,
+          "reason": "Ice Arrow is heavily invested"
+        },
+        {
+          "name": "Freezing Arrow",
+          "minimum": 15,
+          "reason": "Freezing Arrow is heavily invested"
+        }
+      ]
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Fire Arrow", "Exploding Arrow", "Immolation Arrow"],
+        "minimum_total": 35,
+        "reason": "Fire bow package reaches the combined threshold"
+      },
+      {
+        "names": ["Cold Arrow", "Ice Arrow", "Freezing Arrow"],
+        "minimum_total": 35,
+        "reason": "Cold bow package reaches the combined threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Fire Arrow",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Immolation Arrow",
+        "minimum": 15,
+        "weight": 1.75
+      },
+      {
+        "name": "Cold Arrow",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Freezing Arrow",
+        "minimum": 15,
+        "weight": 1.75
+      },
+      {
+        "name": "Ice Arrow",
+        "minimum": 10,
+        "weight": 1.0
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Exploding Arrow",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Pierce",
+        "minimum": 5,
+        "weight": 0.75
+      },
+      {
+        "name": "Penetrate",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Phase Run",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Multiple Shot",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Strafe",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Guided Arrow",
+        "minimum": 10,
+        "weight": 0.6
+      },
+      {
+        "name": "Lightning Fury",
+        "minimum": 15,
+        "weight": 0.6
+      },
+      {
+        "name": "Charged Strike",
+        "minimum": 15,
+        "weight": 0.6
+      }
+    ],
+    "notes": [
+      "Use this for non-physical bow Amazons that invest meaningfully in both the fire and cold arrow packages."
     ]
   },
   {
@@ -374,44 +858,58 @@
     "class_name": "Amazon",
     "label": "Lightning Javazon",
     "family": "Javelin Amazon",
-    "description": "Javelin Amazon with heavy investment in the core lightning package.",
-    "required_skills_all": [
+    "description": "Javelin Amazon with heavy investment in the core lightning javazon package of Power Strike, Charged Strike, Lightning Bolt, and Lightning Fury.",
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Power Strike",
+          "minimum": 13,
+          "reason": "Power Strike is heavily invested"
+        },
+        {
+          "name": "Charged Strike",
+          "minimum": 13,
+          "reason": "Charged Strike is heavily invested"
+        },
+        {
+          "name": "Lightning Bolt",
+          "minimum": 13,
+          "reason": "Lightning Bolt is heavily invested"
+        },
+        {
+          "name": "Lightning Fury",
+          "minimum": 13,
+          "reason": "Lightning Fury is heavily invested"
+        }
+      ]
+    ],
+    "required_skill_sums": [
       {
-        "name": "Lightning Bolt",
-        "minimum": 15,
-        "reason": "Lightning Bolt is heavily invested"
-      },
-      {
-        "name": "Lightning Strike",
-        "minimum": 15,
-        "reason": "Lightning Strike is heavily invested"
-      },
-      {
-        "name": "Lightning Fury",
-        "minimum": 15,
-        "reason": "Lightning Fury is heavily invested"
+        "names": ["Power Strike", "Charged Strike", "Lightning Bolt", "Lightning Fury"],
+        "minimum_total": 35,
+        "reason": "Combined lightning javazon investment reaches the core threshold"
       }
     ],
     "signature_skills": [
       {
-        "name": "Lightning Bolt",
-        "minimum": 15,
-        "weight": 2.0
-      },
-      {
-        "name": "Lightning Strike",
-        "minimum": 15,
-        "weight": 2.0
-      },
-      {
-        "name": "Lightning Fury",
-        "minimum": 15,
-        "weight": 2.0
+        "name": "Power Strike",
+        "minimum": 13,
+        "weight": 1.75
       },
       {
         "name": "Charged Strike",
-        "minimum": 1,
-        "weight": 0.75
+        "minimum": 13,
+        "weight": 2.0
+      },
+      {
+        "name": "Lightning Bolt",
+        "minimum": 13,
+        "weight": 1.75
+      },
+      {
+        "name": "Lightning Fury",
+        "minimum": 13,
+        "weight": 2.0
       },
       {
         "name": "Pierce",
@@ -421,7 +919,7 @@
     ],
     "supporting_skills": [
       {
-        "name": "Power Strike",
+        "name": "Lightning Strike",
         "minimum": 1,
         "weight": 0.5
       },
