@@ -192,6 +192,11 @@
     ],
     "penalty_skills": [
       {
+        "name": "Battle Cry",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
         "name": "Whirlwind",
         "minimum": 15,
         "weight": 0.5
@@ -261,6 +266,152 @@
         "minimum": 15,
         "weight": 0.5
       }
+    ]
+  },
+  {
+    "build_id": "barb-whirling-axes",
+    "class_name": "Barbarian",
+    "label": "Whirling Axes",
+    "family": "Melee Barbarian",
+    "description": "Barbarian centered on the Whirling Axes package with Battle Cry and Double Swing support.",
+    "required_skills_all": [
+      {
+        "name": "Whirling Axes",
+        "minimum": 15,
+        "reason": "Whirling Axes is heavily invested"
+      },
+      {
+        "name": "Battle Cry",
+        "minimum": 15,
+        "reason": "Battle Cry is heavily invested"
+      },
+      {
+        "name": "Double Swing",
+        "minimum": 15,
+        "reason": "Double Swing is heavily invested"
+      }
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Whirling Axes", "Battle Cry", "Double Swing"],
+        "minimum_total": 50,
+        "reason": "Whirling Axes core investment reaches the combined threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Whirling Axes",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Battle Cry",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Double Swing",
+        "minimum": 15,
+        "weight": 2.0
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Battle Orders",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Natural Resistance",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Increased Speed",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "notes": [
+      "Use this for Barbarians whose main identity is the Whirling Axes package, especially when Whirling Axes, Battle Cry, and Double Swing are all heavily invested."
+    ]
+  },
+  {
+    "build_id": "barb-bash",
+    "class_name": "Barbarian",
+    "label": "Bash",
+    "family": "Melee Barbarian",
+    "description": "Barbarian centered on Bash with Stun and Concentrate support.",
+    "required_skills_all": [
+      {
+        "name": "Bash",
+        "minimum": 15,
+        "reason": "Bash is heavily invested"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Bash",
+        "minimum": 15,
+        "weight": 2.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Stun",
+        "minimum": 10,
+        "weight": 0.75
+      },
+      {
+        "name": "Concentrate",
+        "minimum": 10,
+        "weight": 0.75
+      },
+      {
+        "name": "Battle Orders",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Edged Weapon Mastery",
+        "minimum": 1,
+        "weight": 0.4
+      },
+      {
+        "name": "Pole Weapon Mastery",
+        "minimum": 1,
+        "weight": 0.4
+      },
+      {
+        "name": "Blunt Weapon Mastery",
+        "minimum": 1,
+        "weight": 0.4
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Cleave",
+        "minimum": 15,
+        "weight": 0.75
+      },
+      {
+        "name": "Whirlwind",
+        "minimum": 15,
+        "weight": 0.5
+      },
+      {
+        "name": "Frenzy",
+        "minimum": 15,
+        "weight": 0.5
+      },
+      {
+        "name": "Leap Slam",
+        "minimum": 15,
+        "weight": 0.5
+      }
+    ],
+    "notes": [
+      "Use this for Barbarians whose main attack is Bash, especially when Stun and Concentrate also show meaningful investment."
     ]
   },
   {
@@ -441,6 +592,11 @@
       }
     ],
     "penalty_skills": [
+      {
+        "name": "Battle Cry",
+        "minimum": 15,
+        "weight": 1.0
+      },
       {
         "name": "Whirlwind",
         "minimum": 15,
