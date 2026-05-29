@@ -2,6 +2,9 @@
 
 This module builds a page-oriented view on top of the rule-based build classifier.
 It does not modify any existing site pages.
+
+python3 scripts/modules/builds_page.py sc_ladder.json
+python3 scripts/modules/builds_page.py hc_ladder.json --hc
 """
 
 from __future__ import annotations
@@ -265,19 +268,13 @@ class BuildsHTMLGenerator:
             for section in summary_data.get("class_sections", [])
         )
         overview_html = f"""
-        <h1>PoD Build Explorer Beta</h1>
+        <h1>PoD Season 13 Build Explorer</h1>
         <h2>{mode_title} Build Matches</h2>
         <p>
             Builds are grouped by class and ordered from most popular to least popular.
             Each build expands to show the character names currently matching that definition.
             Characters can match multiple builds, but are only counted in the most popular matching build for the summary statistics.
-        </p>
-        <p>
-            "Builds" are defined by sets of rules in json files that live here:
-            <a href="https://github.com/qordwasalreadytaken/PoDBuildExplorer/tree/main/scripts/modules/build_definitions" target="_blank">Build Definitions</a>.<br>
-        </p>
-        <p>
-            Feel free to contribute directly or reach out to Qord with feedback on how to improve the build definitions or this page!
+            Character data sourced from end of ladder season 13 snapshot, charm data is not included.
         </p>
         <div class="fun-facts-row">
             <div class="fun-facts-column">
@@ -304,10 +301,6 @@ class BuildsHTMLGenerator:
         </head>
         <body class="special-background">
             <div class="is-clipped">
-                <div class="banner" style="top:10px; left:10%; width:80%;">
-                    ⚠️ This is a beta version of a better builds finder. Feel free to contribute directly or reach out to Qord with feedback. ⚠️
-                </div>
-
                 <div class="main page-intro">
                     {overview_html}
                     <hr>
@@ -315,7 +308,16 @@ class BuildsHTMLGenerator:
                 </div>
 
                 <div class="footer">
-                    <p>PoD data current as of {escape(timestamp)}</p>
+                    <p>
+                        "Builds" are defined by sets of rules in json files that live here:
+                        <a href="https://github.com/qordwasalreadytaken/PoDBuildExplorer/tree/main/scripts/modules/build_definitions" target="_blank">Build Definitions</a>.<br>
+                    </p>
+                    <p>
+                        This is a beta version of the seasonal builds explorer. Feel free to
+                        <a href="https://github.com/qordwasalreadytaken/PoDBuildExplorer/blob/main/README.md" target="_blank">contribute directly</a>
+                        or reach out to Qord with feedback.
+                    </p>
+                    <p>Page created at {escape(timestamp)}</p>
                 </div>
             </div>
 
