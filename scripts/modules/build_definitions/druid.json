@@ -99,12 +99,17 @@
     ]
   },
   {
-    "build_id": "druid-werewolf",
+    "build_id": "druid-fury",
     "class_name": "Druid",
-    "label": "Werewolf",
+    "label": "Fury",
     "family": "Shapeshift Druid",
-    "description": "Druid fighting in werewolf form, usually built around Fury with Lycanthropy support.",
+    "description": "Druid fighting in werewolf form with Fury as the primary attack.",
     "required_skills_all": [
+      {
+        "name": "Fury",
+        "minimum": 15,
+        "reason": "Fury is heavily invested"
+      },
       {
         "name": "Lycanthropy",
         "minimum": 15,
@@ -115,20 +120,6 @@
         "minimum": 1,
         "reason": "Werewolf form is allocated"
       }
-    ],
-    "required_skill_groups_any": [
-      [
-        {
-          "name": "Fury",
-          "minimum": 15,
-          "reason": "Fury is heavily invested"
-        },
-        {
-          "name": "Feral Rage",
-          "minimum": 10,
-          "reason": "Feral Rage is heavily invested"
-        }
-      ]
     ],
     "signature_skills": [
       {
@@ -344,11 +335,6 @@
       }
     ],
     "penalty_skills": [
-      {
-        "name": "Maul",
-        "minimum": 15,
-        "weight": 2.0
-      },
       {
         "name": "Rabies",
         "minimum": 15,

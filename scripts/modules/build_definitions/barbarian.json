@@ -72,6 +72,130 @@
     ]
   },
   {
+    "build_id": "barb-find-item",
+    "class_name": "Barbarian",
+    "label": "Find Item",
+    "family": "Utility Barbarian",
+    "description": "Barbarian centered on Find Item and stacked magic-find or gold-find gear.",
+    "required_skills_all": [
+      {
+        "name": "Find Item",
+        "minimum": 15,
+        "reason": "Find Item is heavily invested"
+      }
+    ],
+    "required_gear_rule_groups_any": [
+      [
+        {
+          "property_contains": ["extra gold from monsters"],
+          "reason": "Gold-find gear is equipped"
+        },
+        {
+          "property_contains": ["better chance of getting magic items"],
+          "reason": "Magic-find gear is equipped"
+        }
+      ]
+    ],
+    "signature_skills": [
+      {
+        "name": "Find Item",
+        "minimum": 15,
+        "weight": 2.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Battle Orders",
+        "minimum": 10,
+        "weight": 0.75
+      },
+      {
+        "name": "Grim Ward",
+        "minimum": 10,
+        "weight": 0.75
+      },
+      {
+        "name": "Battle Cry",
+        "minimum": 10,
+        "weight": 0.75
+      },
+      {
+        "name": "Increased Speed",
+        "minimum": 10,
+        "weight": 0.75
+      },
+      {
+        "name": "Battle Command",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Find Potion",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "gear_text_any": [
+      {
+        "name": "extra gold from monsters",
+        "minimum": 1,
+        "weight": 1.25,
+        "reason": "Gold-find gear is a core part of the setup"
+      },
+      {
+        "name": "better chance of getting magic items",
+        "minimum": 1,
+        "weight": 1.0,
+        "reason": "Magic-find gear is a core part of the setup"
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Whirlwind",
+        "minimum": 15,
+        "weight": 3.25
+      },
+      {
+        "name": "Frenzy",
+        "minimum": 15,
+        "weight": 3.0
+      },
+      {
+        "name": "Cleave",
+        "minimum": 15,
+        "weight": 3.0
+      },
+      {
+        "name": "War Cry",
+        "minimum": 15,
+        "weight": 3.0
+      },
+      {
+        "name": "Ethereal Throw",
+        "minimum": 15,
+        "weight": 3.0
+      },
+      {
+        "name": "Edged Weapon Mastery",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Pole Weapon Mastery",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Blunt Weapon Mastery",
+        "minimum": 15,
+        "weight": 1.0
+      }
+    ],
+    "notes": [
+      "Use this for utility Barbarians that heavily invest in Find Item and stack gold-find or magic-find gear rather than centering on a primary combat skill."
+    ]
+  },
+  {
     "build_id": "barb-throw",
     "class_name": "Barbarian",
     "label": "Throw",
@@ -279,23 +403,6 @@
         "name": "Whirling Axes",
         "minimum": 15,
         "reason": "Whirling Axes is heavily invested"
-      },
-      {
-        "name": "Battle Cry",
-        "minimum": 15,
-        "reason": "Battle Cry is heavily invested"
-      },
-      {
-        "name": "Double Swing",
-        "minimum": 15,
-        "reason": "Double Swing is heavily invested"
-      }
-    ],
-    "required_skill_sums": [
-      {
-        "names": ["Whirling Axes", "Battle Cry", "Double Swing"],
-        "minimum_total": 50,
-        "reason": "Whirling Axes core investment reaches the combined threshold"
       }
     ],
     "signature_skills": [
@@ -303,19 +410,19 @@
         "name": "Whirling Axes",
         "minimum": 15,
         "weight": 2.5
-      },
+      }
+    ],
+    "supporting_skills": [
       {
         "name": "Battle Cry",
         "minimum": 15,
-        "weight": 2.0
+        "weight": 1.0
       },
       {
         "name": "Double Swing",
         "minimum": 15,
-        "weight": 2.0
-      }
-    ],
-    "supporting_skills": [
+        "weight": 1.0
+      },
       {
         "name": "Battle Orders",
         "minimum": 1,
@@ -333,7 +440,7 @@
       }
     ],
     "notes": [
-      "Use this for Barbarians whose main identity is the Whirling Axes package, especially when Whirling Axes, Battle Cry, and Double Swing are all heavily invested."
+      "Use this for Barbarians whose main identity is Whirling Axes. Battle Cry and Double Swing strengthen the match when present, but they are not required."
     ]
   },
   {
@@ -423,20 +530,20 @@
     "required_skills_all": [
       {
         "name": "Whirlwind",
-        "minimum": 15,
-        "reason": "Whirlwind is heavily invested"
+        "minimum": 1,
+        "reason": "Whirlwind is present"
       }
     ],
     "signature_skills": [
       {
         "name": "Whirlwind",
-        "minimum": 15,
-        "weight": 2.5
+        "minimum": 1,
+        "weight": 1.5
       },
       {
-        "name": "Whirling Axes",
-        "minimum": 10,
-        "weight": 0.75
+        "name": "Grim Ward",
+        "minimum": 15,
+        "weight": 1.25
       },
       {
         "name": "Battle Orders",
@@ -446,19 +553,29 @@
     ],
     "supporting_skills": [
       {
+        "name": "Whirlwind",
+        "minimum": 15,
+        "weight": 1.25
+      },
+      {
+        "name": "Whirling Axes",
+        "minimum": 10,
+        "weight": 0.5
+      },
+      {
         "name": "Edged Weapon Mastery",
-        "minimum": 1,
-        "weight": 0.4
+        "minimum": 15,
+        "weight": 0.75
       },
       {
         "name": "Pole Weapon Mastery",
-        "minimum": 1,
-        "weight": 0.4
+        "minimum": 15,
+        "weight": 0.75
       },
       {
         "name": "Blunt Weapon Mastery",
-        "minimum": 1,
-        "weight": 0.4
+        "minimum": 15,
+        "weight": 0.75
       }
     ],
     "penalty_skills": [
@@ -473,10 +590,18 @@
         "weight": 0.5
       },
       {
+        "name": "Thrown Weapon Mastery",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
         "name": "Leap Slam",
         "minimum": 15,
-        "weight": 0.4
+        "weight": 2.0
       }
+    ],
+    "notes": [
+      "Use this for Whirlwind Barbarians even when Whirlwind itself is only lightly invested, especially if Grim Ward and a matching weapon mastery carry the rest of the build."
     ]
   },
   {
