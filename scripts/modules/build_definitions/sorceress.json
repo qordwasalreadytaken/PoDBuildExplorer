@@ -1,5 +1,190 @@
 [
   {
+    "build_id": "sorc-frost-nova",
+    "class_name": "Sorceress",
+    "label": "Frost Nova",
+    "family": "Cold Sorceress",
+    "description": "Primary cold caster centered on Frost Nova with the typical Ice Blast, Shiver Armor, and Cold Mastery shell.",
+    "required_skills_all": [
+      {
+        "name": "Frost Nova",
+        "minimum": 15,
+        "reason": "Frost Nova is heavily invested"
+      }
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Ice Blast", "Shiver Armor", "Cold Mastery"],
+        "minimum_total": 39,
+        "reason": "Frost Nova support investment reaches the combined threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Frost Nova",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Ice Blast",
+        "minimum": 10,
+        "weight": 1.25
+      },
+      {
+        "name": "Shiver Armor",
+        "minimum": 10,
+        "weight": 1.25
+      },
+      {
+        "name": "Cold Mastery",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Teleport",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Warmth",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Static Field",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Frigerate",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Blizzard",
+        "minimum": 15,
+        "weight": 1.25
+      },
+      {
+        "name": "Frozen Orb",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Hydra",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Lightning Surge",
+        "minimum": 15,
+        "weight": 1.0
+      }
+    ],
+    "notes": [
+      "Use this for cold Sorceresses whose main identity is Frost Nova rather than the other cold caster packages."
+    ]
+  },
+  {
+    "build_id": "sorc-freezing-pulse",
+    "class_name": "Sorceress",
+    "label": "Freezing Pulse",
+    "family": "Cold Sorceress",
+    "description": "Primary cold caster centered on Freezing Pulse with the usual cold support package.",
+    "required_skills_all": [
+      {
+        "name": "Freezing Pulse",
+        "minimum": 15,
+        "reason": "Freezing Pulse is heavily invested"
+      }
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Ice Bolt", "Ice Blast", "Glacial Spike", "Cold Mastery"],
+        "minimum_total": 40,
+        "reason": "Freezing Pulse support investment reaches the combined threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Freezing Pulse",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Ice Bolt",
+        "minimum": 10,
+        "weight": 1.25
+      },
+      {
+        "name": "Ice Blast",
+        "minimum": 10,
+        "weight": 1.25
+      },
+      {
+        "name": "Glacial Spike",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Cold Mastery",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Teleport",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Static Field",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Warmth",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Frigerate",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Blizzard",
+        "minimum": 15,
+        "weight": 1.25
+      },
+      {
+        "name": "Frozen Orb",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Hydra",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Lightning Surge",
+        "minimum": 15,
+        "weight": 1.0
+      }
+    ],
+    "notes": [
+      "Use this for cold Sorceresses whose main identity is Freezing Pulse rather than Blizzard or Frozen Orb, even when they still carry the broader cold support shell."
+    ]
+  },
+  {
     "build_id": "sorc-blizzard",
     "class_name": "Sorceress",
     "label": "Blizzard",
@@ -89,6 +274,210 @@
     ],
     "notes": [
       "Treats secondary cold investment as normal, but penalizes strong hybrid fire or lightning commitment."
+    ]
+  },
+  {
+    "build_id": "sorc-hydra",
+    "class_name": "Sorceress",
+    "label": "Hydra",
+    "family": "Fire Sorceress",
+    "description": "Fire Sorceress centered on Hydra as the primary damage skill.",
+    "required_skills_all": [
+      {
+        "name": "Hydra",
+        "minimum": 20,
+        "reason": "Hydra is heavily invested"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Hydra",
+        "minimum": 20,
+        "weight": 2.5
+      },
+      {
+        "name": "Fire Mastery",
+        "minimum": 10,
+        "weight": 1.5
+      },
+      {
+        "name": "Warmth",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Teleport",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Fireball",
+        "minimum": 10,
+        "weight": 0.75
+      },
+      {
+        "name": "Static Field",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Frozen Orb",
+        "minimum": 15,
+        "weight": 2.25
+      },
+      {
+        "name": "Blizzard",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Lightning Surge",
+        "minimum": 15,
+        "weight": 1.0
+      }
+    ],
+    "notes": [
+      "Use this for fire Sorceresses whose main identity is Hydra rather than the Hydra/Frozen Orb hybrid."
+    ]
+  },
+  {
+    "build_id": "sorc-inferno",
+    "class_name": "Sorceress",
+    "label": "Inferno",
+    "family": "Fire Sorceress",
+    "description": "Fire Sorceress centered on Inferno as the primary damage skill.",
+    "required_skills_all": [
+      {
+        "name": "Inferno",
+        "minimum": 15,
+        "reason": "Inferno is heavily invested"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Inferno",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Fire Mastery",
+        "minimum": 10,
+        "weight": 1.5
+      },
+      {
+        "name": "Warmth",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Teleport",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Fire Wall",
+        "minimum": 10,
+        "weight": 0.75
+      },
+      {
+        "name": "Immolate",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Hydra",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Frozen Orb",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Lightning Surge",
+        "minimum": 15,
+        "weight": 1.0
+      }
+    ],
+    "notes": [
+      "Use this for fire Sorceresses whose defining damage skill is Inferno."
+    ]
+  },
+  {
+    "build_id": "sorc-immolate",
+    "class_name": "Sorceress",
+    "label": "Immolate",
+    "family": "Fire Sorceress",
+    "description": "Fire Sorceress centered on Immolate as the primary damage skill.",
+    "required_skills_all": [
+      {
+        "name": "Immolate",
+        "minimum": 15,
+        "reason": "Immolate is heavily invested"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Immolate",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Fire Mastery",
+        "minimum": 10,
+        "weight": 1.5
+      },
+      {
+        "name": "Warmth",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Teleport",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Inferno",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Fire Wall",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Hydra",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Frozen Orb",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Lightning Surge",
+        "minimum": 15,
+        "weight": 1.0
+      }
+    ],
+    "notes": [
+      "Use this for fire Sorceresses whose defining damage skill is Immolate."
     ]
   },
   {
@@ -251,6 +640,284 @@
     ]
   },
   {
+    "build_id": "sorc-meteor",
+    "class_name": "Sorceress",
+    "label": "Meteor",
+    "family": "Fire Sorceress",
+    "description": "Fire Sorceress centered on Meteor with the usual Fire Bolt, Fire Ball, Inferno, and Fire Mastery shell.",
+    "required_skills_all": [
+      {
+        "name": "Meteor",
+        "minimum": 15,
+        "reason": "Meteor is heavily invested"
+      }
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Fire Bolt", "Fire Ball", "Inferno", "Fire Mastery"],
+        "minimum_total": 40,
+        "reason": "Meteor support investment reaches the combined threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Meteor",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Fire Bolt",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Fire Ball",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Inferno",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Fire Mastery",
+        "minimum": 10,
+        "weight": 1.5
+      },
+      {
+        "name": "Teleport",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Warmth",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Static Field",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Hydra",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Blizzard",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Frozen Orb",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Lightning Surge",
+        "minimum": 15,
+        "weight": 1.0
+      }
+    ],
+    "notes": [
+      "Use this for fire Sorceresses whose main identity is Meteor rather than the more FCR-driven Fireball shell."
+    ]
+  },
+  {
+    "build_id": "sorc-melee",
+    "class_name": "Sorceress",
+    "label": "Melee Sorc",
+    "family": "Melee Sorceress",
+    "description": "Weapon-focused Sorceress built around heavy Enflame or Frigerate investment.",
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Enflame",
+          "minimum": 15,
+          "reason": "Enflame is heavily invested"
+        },
+        {
+          "name": "Frigerate",
+          "minimum": 15,
+          "reason": "Frigerate is heavily invested"
+        }
+      ]
+    ],
+    "signature_skills": [
+      {
+        "name": "Enflame",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Frigerate",
+        "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Warmth",
+        "minimum": 10,
+        "weight": 0.75
+      },
+      {
+        "name": "Fire Mastery",
+        "minimum": 10,
+        "weight": 0.75
+      },
+      {
+        "name": "Cold Mastery",
+        "minimum": 10,
+        "weight": 0.75
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Teleport",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Static Field",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_gear_rules": [
+      {
+        "tag_contains": ["bow"],
+        "worn_slots": ["weapon1", "sweapon1"],
+        "weight": 4.0,
+        "reason": "Bow or crossbow users fit the Bow Sorc bucket instead"
+      },
+      {
+        "title_contains": ["Templar's Might"],
+        "worn_slots": ["body"],
+        "weight": 4.0,
+        "reason": "Templar's Might users fit the Charge Sorc bucket instead"
+      }
+    ],
+    "notes": [
+      "Use this for enchant-style Sorceresses whose primary identity is heavy Enflame or Frigerate investment in a melee weapon setup."
+    ]
+  },
+  {
+    "build_id": "sorc-charge",
+    "class_name": "Sorceress",
+    "label": "Charge Sorc",
+    "family": "Melee Sorceress",
+    "description": "Weapon Sorceress using Templar's Might for the gear-granted Charge attack.",
+    "required_gear_rules_all": [
+      {
+        "title_contains": ["Templar's Might"],
+        "worn_slots": ["body"],
+        "reason": "Templar's Might is equipped"
+      }
+    ],
+    "supporting_gear_rules": [
+      {
+        "title_contains": ["Templar's Might"],
+        "worn_slots": ["body"],
+        "weight": 3.0,
+        "reason": "Templar's Might defines the Charge Sorc setup"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Enflame",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Frigerate",
+        "minimum": 15,
+        "weight": 1.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Warmth",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Fire Mastery",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Cold Mastery",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Teleport",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "notes": [
+      "Use this for Sorceresses whose defining melee identity is wearing Templar's Might for the Charge setup."
+    ]
+  },
+  {
+    "build_id": "sorc-bow",
+    "class_name": "Sorceress",
+    "label": "Bow Sorc",
+    "family": "Ranged Sorceress",
+    "description": "Sorceress using a bow or crossbow as the primary weapon.",
+    "required_gear_rules_all": [
+      {
+        "tag_contains": ["bow"],
+        "worn_slots": ["weapon1", "sweapon1"],
+        "reason": "Bow or crossbow is equipped in either weapon set"
+      }
+    ],
+    "supporting_gear_rules": [
+      {
+        "tag_contains": ["bow"],
+        "worn_slots": ["weapon1", "sweapon1"],
+        "weight": 3.0,
+        "reason": "Bow or crossbow setup supports Bow Sorc"
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Teleport",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Warmth",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Fire Mastery",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Cold Mastery",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Lightning Mastery",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "notes": [
+      "Use this for Sorceresses whose primary identity is simply wielding a bow or crossbow."
+    ]
+  },
+  {
     "build_id": "sorc-ball-lightning-ondal",
     "class_name": "Sorceress",
     "label": "Ball Lightning Ondal",
@@ -339,6 +1006,244 @@
     ],
     "notes": [
       "This is a clear example of a gear-defined build where the weapon property matters as much as the skill tree."
+    ]
+  },
+  {
+    "build_id": "sorc-nova-discharge",
+    "class_name": "Sorceress",
+    "label": "Nova / Discharge",
+    "family": "Lightning Sorceress",
+    "description": "Lightning Sorceress centered on Nova and Discharge as the main self-cast damage package.",
+    "required_skills_all": [
+      {
+        "name": "Nova",
+        "minimum": 15,
+        "reason": "Nova is heavily invested"
+      },
+      {
+        "name": "Discharge",
+        "minimum": 15,
+        "reason": "Discharge is heavily invested"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Nova",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Discharge",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Teleport",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Lightning Mastery",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Static Field",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Blizzard",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Hydra",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Frozen Orb",
+        "minimum": 15,
+        "weight": 1.0
+      }
+    ],
+    "notes": [
+      "Use this for Sorceresses whose defining damage package is simply Nova plus Discharge."
+    ]
+  },
+  {
+    "build_id": "sorc-charged-bolt",
+    "class_name": "Sorceress",
+    "label": "Charged Bolt",
+    "family": "Lightning Sorceress",
+    "description": "Lightning Sorceress centered on Charged Bolt with the usual Lightning Surge, Chain Lightning, and Lightning Mastery shell.",
+    "required_skills_all": [
+      {
+        "name": "Charged Bolt",
+        "minimum": 20,
+        "reason": "Charged Bolt is heavily invested"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Charged Bolt",
+        "minimum": 20,
+        "weight": 2.5
+      },
+      {
+        "name": "Lightning Surge",
+        "minimum": 10,
+        "weight": 1.25
+      },
+      {
+        "name": "Chain Lightning",
+        "minimum": 10,
+        "weight": 1.25
+      },
+      {
+        "name": "Lightning Mastery",
+        "minimum": 10,
+        "weight": 1.5
+      },
+      {
+        "name": "Teleport",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Static Field",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Telekinesis",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Thunder Storm",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Blizzard",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Hydra",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Frozen Orb",
+        "minimum": 15,
+        "weight": 1.0
+      }
+    ],
+    "notes": [
+      "Use this for Sorceresses whose core identity is Charged Bolt, even when they also carry the common Lightning Surge, Chain Lightning, and Lightning Mastery package."
+    ]
+  },
+  {
+    "build_id": "sorc-lightning-chain-lightning",
+    "class_name": "Sorceress",
+    "label": "Lightning / Chain Lightning",
+    "family": "Lightning Sorceress",
+    "description": "Lightning Sorceress primarily using Lightning Surge or Chain Lightning, backed by Charged Bolt and Lightning Mastery.",
+    "required_skill_groups_any": [
+      [
+        {
+          "name": "Lightning Surge",
+          "minimum": 20,
+          "reason": "Lightning Surge is heavily invested"
+        },
+        {
+          "name": "Chain Lightning",
+          "minimum": 20,
+          "reason": "Chain Lightning is heavily invested"
+        }
+      ]
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Charged Bolt", "Lightning Mastery"],
+        "minimum_total": 35,
+        "reason": "Lightning support investment reaches the combined threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Lightning Surge",
+        "minimum": 20,
+        "weight": 1.75
+      },
+      {
+        "name": "Chain Lightning",
+        "minimum": 20,
+        "weight": 1.75
+      },
+      {
+        "name": "Charged Bolt",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Lightning Mastery",
+        "minimum": 15,
+        "weight": 1.5
+      },
+      {
+        "name": "Teleport",
+        "minimum": 1,
+        "weight": 0.5
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Static Field",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Telekinesis",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Thunder Storm",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Blizzard",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Hydra",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Frozen Orb",
+        "minimum": 15,
+        "weight": 1.0
+      }
+    ],
+    "notes": [
+      "Use this for Sorceresses whose main lightning identity is Lightning Surge or Chain Lightning, while still carrying real Charged Bolt and Lightning Mastery investment."
     ]
   },
   {

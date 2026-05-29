@@ -163,6 +163,7 @@ def _expand_item_tag(tag: str) -> str:
     if "bow" in normalized_tag:
         inferred_tags.append("bow")
     if "crossbow" in normalized_tag or any(alias in normalized_tag for alias in crossbow_aliases):
+        inferred_tags.append("bow")
         inferred_tags.append("crossbow")
 
     if not inferred_tags:

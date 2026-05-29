@@ -270,6 +270,7 @@ class BuildsHTMLGenerator:
         <p>
             Builds are grouped by class and ordered from most popular to least popular.
             Each build expands to show the character names currently matching that definition.
+            Characters can match multiple builds, but are only counted in the most popular matching build for the summary statistics.
         </p>
         <p>
             "Builds" are defined by sets of rules in json files that live here:
