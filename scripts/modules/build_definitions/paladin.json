@@ -20,7 +20,7 @@
     "required_skill_sums": [
       {
         "names": ["Fist of the Heavens", "Holy Bolt", "Holy Shock", "Sanctuary", "Conviction"],
-        "minimum_total": 45,
+        "minimum_total": 43,
         "reason": "Lightning and holy caster investment reaches the combined threshold"
       }
     ],
@@ -238,29 +238,15 @@
     "description": "Paladin using Zeal as the core attack pattern, usually backed by Fanaticism and Sacrifice.",
     "required_skills_all": [
       {
-        "name": "Fanaticism",
+        "name": "Zeal",
         "minimum": 15,
-        "reason": "Fanaticism is heavily invested"
+        "reason": "Zeal is heavily invested"
       }
-    ],
-    "required_skill_groups_any": [
-      [
-        {
-          "name": "Zeal",
-          "minimum": 8,
-          "reason": "Zeal is materially invested"
-        },
-        {
-          "name": "Sacrifice",
-          "minimum": 15,
-          "reason": "Sacrifice is heavily invested for Zeal damage"
-        }
-      ]
     ],
     "signature_skills": [
       {
         "name": "Zeal",
-        "minimum": 8,
+        "minimum": 15,
         "weight": 2.0
       },
       {
@@ -281,6 +267,26 @@
     ],
     "supporting_skills": [
       {
+        "name": "Holy Shock",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Holy Freeze",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Conviction",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Salvation",
+        "minimum": 15,
+        "weight": 0.75
+      },
+      {
         "name": "Charge",
         "minimum": 1,
         "weight": 0.25
@@ -295,7 +301,7 @@
       {
         "name": "Blessed Hammer",
         "minimum": 15,
-        "weight": 0.8
+        "weight": 2.0
       },
       {
         "name": "Fist of the Heavens",
@@ -318,51 +324,62 @@
     "required_skills_all": [
       {
         "name": "Charge",
-        "minimum": 10,
+        "minimum": 4,
         "reason": "Charge is materially invested"
       }
-    ],
-    "required_skill_groups_any": [
-      [
-        {
-          "name": "Vigor",
-          "minimum": 10,
-          "reason": "Vigor is heavily invested for Charge support"
-        },
-        {
-          "name": "Fanaticism",
-          "minimum": 10,
-          "reason": "Fanaticism is materially invested for Charge support"
-        }
-      ]
     ],
     "signature_skills": [
       {
         "name": "Charge",
-        "minimum": 10,
-        "weight": 2.5
+        "minimum": 14,
+        "weight": 1.0
       },
       {
-        "name": "Vigor",
-        "minimum": 10,
-        "weight": 1.25
-      },
-      {
-        "name": "Fanaticism",
-        "minimum": 10,
-        "weight": 1.25
-      },
-      {
-        "name": "Dashing Strike",
-        "minimum": 1,
-        "weight": 0.5
+        "name": "Charge",
+        "minimum": 4,
+        "weight": 2.0
       }
     ],
     "supporting_skills": [
       {
+        "name": "Vigor",
+        "minimum": 10,
+        "weight": 0.25
+      },
+      {
+        "name": "Fanaticism",
+        "minimum": 10,
+        "weight": 0.25
+      },
+      {
+        "name": "Might",
+        "minimum": 15,
+        "weight": 0.25
+      },
+      {
+        "name": "Holy Shield",
+        "minimum": 10,
+        "weight": 0.25
+      },
+      {
+        "name": "Vigor",
+        "minimum": 1,
+        "weight": 0.1
+      },
+      {
+        "name": "Might",
+        "minimum": 1,
+        "weight": 0.1
+      },
+      {
         "name": "Holy Shield",
         "minimum": 1,
-        "weight": 0.25
+        "weight": 0.1
+      },
+      {
+        "name": "Dashing Strike",
+        "minimum": 1,
+        "weight": 0.1
       }
     ],
     "penalty_skills": [
@@ -374,12 +391,233 @@
       {
         "name": "Blessed Hammer",
         "minimum": 15,
+        "weight": 2.0
+      },
+      {
+        "name": "Fist of the Heavens",
+        "minimum": 15,
+        "weight": 0.8
+      }
+    ]
+  },
+  {
+    "build_id": "paladin-vengeance",
+    "class_name": "Paladin",
+    "label": "Vengeance",
+    "family": "Melee Paladin",
+    "description": "Paladin centered on Vengeance with elemental resistance synergies and Salvation support.",
+    "required_skills_all": [
+      {
+        "name": "Vengeance",
+        "minimum": 15,
+        "reason": "Vengeance is heavily invested"
+      }
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Resist Fire", "Resist Cold", "Resist Lightning", "Salvation"],
+        "minimum_total": 45,
+        "reason": "Vengeance support investment reaches the combined threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Vengeance",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Resist Fire",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Resist Cold",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Resist Lightning",
+        "minimum": 10,
+        "weight": 1.0
+      },
+      {
+        "name": "Salvation",
+        "minimum": 10,
+        "weight": 1.0
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Conviction",
+        "minimum": 5,
+        "weight": 0.75
+      },
+      {
+        "name": "Holy Shield",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Zeal",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Smite",
+        "minimum": 15,
+        "weight": 0.75
+      },
+      {
+        "name": "Blessed Hammer",
+        "minimum": 15,
         "weight": 0.8
       },
       {
         "name": "Fist of the Heavens",
         "minimum": 15,
         "weight": 0.8
+      },
+      {
+        "name": "Charge",
+        "minimum": 10,
+        "weight": 0.5
+      }
+    ]
+  },
+  {
+    "build_id": "paladin-dashing-strike",
+    "class_name": "Paladin",
+    "label": "Dashing Strike",
+    "family": "Melee Paladin",
+    "description": "Paladin centered on Dashing Strike with Smite, Charge, and Holy Shield support.",
+    "required_skills_all": [
+      {
+        "name": "Dashing Strike",
+        "minimum": 15,
+        "reason": "Dashing Strike is heavily invested"
+      }
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Smite", "Charge", "Holy Shield"],
+        "minimum_total": 20,
+        "reason": "Dashing Strike support investment reaches the combined threshold"
+      }
+    ],
+    "signature_skills": [
+      {
+        "name": "Dashing Strike",
+        "minimum": 15,
+        "weight": 2.5
+      },
+      {
+        "name": "Smite",
+        "minimum": 10,
+        "weight": 1.25
+      },
+      {
+        "name": "Charge",
+        "minimum": 10,
+        "weight": 1.25
+      },
+      {
+        "name": "Holy Shield",
+        "minimum": 10,
+        "weight": 1.25
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Fanaticism",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Defiance",
+        "minimum": 1,
+        "weight": 0.25
+      }
+    ],
+    "penalty_skills": [
+      {
+        "name": "Fist of the Heavens",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Holy Bolt",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Blessed Hammer",
+        "minimum": 15,
+        "weight": 0.9
+      },
+      {
+        "name": "Vigor",
+        "minimum": 10,
+        "weight": 0.4
+      }
+    ]
+  },
+  {
+    "build_id": "paladin-bowadin",
+    "class_name": "Paladin",
+    "label": "Bowadin",
+    "family": "Ranged Paladin",
+    "description": "Paladin using a bow or crossbow as the primary weapon.",
+    "required_gear_rule_groups_any": [
+      [
+        {
+          "tag_contains": ["bow"],
+          "worn_slots": ["weapon1"],
+          "reason": "Primary bow is equipped"
+        },
+        {
+          "tag_contains": ["crossbow"],
+          "worn_slots": ["weapon1"],
+          "reason": "Primary crossbow is equipped"
+        }
+      ]
+    ],
+    "supporting_gear_rules": [
+      {
+        "tag_contains": ["bow"],
+        "worn_slots": ["weapon1"],
+        "weight": 3.0,
+        "reason": "Primary bow setup supports Bowadin"
+      },
+      {
+        "tag_contains": ["crossbow"],
+        "worn_slots": ["weapon1"],
+        "weight": 3.0,
+        "reason": "Primary crossbow setup supports Bowadin"
+      }
+    ],
+    "supporting_skills": [
+      {
+        "name": "Holy Freeze",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Holy Shock",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Conviction",
+        "minimum": 1,
+        "weight": 0.25
+      },
+      {
+        "name": "Fanaticism",
+        "minimum": 1,
+        "weight": 0.25
       }
     ]
   },

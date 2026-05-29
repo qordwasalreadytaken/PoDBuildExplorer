@@ -128,7 +128,7 @@ def extract_equipped_items(character: Dict[str, Any]) -> List[Dict[str, Any]]:
 
     for item in character.get("Equipped", []):
         title = str(item.get("Title", "")).strip().lower()
-        tag = str(item.get("Tag", "")).strip().lower()
+        tag = _expand_item_tag(str(item.get("Tag", "")).strip().lower())
         worn = str(item.get("Worn", "")).strip().lower()
         properties = [str(prop).strip().lower() for prop in item.get("PropertyList", [])]
 
@@ -148,6 +148,27 @@ def extract_equipped_items(character: Dict[str, Any]) -> List[Dict[str, Any]]:
         )
 
     return equipped_items
+
+
+def _expand_item_tag(tag: str) -> str:
+    """Append generic weapon-family tags inferred from item base names."""
+    normalized_tag = _normalize_name(tag)
+    inferred_tags: List[str] = []
+    crossbow_aliases = (
+        "chukonu",
+        "ballista",
+        "arbalest",
+    )
+
+    if "bow" in normalized_tag:
+        inferred_tags.append("bow")
+    if "crossbow" in normalized_tag or any(alias in normalized_tag for alias in crossbow_aliases):
+        inferred_tags.append("crossbow")
+
+    if not inferred_tags:
+        return normalized_tag
+
+    return " ".join([normalized_tag, *inferred_tags])
 
 
 def classify_character(
