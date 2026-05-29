@@ -361,7 +361,7 @@
   {
     "build_id": "necro-poison-nova",
     "class_name": "Necromancer",
-    "label": "Poison Nova",
+    "label": "Desecrate & Poison Nova",
     "family": "Poison Necromancer",
     "description": "Necromancer centered on Poison Nova and poison support skills.",
     "required_skills_all": [
@@ -436,7 +436,7 @@
       {
         "name": "Corpse Explosion",
         "minimum": 15,
-        "weight": 0.75
+        "weight": 3.5
       },
       {
         "name": "Bone Spear",
