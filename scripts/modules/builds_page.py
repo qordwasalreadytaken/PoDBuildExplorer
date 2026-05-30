@@ -271,10 +271,9 @@ class BuildsHTMLGenerator:
         <h1>PoD Season 13 Build Explorer</h1>
         <h2>{mode_title} Build Matches</h2>
         <p>
-            Builds are grouped by class and ordered from most popular to least popular.
-            Each build expands to show the character names currently matching that definition.
-            Characters can match multiple builds, but are only counted in the most popular matching build for the summary statistics.
-            Character data sourced from end of ladder season 13 snapshot, charm data is not included.
+            This is my attempt to classify character builds in use instead of just showing what skills are in use.
+            Some builds have a lot of grey area, so characters can match multiple builds, but are only counted in the most popular matching build for the summary statistics.
+            Character data sourced from end of ladder season 13 snapshot so charm data is not included.
         </p>
         <div class="fun-facts-row">
             <div class="fun-facts-column">
