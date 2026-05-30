@@ -39,26 +39,6 @@
         "name": "Guided Arrow",
         "minimum": 10,
         "weight": 1.5
-      },
-      {
-        "name": "Penetrate",
-        "minimum": 10,
-        "weight": 1.25
-      },
-      {
-        "name": "Pierce",
-        "minimum": 5,
-        "weight": 1.0
-      },
-      {
-        "name": "Critical Strike",
-        "minimum": 1,
-        "weight": 0.75
-      },
-      {
-        "name": "Lethal Strike",
-        "minimum": 9,
-        "weight": 2.0
       }
     ],
     "supporting_skills": [
@@ -66,6 +46,26 @@
         "name": "Guided Arrow",
         "minimum": 1,
         "weight": 0.5
+      },
+      {
+        "name": "Penetrate",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Pierce",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Critical Strike",
+        "minimum": 1,
+        "weight": 0.5
+      },
+      {
+        "name": "Lethal Strike",
+        "minimum": 1,
+        "weight": 0.75
       },
       {
         "name": "Valkyrie",
@@ -105,6 +105,12 @@
         "worn_slots": ["weapon1", "sweapon1"],
         "weight": 0.5,
         "reason": "Faith is a strong phys-first bow tell"
+      },
+      {
+        "title_contains": ["Brand"],
+        "worn_slots": ["weapon1", "sweapon1"],
+        "weight": 0.75,
+        "reason": "Brand is a strong phys-first bow tell"
       },
       {
         "property_contains": ["maximum damage"],
@@ -340,13 +346,18 @@
       [
         {
           "name": "Multiple Shot",
-          "minimum": 15,
+          "minimum": 5,
           "reason": "Multiple Shot is a primary attack"
         },
         {
           "name": "Strafe",
-          "minimum": 15,
+          "minimum": 5,
           "reason": "Strafe is a primary attack"
+        },
+        {
+          "name": "Guided Arrow",
+          "minimum": 5,
+          "reason": "Guided Arrow is a real physical bow core skill"
         }
       ],
       [
@@ -399,13 +410,18 @@
     "signature_skills": [
       {
         "name": "Multiple Shot",
-        "minimum": 15,
+        "minimum": 5,
         "weight": 1.5
       },
       {
         "name": "Strafe",
-        "minimum": 15,
+        "minimum": 5,
         "weight": 1.5
+      },
+      {
+        "name": "Guided Arrow",
+        "minimum": 5,
+        "weight": 1.0
       },
       {
         "name": "Fire Arrow",

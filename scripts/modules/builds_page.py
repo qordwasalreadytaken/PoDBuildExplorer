@@ -268,12 +268,12 @@ class BuildsHTMLGenerator:
             for section in summary_data.get("class_sections", [])
         )
         overview_html = f"""
-        <h1>PoD Season 13 Build Explorer</h1>
+        <h1>PoD Season 13 Build Explorer Beta</h1>
         <h2>{mode_title} Build Matches</h2>
         <p>
-            This is my attempt to classify character builds in use instead of just showing what skills are in use.
-            Some builds have a lot of grey area, so characters can match multiple builds, but are only counted in the most popular matching build for the summary statistics.
-            Character data sourced from end of ladder season 13 snapshot so charm data is not included.
+            Inspired by the <a href="https://trends.pathofdiablo.com/">Trends reporting site</a>, this is an attempt to better show actual character builds in use as opposed to displaying statistics around skill and item usage.</br>
+            Some builds have a lot of grey area with some guess work, so characters can match multiple builds, but are only counted in the most popular matching build for the summary statistics.</br>
+            Character data sourced from end of ladder season 13 snapshot so charm analysis is not included.
         </p>
         <div class="fun-facts-row">
             <div class="fun-facts-column">
