@@ -45,6 +45,16 @@ class SkillSumRequirement:
 
 
 @dataclass(frozen=True)
+class SkillLeaderRequirement:
+    """A requirement that one skill group leads a competing skill set."""
+
+    leader_names: Sequence[str] = field(default_factory=tuple)
+    competitor_names: Sequence[str] = field(default_factory=tuple)
+    minimum_leader: float = 0
+    reason: Optional[str] = None
+
+
+@dataclass(frozen=True)
 class BuildDefinition:
     """A build definition that can be scored against a character profile."""
 
@@ -56,6 +66,7 @@ class BuildDefinition:
     required_skills_all: Sequence[ThresholdSignal] = field(default_factory=tuple)
     required_skill_groups_any: Sequence[Sequence[ThresholdSignal]] = field(default_factory=tuple)
     required_skill_sums: Sequence[SkillSumRequirement] = field(default_factory=tuple)
+    required_skill_leaders_all: Sequence[SkillLeaderRequirement] = field(default_factory=tuple)
     required_gear_rule_groups_any: Sequence[Sequence[GearRule]] = field(default_factory=tuple)
     signature_skills: Sequence[ThresholdSignal] = field(default_factory=tuple)
     supporting_skills: Sequence[ThresholdSignal] = field(default_factory=tuple)
@@ -235,6 +246,8 @@ def default_build_definitions() -> List[BuildDefinition]:
     definitions_dir = Path(__file__).parent / "build_definitions"
     definitions: List[BuildDefinition] = []
     for definition_file in sorted(definitions_dir.glob("*.json")):
+        if definition_file.stem.lower().endswith("-bak"):
+            continue
         definitions.extend(_load_build_definitions_from_json(definition_file))
     return definitions
 
@@ -260,6 +273,10 @@ def _build_definition_from_dict(payload: Dict[str, Any]) -> BuildDefinition:
         required_skill_sums=tuple(
             _skill_sum_requirement_from_dict(requirement)
             for requirement in payload.get("required_skill_sums", [])
+        ),
+        required_skill_leaders_all=tuple(
+            _skill_leader_requirement_from_dict(requirement)
+            for requirement in payload.get("required_skill_leaders_all", [])
         ),
         required_gear_rule_groups_any=tuple(
             tuple(_gear_rule_from_dict(rule) for rule in rule_group)
@@ -307,6 +324,15 @@ def _skill_sum_requirement_from_dict(payload: Dict[str, Any]) -> SkillSumRequire
     )
 
 
+def _skill_leader_requirement_from_dict(payload: Dict[str, Any]) -> SkillLeaderRequirement:
+    return SkillLeaderRequirement(
+        leader_names=tuple(payload.get("leader_names", [])),
+        competitor_names=tuple(payload.get("competitor_names", [])),
+        minimum_leader=payload.get("minimum_leader", 0),
+        reason=payload.get("reason"),
+    )
+
+
 def _score_definition(
     definition: BuildDefinition,
     skill_map: Dict[str, int],
@@ -326,6 +352,8 @@ def _score_definition(
     if not _passes_any_groups(definition.required_skill_groups_any, skill_map, reasons):
         return 0.0, reasons, matched_skills, matched_stats, matched_gear
     if not _passes_skill_sum_requirements(definition.required_skill_sums, skill_map, reasons):
+        return 0.0, reasons, matched_skills, matched_stats, matched_gear
+    if not _passes_skill_leader_requirements(definition.required_skill_leaders_all, skill_map, reasons):
         return 0.0, reasons, matched_skills, matched_stats, matched_gear
     if not _passes_stat_requirements(definition.stat_requirements, stats, bonus, reasons, matched_stats):
         return 0.0, reasons, matched_skills, matched_stats, matched_gear
@@ -451,6 +479,30 @@ def _passes_skill_sum_requirements(
         reasons.append(
             requirement.reason or f"{skill_list} reached the required combined threshold"
         )
+    return True
+
+
+def _passes_skill_leader_requirements(
+    requirements: Iterable[SkillLeaderRequirement],
+    skill_map: Dict[str, int],
+    reasons: List[str],
+) -> bool:
+    for requirement in requirements:
+        leader_values = [skill_map.get(_normalize_name(name), 0) for name in requirement.leader_names]
+        if not leader_values:
+            return False
+
+        leader_value = max(leader_values)
+        if leader_value < requirement.minimum_leader:
+            return False
+
+        competitor_values = [skill_map.get(_normalize_name(name), 0) for name in requirement.competitor_names]
+        if competitor_values and leader_value < max(competitor_values):
+            return False
+
+        leader_list = ", ".join(requirement.leader_names)
+        reasons.append(requirement.reason or f"{leader_list} is the leading combat skill")
+
     return True
 
 

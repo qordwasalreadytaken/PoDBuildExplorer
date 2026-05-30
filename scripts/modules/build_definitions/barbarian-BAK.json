@@ -271,8 +271,8 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Ethereal Throw", "Double Throw", "Thrown Weapon Mastery", "Whirling Axes"],
-        "minimum_total": 20,
+        "names": ["Ethereal Throw", "Thrown Weapon Mastery", "Whirling Axes"],
+        "minimum_total": 30,
         "reason": "Throw skill investment reaches the combined threshold"
       }
     ],
@@ -309,28 +309,9 @@
     ],
     "supporting_skills": [
       {
-        "name": "Ethereal Throw",
-        "minimum": 1,
-        "weight": 0.75
-      },
-      {
         "name": "Battle Orders",
         "minimum": 1,
         "weight": 0.25
-      }
-    ],
-    "supporting_gear_rules": [
-      {
-        "title_contains": ["Warshrike"],
-        "worn_slots": ["weapon1", "weapon2"],
-        "weight": 0.75,
-        "reason": "Warshrike strongly indicates a throw setup"
-      },
-      {
-        "title_contains": ["Lacerator"],
-        "worn_slots": ["weapon1", "weapon2"],
-        "weight": 0.75,
-        "reason": "Lacerator strongly indicates a throw setup"
       }
     ],
     "penalty_skills": [
@@ -412,11 +393,11 @@
     ]
   },
   {
-    "build_id": "barb-wa-proc-whirlwind",
+    "build_id": "barb-whirling-axes",
     "class_name": "Barbarian",
-    "label": "WA proc'd by Whirlwind",
-    "family": "Whirling Axes Barbarian",
-    "description": "Whirling Axes Barbarian whose leading proc skill is Whirlwind.",
+    "label": "Whirling Axes",
+    "family": "Melee Barbarian",
+    "description": "Barbarian centered on the Whirling Axes package with Battle Cry and Double Swing support.",
     "required_skills_all": [
       {
         "name": "Whirling Axes",
@@ -424,27 +405,24 @@
         "reason": "Whirling Axes is heavily invested"
       }
     ],
-    "required_skill_leaders_all": [
-      {
-        "leader_names": ["Whirlwind"],
-        "competitor_names": ["Double Throw", "Ethereal Throw", "Cleave", "Bash", "Stun", "Concentrate", "Frenzy", "Leap Slam"],
-        "minimum_leader": 1,
-        "reason": "Whirlwind is the leading proc skill"
-      }
-    ],
     "signature_skills": [
       {
         "name": "Whirling Axes",
         "minimum": 15,
         "weight": 2.5
-      },
-      {
-        "name": "Whirlwind",
-        "minimum": 1,
-        "weight": 1.25
       }
     ],
     "supporting_skills": [
+      {
+        "name": "Battle Cry",
+        "minimum": 15,
+        "weight": 1.0
+      },
+      {
+        "name": "Double Swing",
+        "minimum": 15,
+        "weight": 1.0
+      },
       {
         "name": "Battle Orders",
         "minimum": 1,
@@ -459,419 +437,10 @@
         "name": "Increased Speed",
         "minimum": 1,
         "weight": 0.25
-      },
-      {
-        "name": "Grim Ward",
-        "minimum": 1,
-        "weight": 0.25
       }
     ],
     "notes": [
-      "Use this for Whirling Axes Barbarians whose leading proc shell is Whirlwind, including the common one-point Whirlwind shell."
-    ]
-  },
-  {
-    "build_id": "barb-wa-proc-throw",
-    "class_name": "Barbarian",
-    "label": "WA proc'd by Throw",
-    "family": "Whirling Axes Barbarian",
-    "description": "Whirling Axes Barbarian whose leading proc skill is Double Throw or Ethereal Throw.",
-    "required_skills_all": [
-      {
-        "name": "Whirling Axes",
-        "minimum": 15,
-        "reason": "Whirling Axes is heavily invested"
-      }
-    ],
-    "required_skill_leaders_all": [
-      {
-        "leader_names": ["Double Throw", "Ethereal Throw"],
-        "competitor_names": ["Whirlwind", "Cleave", "Bash", "Stun", "Concentrate", "Frenzy", "Leap Slam"],
-        "minimum_leader": 2,
-        "reason": "Throw skills are the leading proc shell"
-      }
-    ],
-    "signature_skills": [
-      {
-        "name": "Whirling Axes",
-        "minimum": 15,
-        "weight": 2.5
-      },
-      {
-        "name": "Double Throw",
-        "minimum": 2,
-        "weight": 0.75
-      },
-      {
-        "name": "Ethereal Throw",
-        "minimum": 2,
-        "weight": 1.0
-      }
-    ],
-    "supporting_skills": [
-      {
-        "name": "Thrown Weapon Mastery",
-        "minimum": 1,
-        "weight": 0.5
-      },
-      {
-        "name": "Battle Orders",
-        "minimum": 1,
-        "weight": 0.25
-      }
-    ],
-    "notes": [
-      "Use this for Whirling Axes Barbarians whose highest non-Double-Swing combat investment is a throw skill."
-    ]
-  },
-  {
-    "build_id": "barb-wa-proc-cleave",
-    "class_name": "Barbarian",
-    "label": "WA proc'd by Cleave",
-    "family": "Whirling Axes Barbarian",
-    "description": "Whirling Axes Barbarian whose leading proc skill is Cleave.",
-    "required_skills_all": [
-      {
-        "name": "Whirling Axes",
-        "minimum": 15,
-        "reason": "Whirling Axes is heavily invested"
-      }
-    ],
-    "required_skill_leaders_all": [
-      {
-        "leader_names": ["Cleave"],
-        "competitor_names": ["Whirlwind", "Double Throw", "Ethereal Throw", "Bash", "Stun", "Concentrate", "Frenzy", "Leap Slam"],
-        "minimum_leader": 2,
-        "reason": "Cleave is the leading proc skill"
-      }
-    ],
-    "signature_skills": [
-      {
-        "name": "Whirling Axes",
-        "minimum": 15,
-        "weight": 2.5
-      },
-      {
-        "name": "Cleave",
-        "minimum": 2,
-        "weight": 1.25
-      }
-    ],
-    "supporting_skills": [
-      {
-        "name": "Battle Orders",
-        "minimum": 1,
-        "weight": 0.25
-      }
-    ],
-    "notes": [
-      "Use this for Whirling Axes Barbarians whose highest non-Double-Swing combat investment is Cleave."
-    ]
-  },
-  {
-    "build_id": "barb-wa-proc-bash",
-    "class_name": "Barbarian",
-    "label": "WA proc'd by Bash",
-    "family": "Whirling Axes Barbarian",
-    "description": "Whirling Axes Barbarian whose leading proc skill is Bash.",
-    "required_skills_all": [
-      {
-        "name": "Whirling Axes",
-        "minimum": 15,
-        "reason": "Whirling Axes is heavily invested"
-      }
-    ],
-    "required_skill_leaders_all": [
-      {
-        "leader_names": ["Bash"],
-        "competitor_names": ["Whirlwind", "Double Throw", "Ethereal Throw", "Cleave", "Stun", "Concentrate", "Frenzy", "Leap Slam"],
-        "minimum_leader": 2,
-        "reason": "Bash is the leading proc skill"
-      }
-    ],
-    "signature_skills": [
-      {
-        "name": "Whirling Axes",
-        "minimum": 15,
-        "weight": 2.5
-      },
-      {
-        "name": "Bash",
-        "minimum": 2,
-        "weight": 1.25
-      }
-    ],
-    "supporting_skills": [
-      {
-        "name": "Stun",
-        "minimum": 1,
-        "weight": 0.25
-      },
-      {
-        "name": "Concentrate",
-        "minimum": 1,
-        "weight": 0.25
-      }
-    ],
-    "notes": [
-      "Use this for Whirling Axes Barbarians whose highest non-Double-Swing combat investment is Bash."
-    ]
-  },
-  {
-    "build_id": "barb-wa-proc-stun",
-    "class_name": "Barbarian",
-    "label": "WA proc'd by Stun",
-    "family": "Whirling Axes Barbarian",
-    "description": "Whirling Axes Barbarian whose leading proc skill is Stun.",
-    "required_skills_all": [
-      {
-        "name": "Whirling Axes",
-        "minimum": 15,
-        "reason": "Whirling Axes is heavily invested"
-      }
-    ],
-    "required_skill_leaders_all": [
-      {
-        "leader_names": ["Stun"],
-        "competitor_names": ["Whirlwind", "Double Throw", "Ethereal Throw", "Cleave", "Bash", "Concentrate", "Frenzy", "Leap Slam"],
-        "minimum_leader": 2,
-        "reason": "Stun is the leading proc skill"
-      }
-    ],
-    "signature_skills": [
-      {
-        "name": "Whirling Axes",
-        "minimum": 15,
-        "weight": 2.5
-      },
-      {
-        "name": "Stun",
-        "minimum": 2,
-        "weight": 1.0
-      }
-    ],
-    "supporting_skills": [
-      {
-        "name": "Bash",
-        "minimum": 1,
-        "weight": 0.25
-      },
-      {
-        "name": "Concentrate",
-        "minimum": 1,
-        "weight": 0.25
-      }
-    ],
-    "notes": [
-      "Use this for Whirling Axes Barbarians whose highest non-Double-Swing combat investment is Stun."
-    ]
-  },
-  {
-    "build_id": "barb-wa-proc-concentrate",
-    "class_name": "Barbarian",
-    "label": "WA proc'd by Concentrate",
-    "family": "Whirling Axes Barbarian",
-    "description": "Whirling Axes Barbarian whose leading proc skill is Concentrate.",
-    "required_skills_all": [
-      {
-        "name": "Whirling Axes",
-        "minimum": 15,
-        "reason": "Whirling Axes is heavily invested"
-      }
-    ],
-    "required_skill_leaders_all": [
-      {
-        "leader_names": ["Concentrate"],
-        "competitor_names": ["Whirlwind", "Double Throw", "Ethereal Throw", "Cleave", "Bash", "Stun", "Frenzy", "Leap Slam"],
-        "minimum_leader": 2,
-        "reason": "Concentrate is the leading proc skill"
-      }
-    ],
-    "signature_skills": [
-      {
-        "name": "Whirling Axes",
-        "minimum": 15,
-        "weight": 2.5
-      },
-      {
-        "name": "Concentrate",
-        "minimum": 2,
-        "weight": 1.0
-      }
-    ],
-    "supporting_skills": [
-      {
-        "name": "Bash",
-        "minimum": 1,
-        "weight": 0.25
-      },
-      {
-        "name": "Stun",
-        "minimum": 1,
-        "weight": 0.25
-      }
-    ],
-    "notes": [
-      "Use this for Whirling Axes Barbarians whose highest non-Double-Swing combat investment is Concentrate."
-    ]
-  },
-  {
-    "build_id": "barb-wa-proc-frenzy",
-    "class_name": "Barbarian",
-    "label": "WA proc'd by Frenzy",
-    "family": "Whirling Axes Barbarian",
-    "description": "Whirling Axes Barbarian whose leading proc skill is Frenzy.",
-    "required_skills_all": [
-      {
-        "name": "Whirling Axes",
-        "minimum": 15,
-        "reason": "Whirling Axes is heavily invested"
-      }
-    ],
-    "required_skill_leaders_all": [
-      {
-        "leader_names": ["Frenzy"],
-        "competitor_names": ["Whirlwind", "Double Throw", "Ethereal Throw", "Cleave", "Bash", "Stun", "Concentrate", "Leap Slam"],
-        "minimum_leader": 2,
-        "reason": "Frenzy is the leading proc skill"
-      }
-    ],
-    "signature_skills": [
-      {
-        "name": "Whirling Axes",
-        "minimum": 15,
-        "weight": 2.5
-      },
-      {
-        "name": "Frenzy",
-        "minimum": 2,
-        "weight": 1.25
-      }
-    ],
-    "supporting_skills": [
-      {
-        "name": "Battle Orders",
-        "minimum": 1,
-        "weight": 0.25
-      }
-    ],
-    "notes": [
-      "Use this for Whirling Axes Barbarians whose highest non-Double-Swing combat investment is Frenzy."
-    ]
-  },
-  {
-    "build_id": "barb-wa-proc-leap-slam",
-    "class_name": "Barbarian",
-    "label": "WA proc'd by Leap Slam",
-    "family": "Whirling Axes Barbarian",
-    "description": "Whirling Axes Barbarian whose leading proc skill is Leap Slam.",
-    "required_skills_all": [
-      {
-        "name": "Whirling Axes",
-        "minimum": 15,
-        "reason": "Whirling Axes is heavily invested"
-      }
-    ],
-    "required_skill_leaders_all": [
-      {
-        "leader_names": ["Leap Slam"],
-        "competitor_names": ["Whirlwind", "Double Throw", "Ethereal Throw", "Cleave", "Bash", "Stun", "Concentrate", "Frenzy"],
-        "minimum_leader": 2,
-        "reason": "Leap Slam is the leading proc skill"
-      }
-    ],
-    "signature_skills": [
-      {
-        "name": "Whirling Axes",
-        "minimum": 15,
-        "weight": 2.5
-      },
-      {
-        "name": "Leap Slam",
-        "minimum": 2,
-        "weight": 1.25
-      }
-    ],
-    "supporting_skills": [
-      {
-        "name": "Battle Orders",
-        "minimum": 1,
-        "weight": 0.25
-      },
-      {
-        "name": "Increased Speed",
-        "minimum": 1,
-        "weight": 0.25
-      }
-    ],
-    "notes": [
-      "Use this for Whirling Axes Barbarians whose highest non-Double-Swing combat investment is Leap Slam."
-    ]
-  },
-  {
-    "build_id": "barb-wa-proc-charge",
-    "class_name": "Barbarian",
-    "label": "WA proc'd by Charge",
-    "family": "Whirling Axes Barbarian",
-    "description": "Whirling Axes Barbarian using Templar's Might for the gear-granted Charge attack.",
-    "required_skills_all": [
-      {
-        "name": "Whirling Axes",
-        "minimum": 15,
-        "reason": "Whirling Axes is heavily invested"
-      }
-    ],
-    "required_gear_rules_all": [
-      {
-        "title_contains": ["Templar's Might"],
-        "worn_slots": ["body"],
-        "reason": "Templar's Might is equipped"
-      }
-    ],
-    "signature_skills": [
-      {
-        "name": "Whirling Axes",
-        "minimum": 15,
-        "weight": 2.5
-      },
-      {
-        "name": "Double Swing",
-        "minimum": 15,
-        "weight": 1.25
-      },
-      {
-        "name": "Battle Cry",
-        "minimum": 15,
-        "weight": 0.75
-      }
-    ],
-    "supporting_skills": [
-      {
-        "name": "Battle Command",
-        "minimum": 1,
-        "weight": 0.5
-      },
-      {
-        "name": "Grim Ward",
-        "minimum": 1,
-        "weight": 0.25
-      },
-      {
-        "name": "Battle Orders",
-        "minimum": 1,
-        "weight": 0.25
-      }
-    ],
-    "supporting_gear_rules": [
-      {
-        "title_contains": ["Templar's Might"],
-        "worn_slots": ["body"],
-        "weight": 3.0,
-        "reason": "Templar's Might defines the Charge proc setup"
-      }
-    ],
-    "notes": [
-      "Use this for Whirling Axes Barbarians wearing Templar's Might for the Charge setup, especially odd Double Swing-forward variants with no other real combat-skill investment."
+      "Use this for Barbarians whose main identity is Whirling Axes. Battle Cry and Double Swing strengthen the match when present, but they are not required."
     ]
   },
   {
@@ -1007,11 +576,6 @@
         "name": "Blunt Weapon Mastery",
         "minimum": 15,
         "weight": 0.75
-      },
-      {
-        "name": "Battle Command",
-        "minimum": 10,
-        "weight": 0.5
       }
     ],
     "penalty_skills": [
