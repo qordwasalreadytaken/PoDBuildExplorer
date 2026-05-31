@@ -4,7 +4,7 @@ This module builds a page-oriented view on top of the rule-based build classifie
 It does not modify any existing site pages.
 
 python3 scripts/modules/builds_page.py sc_ladder.json
-python3 scripts/modules/builds_page.py hc_ladder.json --hc --min-level 80
+python3 scripts/modules/builds_page.py hc_ladder.json --hc
 """
 
 from __future__ import annotations
@@ -142,7 +142,6 @@ def summarize_builds_by_class(
     minimum_score: float = 0.45,
     overlap_delta: float = 0.08,
     class_order: Optional[Sequence[str]] = None,
-    min_level: int = 0,
 ) -> Dict[str, Any]:
     """Summarize classified builds grouped by class for page rendering."""
     if definitions is None:
@@ -157,9 +156,7 @@ def summarize_builds_by_class(
             characters_by_class[definition.class_name] = []
             ordered_classes.append(definition.class_name)
 
-    # Filter characters by min_level argument
-    filtered_characters = [c for c in all_characters if int(c.get("Stats", {}).get("Level", 0) or 0) >= min_level]
-    for character in filtered_characters:
+    for character in all_characters:
         if not isinstance(character, dict):
             continue
         class_name = character.get("Class")
@@ -442,12 +439,12 @@ class BuildsHTMLGenerator:
         """
 
 
-def generate_builds_page(all_characters, timestamp: Optional[str] = None, is_hardcore: bool = False, min_level: int = 0) -> str:
+def generate_builds_page(all_characters, timestamp: Optional[str] = None, is_hardcore: bool = False) -> str:
     """Generate a standalone builds page from classified character data."""
     if timestamp is None:
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    summary_data = summarize_builds_by_class(all_characters, min_level=min_level)
+    summary_data = summarize_builds_by_class(all_characters)
     return BuildsHTMLGenerator.generate_full_builds_page(
         summary_data,
         timestamp,
@@ -607,13 +604,6 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         action="store_true",
         help="Render the page in hardcore mode styling and naming.",
     )
-    parser.add_argument(
-        "--min-level",
-        dest="min_level",
-        type=int,
-        default=0,
-        help="Minimum character level to include (default: 0, no filtering)",
-    )
     args = parser.parse_args(argv)
 
     input_path = Path(args.input_json).resolve()
@@ -627,12 +617,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     try:
         characters = _load_characters_from_json(input_path)
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        html_content = generate_builds_page(
-            characters,
-            timestamp=timestamp,
-            is_hardcore=is_hardcore,
-            min_level=args.min_level,
-        )
+        html_content = generate_builds_page(characters, timestamp=timestamp, is_hardcore=is_hardcore)
         output_path.write_text(html_content, encoding="utf-8")
     except Exception as exc:
         print(f"Error generating builds page: {exc}")
