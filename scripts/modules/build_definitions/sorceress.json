@@ -489,35 +489,45 @@
     "required_skills_all": [
       {
         "name": "Hydra",
-        "minimum": 20,
+        "minimum": 5,
         "reason": "Hydra is maxed or near-maxed"
       },
       {
         "name": "Frozen Orb",
-        "minimum": 20,
+        "minimum": 5,
         "reason": "Frozen Orb is maxed or near-maxed"
+      },
+      {
+        "name": "Fire Mastery",
+        "minimum": 5,
+        "weight": 2.5
+      },
+      {
+        "name": "Cold Mastery",
+        "minimum": 5,
+        "weight": 2.5
       }
     ],
     "signature_skills": [
       {
         "name": "Hydra",
-        "minimum": 20,
+        "minimum": 5,
         "weight": 2.5
       },
       {
         "name": "Frozen Orb",
-        "minimum": 20,
+        "minimum": 5,
         "weight": 2.5
       },
       {
-        "name": "Teleport",
-        "minimum": 1,
-        "weight": 0.5
+        "name": "Fire Mastery",
+        "minimum": 5,
+        "weight": 2.5
       },
       {
-        "name": "Static Field",
-        "minimum": 1,
-        "weight": 0.5
+        "name": "Cold Mastery",
+        "minimum": 5,
+        "weight": 2.5
       }
     ],
     "supporting_skills": [
@@ -1153,19 +1163,19 @@
       [
         {
           "name": "Lightning Surge",
-          "minimum": 20,
+          "minimum": 15,
           "reason": "Lightning Surge is heavily invested"
         },
         {
           "name": "Chain Lightning",
-          "minimum": 20,
+          "minimum": 15,
           "reason": "Chain Lightning is heavily invested"
         }
       ]
     ],
     "required_skill_sums": [
       {
-        "names": ["Charged Bolt", "Lightning Mastery"],
+        "names": ["Lightning Surge", "Lightning Mastery", "Chain Lightning"],
         "minimum_total": 35,
         "reason": "Lightning support investment reaches the combined threshold"
       }
@@ -1173,18 +1183,13 @@
     "signature_skills": [
       {
         "name": "Lightning Surge",
-        "minimum": 20,
+        "minimum": 15,
         "weight": 1.75
       },
       {
         "name": "Chain Lightning",
-        "minimum": 20,
-        "weight": 1.75
-      },
-      {
-        "name": "Charged Bolt",
         "minimum": 15,
-        "weight": 1.0
+        "weight": 1.75
       },
       {
         "name": "Lightning Mastery",
@@ -1327,16 +1332,15 @@
     ]
   },
   {
-    "build_id": "sorc-warpspear-thunder-storm",
+    "build_id": "sorc-thunder-storm",
     "class_name": "Sorceress",
-    "label": "Warpspear Thunder Storm",
+    "label": "Thunder Storm",
     "family": "Lightning Sorceress",
-    "description": "Thunder Storm Sorceress built around Warpspear's item-specific effect.",
-    "required_gear_rules_all": [
+    "description": "Thunder Storm Sorceress builds, include Warpspear's item-specific effect.",
+    "supporting_gear_rules": [
       {
-        "title_contains": ["Warpspear"],
         "property_contains": ["Thunder Storm"],
-        "reason": "Warpspear with the Thunder Storm modifier is equipped"
+        "reason": "Warpspear or synth with the Thunder Storm modifier is equipped"
       }
     ],
     "required_skill_groups_any": [
