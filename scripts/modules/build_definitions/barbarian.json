@@ -1237,5 +1237,30 @@
         "weight": 0.25
       }
     ]
-  }
+  },
+  {
+    "build_id": "barb-ball-lightning",
+    "class_name": "Barbarian",
+    "label": "Ball Lightning",
+    "family": "Ball Lightning Barbarian",
+    "description": "Barbarian with a Ball Lightning weapon equipped.",
+    "required_gear_rules_all": [
+      {
+        "property_contains": ["ball lightning"],
+        "worn_slots": ["weapon1", "weapon2", "sweapon1", "sweapon2"],
+        "reason": "Ball Lightning weapon is equipped"
+      }
+    ],
+    "supporting_gear_rules": [
+      {
+        "property_contains": ["ball lightning"],
+        "worn_slots": ["weapon1", "weapon2", "sweapon1", "sweapon2"],
+        "weight": 5.0,
+        "reason": "Ball Lightning weapon is equipped"
+      }
+    ],
+    "notes": [
+      "This requires a weapon with the Ball Lightning."
+    ]
+  }  
 ]

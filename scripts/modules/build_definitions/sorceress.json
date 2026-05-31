@@ -920,38 +920,27 @@
   {
     "build_id": "sorc-ball-lightning-ondal",
     "class_name": "Sorceress",
-    "label": "Ball Lightning Ondal",
+    "label": "Ball Lightning",
     "family": "Lightning Sorceress",
-    "description": "Gear-defined lightning Sorceress using Ondal's Wisdom with Ball Lightning.",
+    "description": "Gear-defined lightning Sorceress using an item with Ball Lightning.",
     "required_gear_rules_all": [
       {
-        "title_contains": ["Ondal"],
         "property_contains": ["Ball Lightning"],
-        "reason": "Ondal's Wisdom with Ball Lightning is equipped"
+        "reason": "An item with Ball Lightning is equipped"
       }
     ],
     "required_skill_groups_any": [
       [
         {
-          "name": "Lightning Surge",
+          "name": "Lightning Mastery",
           "minimum": 10,
           "reason": "Primary lightning skill investment is present"
-        },
-        {
-          "name": "Thunder Storm",
-          "minimum": 10,
-          "reason": "Primary lightning skill investment is present"
-        },
-        {
-          "name": "Telekinesis",
-          "minimum": 10,
-          "reason": "Lightning-caster support investment is present"
         }
       ]
     ],
     "signature_skills": [
       {
-        "name": "Lightning Surge",
+        "name": "Lightning Mastery",
         "minimum": 10,
         "weight": 2.0
       },

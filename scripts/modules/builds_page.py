@@ -209,7 +209,7 @@ def summarize_builds_by_class(
         total_class_characters = len(class_characters)
         for bucket in build_buckets.values():
             characters = sorted(
-                bucket["characters"],
+                bucket["characters"], 
                 key=lambda item: (-item["score"], -item["level"], item["name"].lower()),
             )
             builds.append(
