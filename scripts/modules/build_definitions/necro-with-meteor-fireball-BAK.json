@@ -630,5 +630,42 @@
     "notes": [
       "This requires a weapon with the Ball Lightning."
     ]
+  },
+  {
+    "build_id": "necro-meteor-firewall",
+    "class_name": "Necromancer",
+    "label": "Meteor Firewall",
+    "family": "Meteor Firewall Necromancer",
+    "description": "Necromancer with 4 piece Trang and facets.",
+    "required_gear_rule_groups_any": [
+      {
+        "rules": [
+          { "title_contains": ["Trang"], "worn_slots": ["helmet", "helm"], "reason": "Trang-Oul's helm equipped" },
+          { "title_contains": ["Trang"], "worn_slots": ["body"], "reason": "Trang-Oul's armor equipped" },
+          { "title_contains": ["Trang"], "worn_slots": ["gloves"], "reason": "Trang-Oul's gloves equipped" },
+          { "title_contains": ["Trang"], "worn_slots": ["belt"], "reason": "Trang-Oul's belt equipped" },
+          { "title_contains": ["Trang"], "worn_slots": ["weapon1", "weapon2", "sweapon1", "sweapon2"], "reason": "Trang-Oul's wing equipped" }
+        ],
+        "minimum_count": 4
+      }
+    ],
+    "supporting_gear_rules": [
+      {
+        "title_contains": ["Trang"],
+        "worn_slots": ["helmet", "helm", "body", "gloves", "belt"],
+        "weight": 5.0,
+        "reason": "Trang-Oul's set pieces are equipped"
+      }
+    ],
+    "required_gear_rules_all": [
+      {
+        "property_contains": ["enemy fire"],
+        "minimum_count": 1,
+        "reason": "At least one item has -% Enemy Fire Resist"
+      }
+    ],
+    "notes": [
+      "This requires any 4 Trang-Oul's set pieces (helm, armor, gloves, belt, weapon) and at least one thing must have -% Enemy Fire Resist."
+    ]
   }
 ]

@@ -1,6 +1,9 @@
 from __future__ import annotations
+import builtins
+from itertools import count
 import json
 from dataclasses import dataclass, field
+from multiprocessing.util import debug
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
 
@@ -52,30 +55,58 @@ class SkillLeaderRequirement:
     reason: Optional[str] = None
 
 
-@dataclass(frozen=True)
+class GearRuleGroup:
+    """A group of gear rules with an optional minimum_count."""
+    def __init__(self, rules: Sequence[GearRule], minimum_count: int = 1):
+        self.rules = tuple(rules)
+        self.minimum_count = minimum_count
+
 class BuildDefinition:
     """A build definition that can be scored against a character profile."""
 
-    build_id: str
-    class_name: str
-    label: str
-    family: str
-    description: str = ""
-    required_skills_all: Sequence[ThresholdSignal] = field(default_factory=tuple)
-    required_skill_groups_any: Sequence[Sequence[ThresholdSignal]] = field(default_factory=tuple)
-    required_skill_sums: Sequence[SkillSumRequirement] = field(default_factory=tuple)
-    required_skill_leaders_all: Sequence[SkillLeaderRequirement] = field(default_factory=tuple)
-    required_gear_rule_groups_any: Sequence[Sequence[GearRule]] = field(default_factory=tuple)
-    signature_skills: Sequence[ThresholdSignal] = field(default_factory=tuple)
-    supporting_skills: Sequence[ThresholdSignal] = field(default_factory=tuple)
-    penalty_skills: Sequence[ThresholdSignal] = field(default_factory=tuple)
-    stat_requirements: Sequence[ThresholdSignal] = field(default_factory=tuple)
-    required_gear_rules_all: Sequence[GearRule] = field(default_factory=tuple)
-    gear_text_any: Sequence[ThresholdSignal] = field(default_factory=tuple)
-    gear_titles_any: Sequence[ThresholdSignal] = field(default_factory=tuple)
-    supporting_gear_rules: Sequence[GearRule] = field(default_factory=tuple)
-    penalty_gear_rules: Sequence[GearRule] = field(default_factory=tuple)
-    notes: Sequence[str] = field(default_factory=tuple)
+    def __init__(
+        self,
+        build_id: str,
+        class_name: str,
+        label: str,
+        family: str,
+        description: str = "",
+        required_skills_all: Sequence[ThresholdSignal] = (),
+        required_skill_groups_any: Sequence[Sequence[ThresholdSignal]] = (),
+        required_skill_sums: Sequence[SkillSumRequirement] = (),
+        required_skill_leaders_all: Sequence[SkillLeaderRequirement] = (),
+        required_gear_rule_groups_any: Sequence[GearRuleGroup] = (),
+        signature_skills: Sequence[ThresholdSignal] = (),
+        supporting_skills: Sequence[ThresholdSignal] = (),
+        penalty_skills: Sequence[ThresholdSignal] = (),
+        stat_requirements: Sequence[ThresholdSignal] = (),
+        required_gear_rules_all: Sequence[GearRule] = (),
+        gear_text_any: Sequence[ThresholdSignal] = (),
+        gear_titles_any: Sequence[ThresholdSignal] = (),
+        supporting_gear_rules: Sequence[GearRule] = (),
+        penalty_gear_rules: Sequence[GearRule] = (),
+        notes: Sequence[str] = (),
+    ):
+        self.build_id = build_id
+        self.class_name = class_name
+        self.label = label
+        self.family = family
+        self.description = description
+        self.required_skills_all = required_skills_all
+        self.required_skill_groups_any = required_skill_groups_any
+        self.required_skill_sums = required_skill_sums
+        self.required_skill_leaders_all = required_skill_leaders_all
+        self.required_gear_rule_groups_any = required_gear_rule_groups_any
+        self.signature_skills = signature_skills
+        self.supporting_skills = supporting_skills
+        self.penalty_skills = penalty_skills
+        self.stat_requirements = stat_requirements
+        self.required_gear_rules_all = required_gear_rules_all
+        self.gear_text_any = gear_text_any
+        self.gear_titles_any = gear_titles_any
+        self.supporting_gear_rules = supporting_gear_rules
+        self.penalty_gear_rules = penalty_gear_rules
+        self.notes = notes
 
 
 @dataclass(frozen=True)
@@ -257,6 +288,17 @@ def _load_build_definitions_from_json(file_path: Path) -> List[BuildDefinition]:
 
 
 def _build_definition_from_dict(payload: Dict[str, Any]) -> BuildDefinition:
+    # Support both legacy (list of rules) and new (dict with rules/minimum_count) group format
+    def parse_gear_rule_group(group):
+        if isinstance(group, dict):
+            rules = tuple(_gear_rule_from_dict(rule) for rule in group.get("rules", []))
+            minimum_count = group.get("minimum_count", 1)
+            return GearRuleGroup(rules, minimum_count)
+        else:
+            # legacy: just a list of rules, minimum_count=1
+            rules = tuple(_gear_rule_from_dict(rule) for rule in group)
+            return GearRuleGroup(rules, 1)
+
     return BuildDefinition(
         build_id=payload["build_id"],
         class_name=payload["class_name"],
@@ -277,8 +319,7 @@ def _build_definition_from_dict(payload: Dict[str, Any]) -> BuildDefinition:
             for requirement in payload.get("required_skill_leaders_all", [])
         ),
         required_gear_rule_groups_any=tuple(
-            tuple(_gear_rule_from_dict(rule) for rule in rule_group)
-            for rule_group in payload.get("required_gear_rule_groups_any", [])
+            parse_gear_rule_group(group) for group in payload.get("required_gear_rule_groups_any", [])
         ),
         signature_skills=tuple(_threshold_signal_from_dict(signal) for signal in payload.get("signature_skills", [])),
         supporting_skills=tuple(_threshold_signal_from_dict(signal) for signal in payload.get("supporting_skills", [])),
@@ -520,21 +561,36 @@ def _passes_required_gear_rules(
 
 
 def _passes_any_gear_rule_groups(
-    groups: Iterable[Sequence[GearRule]],
+    groups: Iterable['GearRuleGroup'],
     equipped_items: Sequence[Dict[str, Any]],
     reasons: List[str],
     matched_gear: List[str],
 ) -> bool:
+    import builtins
+    debug = getattr(builtins, '_ENABLE_GEAR_DEBUG', False)
     for group in groups:
-        matched_rule = next(
-            (rule for rule in group if _count_gear_rule_matches(rule, equipped_items) >= rule.minimum_count),
-            None,
-        )
-        if matched_rule is None:
+        if debug:
+            print(f"[DEBUG] Checking GearRuleGroup: min_count={group.minimum_count}, rules={group.rules}")
+        match_count = 0
+        matched_descriptions = []
+        for rule in group.rules:
+            count = _count_gear_rule_matches(rule, equipped_items)
+            if debug:
+                print(f"[DEBUG]   Rule {rule}: matched {count} items (min required: {rule.minimum_count})")
+            if count >= rule.minimum_count:
+                match_count += 1
+                matched_descriptions.append(rule.reason or _describe_gear_rule(rule))
+        if debug:
+            print(f"[DEBUG]   Group matched {match_count} of {len(group.rules)} rules (min group count: {group.minimum_count})")
+        if match_count < group.minimum_count:
+            if debug:
+                print(f"[DEBUG]   -> Group did NOT match")
             return False
-        description = matched_rule.reason or _describe_gear_rule(matched_rule)
-        matched_gear.append(_describe_gear_rule(matched_rule))
-        reasons.append(description)
+        # Add all matched rule descriptions for debug
+        matched_gear.extend(matched_descriptions)
+        reasons.append(f"Matched {match_count} of {len(group.rules)} gear rules (min {group.minimum_count})")
+    if debug:
+        print(f"[DEBUG] All groups matched!")
     return True
 
 
@@ -543,24 +599,40 @@ def _count_gear_rule_matches(rule: GearRule, equipped_items: Sequence[Dict[str, 
 
 
 def _item_matches_rule(item: Dict[str, Any], rule: GearRule) -> bool:
+    import builtins
+    debug = getattr(builtins, '_ENABLE_GEAR_DEBUG', False)
     item_worn = _normalize_name(item.get("worn", ""))
-    if rule.worn_slots and item_worn not in {_normalize_name(slot) for slot in rule.worn_slots}:
-        return False
-
     title = _normalize_name(item.get("title", ""))
     tag = _normalize_name(item.get("tag", ""))
     properties = [_normalize_name(prop) for prop in item.get("properties", [])]
 
+    if debug:
+        print(f"[DEBUG] Checking item: title='{title}', tag='{tag}', worn='{item_worn}', properties={properties}")
+        print(f"[DEBUG] Against rule: title_contains={rule.title_contains}, tag_contains={rule.tag_contains}, property_contains={rule.property_contains}, worn_slots={rule.worn_slots}")
+
+    if rule.worn_slots and item_worn not in {_normalize_name(slot) for slot in rule.worn_slots}:
+        if debug:
+            print(f"[DEBUG]   -> Slot mismatch: {item_worn} not in {[_normalize_name(slot) for slot in rule.worn_slots]}")
+        return False
+
     if rule.title_contains and not all(_normalize_name(fragment) in title for fragment in rule.title_contains):
+        if debug:
+            print(f"[DEBUG]   -> Title mismatch: required fragments {rule.title_contains} not all in '{title}'")
         return False
     if rule.tag_contains and not all(_normalize_name(fragment) in tag for fragment in rule.tag_contains):
+        if debug:
+            print(f"[DEBUG]   -> Tag mismatch: required fragments {rule.tag_contains} not all in '{tag}'")
         return False
     if rule.property_contains and not all(
         any(_normalize_name(fragment) in prop for prop in properties)
         for fragment in rule.property_contains
     ):
+        if debug:
+            print(f"[DEBUG]   -> Property mismatch: required fragments {rule.property_contains} not all in properties {properties}")
         return False
 
+    if debug:
+        print(f"[DEBUG]   -> MATCH!")
     return True
 
 
@@ -609,6 +681,11 @@ __all__ = [
     "extract_skill_map",
 ]
 
+"""
+Debug CLI for build classification
+python3 scripts/modules/build_classifier.py sc_ladder.json Go
+Where correct json and character name is "go"
+"""
 
 if __name__ == "__main__":
     import sys
@@ -648,7 +725,7 @@ if __name__ == "__main__":
         print(f"  {d.build_id} ({d.label})")
 
     # Print reasons for not matching Procadin
-    procadin = next((d for d in definitions if d.build_id == "paladin-procadin"), None)
+    procadin = next((d for d in definitions if d.build_id == "necro-meteor-firewall"), None)
     if procadin:
         score, reasons, matched_skills, matched_stats, matched_gear = _score_definition(
             procadin,

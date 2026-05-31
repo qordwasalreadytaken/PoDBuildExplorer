@@ -5,11 +5,14 @@ It does not modify any existing site pages.
 
 python3 scripts/modules/builds_page.py sc_ladder.json
 python3 scripts/modules/builds_page.py hc_ladder.json --hc --min-level 80
+
+Debug can be enabled in summarize_builds_by_class, it's commented out
 """
 
 from __future__ import annotations
 
 import argparse
+import builtins
 import json
 import sys
 from collections import defaultdict
@@ -175,12 +178,17 @@ def summarize_builds_by_class(
         unmatched_class_characters: List[Dict[str, Any]] = []
 
         for character in class_characters:
+            import builtins
+            builtins._ENABLE_GEAR_DEBUG = False
+#            if character.get("Name", "").lower() == "go":
+#                builtins._ENABLE_GEAR_DEBUG = True
             matches = classify_character(
                 character,
                 definitions,
                 minimum_score=minimum_score,
                 overlap_delta=overlap_delta,
             )
+            builtins._ENABLE_GEAR_DEBUG = False  # Always reset after
             if matches:
                 matched_character_names.add(character.get("Name", "Unknown"))
             else:

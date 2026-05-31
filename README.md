@@ -23,6 +23,14 @@ python3 scripts/modules/builds_page.py sc_ladder.json
 python3 scripts/modules/builds_page.py hc_ladder.json --hc
 ```
 
+To exclude characters under level 80 (for example):
+
+```bash
+python3 scripts/modules/builds_page.py sc_ladder.json --min-level 80
+python3 scripts/modules/builds_page.py hc_ladder.json --hc --min-level 80
+```
+Replace "80" with whatever level you want to filter.
+
 That writes:
 
 - `Builds.html`
@@ -285,3 +293,8 @@ If a build is matching too few characters:
 - The current generator uses only Python standard library modules.
 - The generated page is static HTML and can be hosted with GitHub Pages.
 - The generated page uses the bundled armory iframe assets and local ladder snapshots for popup data.
+
+## Thoughts
+
+ - 
+
