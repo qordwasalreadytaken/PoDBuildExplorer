@@ -1,16 +1,14 @@
-"""Rule-based build classification utilities.
-
-This module is intentionally standalone so new build definitions can be developed
-without changing the existing class-page clustering outputs.
-"""
-
 from __future__ import annotations
-
 import json
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
 
+
+
+
+
+# CLI block moved to very end of file
 
 @dataclass(frozen=True)
 class ThresholdSignal:
@@ -187,7 +185,7 @@ def classify_character(
     character: Dict[str, Any],
     definitions: Sequence[BuildDefinition],
     minimum_score: float = 0.45,
-    overlap_delta: float = 0.08,
+    overlap_delta: float = 0.20,
 ) -> List[BuildMatch]:
     """Return the best matching build definitions for one character.
 
@@ -610,3 +608,60 @@ __all__ = [
     "extract_search_blob",
     "extract_skill_map",
 ]
+
+
+if __name__ == "__main__":
+    import sys
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Debug build classification for a single character.")
+    parser.add_argument("ladder_json", help="Path to ladder JSON file")
+    parser.add_argument("character_name", help="Character name to debug (case-sensitive)")
+    args = parser.parse_args()
+
+    with open(args.ladder_json, encoding="utf-8") as f:
+        characters = json.load(f)
+
+    char = next((c for c in characters if c.get("Name") == args.character_name), None)
+    if not char:
+        print(f"Character {args.character_name} not found.")
+        sys.exit(1)
+
+    definitions = default_build_definitions()
+    matches = classify_character(char, definitions, minimum_score=0.0, overlap_delta=0.20)
+    print(f"Matches for {args.character_name}:")
+    for match in matches:
+        print(f"  Build: {match.build_id} | Score: {match.score} | Confidence: {match.confidence}")
+        print(f"    Reasons: {match.reasons}")
+        print(f"    Matched skills: {match.matched_skills}")
+        print(f"    Matched gear: {match.matched_gear}")
+    if not matches:
+        print("  No matches found.")
+
+    print("\nSkill map:")
+    print(extract_skill_map(char))
+    print("\nEquipped items:")
+    print(extract_equipped_items(char))
+
+    print("\nLoaded build definitions:")
+    for d in definitions:
+        print(f"  {d.build_id} ({d.label})")
+
+    # Print reasons for not matching Procadin
+    procadin = next((d for d in definitions if d.build_id == "paladin-procadin"), None)
+    if procadin:
+        score, reasons, matched_skills, matched_stats, matched_gear = _score_definition(
+            procadin,
+            extract_skill_map(char),
+            char.get("Stats", {}),
+            char.get("Bonus", {}),
+            extract_search_blob(char)[0],
+            extract_search_blob(char)[1],
+            extract_equipped_items(char),
+        )
+        print(f"\nProcadin score: {score}")
+        print(f"Procadin reasons: {reasons}")
+        print(f"Procadin matched_skills: {matched_skills}")
+        print(f"Procadin matched_gear: {matched_gear}")
+    else:
+        print("Procadin definition not loaded!")

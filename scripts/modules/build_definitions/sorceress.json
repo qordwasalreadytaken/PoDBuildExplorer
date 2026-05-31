@@ -1418,5 +1418,32 @@
     "notes": [
       "This is another item-defined build where the weapon modifier creates the subtype more clearly than the rest of the gear."
     ]
-  }
+  },
+  {
+    "build_id": "sorc-werebear",
+    "class_name": "Sorceress",
+    "label": "Werebear",
+    "family": "Passive Sorceress",
+    "description": "Sorceress with a Beast runeword weapon equipped.",
+    "required_gear_rules_all": [
+      {
+        "title_contains": ["beast"],
+        "property_contains": ["fanaticism aura when equipped"],
+        "worn_slots": ["weapon1", "weapon2", "sweapon1", "sweapon2"],
+        "reason": "Beast runeword weapon is equipped"
+      }
+    ],
+    "supporting_gear_rules": [
+      {
+        "title_contains": ["beast"],
+        "property_contains": ["fanaticism aura when equipped"],
+        "worn_slots": ["weapon1", "weapon2", "sweapon1", "sweapon2"],
+        "weight": 5.0,
+        "reason": "Beast runeword weapon is equipped (signature for werebear)"
+      }
+    ],
+    "notes": [
+      "This requires a Beast runeword weapon match, so it will stay empty until ladder data contains a Sorceress actually using Beast."
+    ]
+  }  
 ]

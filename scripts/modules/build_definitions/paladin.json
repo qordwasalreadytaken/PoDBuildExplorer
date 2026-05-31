@@ -138,18 +138,46 @@
     "penalty_skills": [
       {
         "name": "Fist of the Heavens",
-        "minimum": 15,
+        "minimum": 5,
         "weight": 1.0
       },
       {
+        "name": "Zeal",
+        "minimum": 5,
+        "weight": 1.5
+      },
+      {
+        "name": "Sacrifice",
+        "minimum": 5,
+        "weight": 1.5      },
+      {
+        "name": "Dashing Strike",
+        "minimum": 5,
+        "weight": 1.5
+      },
+      {
         "name": "Smite",
-        "minimum": 15,
-        "weight": 0.8
+        "minimum": 5,
+        "weight": 1.5
       },
       {
         "name": "Charge",
-        "minimum": 10,
-        "weight": 0.5
+        "minimum": 5,
+        "weight": 1.5
+      }
+    ],
+    "penalty_gear_rules": [
+      {
+        "title_contains": ["Vampire Gaze"],
+        "worn_slots": ["helmet"],
+        "weight": 1.5,
+        "reason": "Vampire Gaze is a melee helmet, not typical for Hammerdin"
+      },
+      {
+        "title_contains": ["Death"],
+        "worn_slots": ["weapon1"],
+        "weight": 1.5,
+        "reason": "Death runeword is a melee weapon, not typical for Hammerdin"
       }
     ]
   },
@@ -708,6 +736,91 @@
         "minimum": 10,
         "weight": 0.5
       }
+    ]
+  }
+,{
+    "build_id": "paladin-procadin",
+    "class_name": "Paladin",
+    "label": "Procadin",
+    "family": "Proc Paladin",
+    "description": "Paladin using Blessed Hammer procs via melee attacks, with meaningful investment in both hammer and melee skills, and not using caster weapons.",
+    "required_skills_all": [
+      { "name": "Blessed Hammer", "minimum": 15, "reason": "Blessed Hammer is heavily invested" },
+      { "name": "Blessed Aim", "minimum": 1, "reason": "Blessed Aim is invested (lowered to 1 for edge cases)" }
+    ],
+    "required_skill_groups_any": [
+      [
+        { "name": "Zeal", "minimum": 3, "reason": "Melee skill investment (Zeal)" },
+        { "name": "Sacrifice", "minimum": 3, "reason": "Melee skill investment (Sacrifice)" },
+        { "name": "Smite", "minimum": 3, "reason": "Melee skill investment (Smite)" },
+        { "name": "Charge", "minimum": 3, "reason": "Melee skill investment (Charge)" },
+        { "name": "Vengeance", "minimum": 3, "reason": "Melee skill investment (Vengeance)" },
+        { "name": "Absolution", "minimum": 3, "reason": "Melee skill investment (Absolution)" },
+        { "name": "Dashing Strike", "minimum": 3, "reason": "Melee skill investment (Dashing Strike)" }
+      ]
+    ],
+    "signature_skills": [
+      { "name": "Blessed Hammer", "minimum": 15, "weight": 2.0 },
+      { "name": "Blessed Aim", "minimum": 1, "weight": 1.5 },
+      { "name": "Vigor", "minimum": 1, "weight": 1.25 },
+      { "name": "Concentration", "minimum": 1, "weight": 1.25 }
+    ],
+    "supporting_skills": [
+      { "name": "Zeal", "minimum": 3, "weight": 1.0 },
+      { "name": "Sacrifice", "minimum": 3, "weight": 1.0 },
+      { "name": "Smite", "minimum": 3, "weight": 1.0 },
+      { "name": "Charge", "minimum": 3, "weight": 1.0 },
+      { "name": "Vengeance", "minimum": 3, "weight": 1.0 },
+      { "name": "Absolution", "minimum": 3, "weight": 1.0 },
+      { "name": "Dashing Strike", "minimum": 3, "weight": 1.0 },
+      { "name": "Holy Shield", "minimum": 1, "weight": 0.5 },
+      { "name": "Fanaticism", "minimum": 1, "weight": 0.25 },
+      { "name": "Defiance", "minimum": 1, "weight": 0.25 }
+    ],
+    "required_skill_sums": [
+      {
+        "names": ["Blessed Hammer", "Blessed Aim", "Vigor", "Concentration"],
+        "minimum_total": 20,
+        "reason": "Hammer support investment reaches the combined threshold"
+      }
+    ],
+    "penalty_skills": [
+      { "name": "Fist of the Heavens", "minimum": 15, "weight": 1.0 }
+    ],
+    "penalty_gear_rules": [
+      { "title_contains": ["Spirit"], "worn_slots": ["weapon1"], "weight": 2.0, "reason": "Spirit is a caster weapon" },
+      { "title_contains": ["Heart of the Oak"], "worn_slots": ["weapon1"], "weight": 2.0, "reason": "Heart of the Oak is a caster weapon" },
+      { "title_contains": ["Wizardspike"], "worn_slots": ["weapon1"], "weight": 2.0, "reason": "Wizardspike is a caster weapon" }
+    ],
+    "notes": [
+      "Procadin is a melee paladin that triggers Blessed Hammer via procs, not by casting directly. Distinguished from Hammerdin by meaningful melee skill investment and not using caster weapons like Spirit or Heart of the Oak."
+    ]
+  },
+  {
+    "build_id": "paladin-werebear",
+    "class_name": "Paladin",
+    "label": "Werebear",
+    "family": "Passive Paladin",
+    "description": "Paladin with a Beast runeword weapon equipped.",
+    "required_gear_rules_all": [
+      {
+        "title_contains": ["beast"],
+        "property_contains": ["fanaticism aura when equipped"],
+        "worn_slots": ["weapon1", "weapon2", "sweapon1", "sweapon2"],
+        "reason": "Beast runeword weapon is equipped"
+      }
+    ],
+    "supporting_gear_rules": [
+      {
+        "title_contains": ["beast"],
+        "property_contains": ["fanaticism aura when equipped"],
+        "worn_slots": ["weapon1", "weapon2", "sweapon1", "sweapon2"],
+        "weight": 5.0,
+        "reason": "Beast runeword weapon is equipped (signature for werebear)"
+      }
+    ],
+    "notes": [
+      "This requires a Beast runeword weapon match, so it will stay empty until ladder data contains a Paladin actually using Beast."
     ]
   }
 ]

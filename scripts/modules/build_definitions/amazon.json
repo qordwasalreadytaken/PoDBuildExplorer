@@ -1266,6 +1266,15 @@
         "reason": "Beast runeword weapon is equipped"
       }
     ],
+    "supporting_gear_rules": [
+      {
+        "title_contains": ["beast"],
+        "property_contains": ["fanaticism aura when equipped"],
+        "worn_slots": ["weapon1", "weapon2", "sweapon1", "sweapon2"],
+        "weight": 5.0,
+        "reason": "Beast runeword weapon is equipped (signature for werebear)"
+      }
+    ],
     "signature_skills": [
       {
         "name": "Penetrate",
