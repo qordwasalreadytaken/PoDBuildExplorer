@@ -95,26 +95,47 @@
     ],
     "supporting_gear_rules": [
       {
-        "title_contains": ["Fortitude"],
-        "worn_slots": ["body"],
+        "title_contains": [
+          "Fortitude"
+        ],
+        "worn_slots": [
+          "body"
+        ],
         "weight": 0.5,
         "reason": "Fortitude is a strong phys-first gear tell"
       },
       {
-        "title_contains": ["Faith"],
-        "worn_slots": ["weapon1", "sweapon1"],
+        "title_contains": [
+          "Faith"
+        ],
+        "worn_slots": [
+          "weapon1",
+          "sweapon1"
+        ],
         "weight": 0.5,
         "reason": "Faith is a strong phys-first bow tell"
       },
       {
-        "title_contains": ["Brand"],
-        "worn_slots": ["weapon1", "sweapon1"],
+        "title_contains": [
+          "Brand"
+        ],
+        "worn_slots": [
+          "weapon1",
+          "sweapon1"
+        ],
         "weight": 0.75,
         "reason": "Brand is a strong phys-first bow tell"
       },
       {
-        "property_contains": ["maximum damage"],
-        "worn_slots": ["weapon2", "sweapon2", "ring1", "ring2"],
+        "property_contains": [
+          "maximum damage"
+        ],
+        "worn_slots": [
+          "weapon2",
+          "sweapon2",
+          "ring1",
+          "ring2"
+        ],
         "weight": 0.25,
         "reason": "Equipped gear includes direct maximum damage scaling"
       }
@@ -264,7 +285,11 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Cold Arrow", "Ice Arrow", "Freezing Arrow"],
+        "names": [
+          "Cold Arrow",
+          "Ice Arrow",
+          "Freezing Arrow"
+        ],
         "minimum_total": 35,
         "reason": "Cold bow package reaches the combined threshold"
       }
@@ -397,12 +422,20 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Fire Arrow", "Exploding Arrow", "Immolation Arrow"],
+        "names": [
+          "Fire Arrow",
+          "Exploding Arrow",
+          "Immolation Arrow"
+        ],
         "minimum_total": 25,
         "reason": "Fire branch reaches the hybrid threshold"
       },
       {
-        "names": ["Cold Arrow", "Ice Arrow", "Freezing Arrow"],
+        "names": [
+          "Cold Arrow",
+          "Ice Arrow",
+          "Freezing Arrow"
+        ],
         "minimum_total": 20,
         "reason": "Cold branch reaches the hybrid threshold"
       }
@@ -519,7 +552,11 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Fire Arrow", "Exploding Arrow", "Immolation Arrow"],
+        "names": [
+          "Fire Arrow",
+          "Exploding Arrow",
+          "Immolation Arrow"
+        ],
         "minimum_total": 25,
         "reason": "Fire bow package reaches the physical-fire hybrid threshold"
       }
@@ -575,32 +612,55 @@
     ],
     "supporting_gear_rules": [
       {
-        "title_contains": ["Windforce"],
-        "worn_slots": ["weapon1", "sweapon1"],
+        "title_contains": [
+          "Windforce"
+        ],
+        "worn_slots": [
+          "weapon1",
+          "sweapon1"
+        ],
         "weight": 1.0,
         "reason": "Windforce is a strong phys-first bow tell"
       },
       {
-        "title_contains": ["Fortitude"],
-        "worn_slots": ["body"],
+        "title_contains": [
+          "Fortitude"
+        ],
+        "worn_slots": [
+          "body"
+        ],
         "weight": 0.75,
         "reason": "Fortitude reinforces a phys-first bow setup"
       },
       {
-        "title_contains": ["Razortail"],
-        "worn_slots": ["belt"],
+        "title_contains": [
+          "Razortail"
+        ],
+        "worn_slots": [
+          "belt"
+        ],
         "weight": 0.75,
         "reason": "Razortail is a common pierce-based physical bow tell"
       },
       {
-        "title_contains": ["War Traveler"],
-        "worn_slots": ["boots"],
+        "title_contains": [
+          "War Traveler"
+        ],
+        "worn_slots": [
+          "boots"
+        ],
         "weight": 0.5,
         "reason": "War Traveler adds direct weapon damage support"
       },
       {
-        "property_contains": ["maximum damage"],
-        "worn_slots": ["weapon2", "sweapon2", "belt"],
+        "property_contains": [
+          "maximum damage"
+        ],
+        "worn_slots": [
+          "weapon2",
+          "sweapon2",
+          "belt"
+        ],
         "weight": 0.75,
         "reason": "Equipped arrows or belt include direct maximum damage scaling"
       }
@@ -665,7 +725,11 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Cold Arrow", "Ice Arrow", "Freezing Arrow"],
+        "names": [
+          "Cold Arrow",
+          "Ice Arrow",
+          "Freezing Arrow"
+        ],
         "minimum_total": 25,
         "reason": "Cold bow package reaches the physical-cold hybrid threshold"
       }
@@ -779,12 +843,20 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Fire Arrow", "Exploding Arrow", "Immolation Arrow"],
+        "names": [
+          "Fire Arrow",
+          "Exploding Arrow",
+          "Immolation Arrow"
+        ],
         "minimum_total": 35,
         "reason": "Fire bow package reaches the combined threshold"
       },
       {
-        "names": ["Cold Arrow", "Ice Arrow", "Freezing Arrow"],
+        "names": [
+          "Cold Arrow",
+          "Ice Arrow",
+          "Freezing Arrow"
+        ],
         "minimum_total": 35,
         "reason": "Cold bow package reaches the combined threshold"
       }
@@ -901,7 +973,12 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Power Strike", "Charged Strike", "Lightning Bolt", "Lightning Fury"],
+        "names": [
+          "Power Strike",
+          "Charged Strike",
+          "Lightning Bolt",
+          "Lightning Fury"
+        ],
         "minimum_total": 35,
         "reason": "Combined lightning javazon investment reaches the core threshold"
       }
@@ -1043,7 +1120,11 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Lightning Bolt", "Lightning Strike", "Lightning Fury"],
+        "names": [
+          "Lightning Bolt",
+          "Lightning Strike",
+          "Lightning Fury"
+        ],
         "minimum_total": 40,
         "reason": "Combined lightning investment reaches the hybrid threshold"
       }
@@ -1190,7 +1271,12 @@
     "description": "Amazon centered on Valkyrie and the supporting summon-oriented passive package.",
     "required_skill_sums": [
       {
-        "names": ["Valkyrie", "Inner Sight", "Phase Run", "Decoy"],
+        "names": [
+          "Valkyrie",
+          "Inner Sight",
+          "Phase Run",
+          "Decoy"
+        ],
         "minimum_total": 40,
         "reason": "Summon-focused passive skills reach the required combined threshold"
       }
@@ -1236,7 +1322,9 @@
     ],
     "supporting_gear_rules": [
       {
-        "title_contains": ["eternity"],
+        "title_contains": [
+          "eternity"
+        ],
         "weight": 0.75,
         "reason": "Eternity runeword supports a summon-oriented setup"
       }
@@ -1253,24 +1341,53 @@
     "description": "Amazon with heavy passive-and-magic investment and a Beast runeword weapon equipped.",
     "required_skill_sums": [
       {
-        "names": ["Critical Strike", "Penetrate", "Pierce", "Dodge", "Avoid", "Evade", "Inner Sight", "Phase Run", "Valkyrie", "Decoy"],
+        "names": [
+          "Critical Strike",
+          "Penetrate",
+          "Pierce",
+          "Dodge",
+          "Avoid",
+          "Evade",
+          "Inner Sight",
+          "Phase Run",
+          "Valkyrie",
+          "Decoy"
+        ],
         "minimum_total": 40,
         "reason": "Passive and Magic investment reaches the required combined threshold"
       }
     ],
     "required_gear_rules_all": [
       {
-        "title_contains": ["beast"],
-        "property_contains": ["fanaticism aura when equipped"],
-        "worn_slots": ["weapon1", "weapon2", "sweapon1", "sweapon2"],
+        "title_contains": [
+          "beast"
+        ],
+        "property_contains": [
+          "fanaticism aura when equipped"
+        ],
+        "worn_slots": [
+          "weapon1",
+          "weapon2",
+          "sweapon1",
+          "sweapon2"
+        ],
         "reason": "Beast runeword weapon is equipped"
       }
     ],
     "supporting_gear_rules": [
       {
-        "title_contains": ["beast"],
-        "property_contains": ["fanaticism aura when equipped"],
-        "worn_slots": ["weapon1", "weapon2", "sweapon1", "sweapon2"],
+        "title_contains": [
+          "beast"
+        ],
+        "property_contains": [
+          "fanaticism aura when equipped"
+        ],
+        "worn_slots": [
+          "weapon1",
+          "weapon2",
+          "sweapon1",
+          "sweapon2"
+        ],
         "weight": 5.0,
         "reason": "Beast runeword weapon is equipped (signature for werebear)"
       }

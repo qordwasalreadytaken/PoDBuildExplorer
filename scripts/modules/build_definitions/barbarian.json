@@ -14,7 +14,12 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["War Cry", "Shout", "Battle Cry", "Battle Orders"],
+        "names": [
+          "War Cry",
+          "Shout",
+          "Battle Cry",
+          "Battle Orders"
+        ],
         "minimum_total": 40,
         "reason": "War Cry support investment reaches the combined threshold"
       }
@@ -87,11 +92,15 @@
     "required_gear_rule_groups_any": [
       [
         {
-          "property_contains": ["extra gold from monsters"],
+          "property_contains": [
+            "extra gold from monsters"
+          ],
           "reason": "Gold-find gear is equipped"
         },
         {
-          "property_contains": ["better chance of getting magic items"],
+          "property_contains": [
+            "better chance of getting magic items"
+          ],
           "reason": "Magic-find gear is equipped"
         }
       ]
@@ -218,60 +227,115 @@
     "required_gear_rule_groups_any": [
       [
         {
-          "tag_contains": ["winged knife"],
-          "worn_slots": ["weapon1", "weapon2"],
+          "tag_contains": [
+            "winged knife"
+          ],
+          "worn_slots": [
+            "weapon1",
+            "weapon2"
+          ],
           "reason": "Thrown weapon equipped"
         },
         {
-          "tag_contains": ["winged axe"],
-          "worn_slots": ["weapon1", "weapon2"],
+          "tag_contains": [
+            "winged axe"
+          ],
+          "worn_slots": [
+            "weapon1",
+            "weapon2"
+          ],
           "reason": "Thrown weapon equipped"
         },
         {
-          "tag_contains": ["winged harpoon"],
-          "worn_slots": ["weapon1", "weapon2"],
+          "tag_contains": [
+            "winged harpoon"
+          ],
+          "worn_slots": [
+            "weapon1",
+            "weapon2"
+          ],
           "reason": "Thrown weapon equipped"
         },
         {
-          "tag_contains": ["throwing spear"],
-          "worn_slots": ["weapon1", "weapon2"],
+          "tag_contains": [
+            "throwing spear"
+          ],
+          "worn_slots": [
+            "weapon1",
+            "weapon2"
+          ],
           "reason": "Thrown weapon equipped"
         },
         {
-          "tag_contains": ["balanced knife"],
-          "worn_slots": ["weapon1", "weapon2"],
+          "tag_contains": [
+            "balanced knife"
+          ],
+          "worn_slots": [
+            "weapon1",
+            "weapon2"
+          ],
           "reason": "Thrown weapon equipped"
         },
         {
-          "tag_contains": ["balanced axe"],
-          "worn_slots": ["weapon1", "weapon2"],
+          "tag_contains": [
+            "balanced axe"
+          ],
+          "worn_slots": [
+            "weapon1",
+            "weapon2"
+          ],
           "reason": "Thrown weapon equipped"
         },
         {
-          "tag_contains": ["glaive"],
-          "worn_slots": ["weapon1", "weapon2"],
+          "tag_contains": [
+            "glaive"
+          ],
+          "worn_slots": [
+            "weapon1",
+            "weapon2"
+          ],
           "reason": "Thrown weapon equipped"
         },
         {
-          "tag_contains": ["spiculum"],
-          "worn_slots": ["weapon1", "weapon2"],
+          "tag_contains": [
+            "spiculum"
+          ],
+          "worn_slots": [
+            "weapon1",
+            "weapon2"
+          ],
           "reason": "Thrown weapon equipped"
         },
         {
-          "title_contains": ["warshrike"],
-          "worn_slots": ["weapon1", "weapon2"],
+          "title_contains": [
+            "warshrike"
+          ],
+          "worn_slots": [
+            "weapon1",
+            "weapon2"
+          ],
           "reason": "Warshrike equipped"
         },
         {
-          "title_contains": ["lacerator"],
-          "worn_slots": ["weapon1", "weapon2"],
+          "title_contains": [
+            "lacerator"
+          ],
+          "worn_slots": [
+            "weapon1",
+            "weapon2"
+          ],
           "reason": "Lacerator equipped"
         }
       ]
     ],
     "required_skill_sums": [
       {
-        "names": ["Ethereal Throw", "Double Throw", "Thrown Weapon Mastery", "Whirling Axes"],
+        "names": [
+          "Ethereal Throw",
+          "Double Throw",
+          "Thrown Weapon Mastery",
+          "Whirling Axes"
+        ],
         "minimum_total": 20,
         "reason": "Throw skill investment reaches the combined threshold"
       }
@@ -321,14 +385,24 @@
     ],
     "supporting_gear_rules": [
       {
-        "title_contains": ["Warshrike"],
-        "worn_slots": ["weapon1", "weapon2"],
+        "title_contains": [
+          "Warshrike"
+        ],
+        "worn_slots": [
+          "weapon1",
+          "weapon2"
+        ],
         "weight": 0.75,
         "reason": "Warshrike strongly indicates a throw setup"
       },
       {
-        "title_contains": ["Lacerator"],
-        "worn_slots": ["weapon1", "weapon2"],
+        "title_contains": [
+          "Lacerator"
+        ],
+        "worn_slots": [
+          "weapon1",
+          "weapon2"
+        ],
         "weight": 0.75,
         "reason": "Lacerator strongly indicates a throw setup"
       }
@@ -426,8 +500,19 @@
     ],
     "required_skill_leaders_all": [
       {
-        "leader_names": ["Whirlwind"],
-        "competitor_names": ["Double Throw", "Ethereal Throw", "Cleave", "Bash", "Stun", "Concentrate", "Frenzy", "Leap Slam"],
+        "leader_names": [
+          "Whirlwind"
+        ],
+        "competitor_names": [
+          "Double Throw",
+          "Ethereal Throw",
+          "Cleave",
+          "Bash",
+          "Stun",
+          "Concentrate",
+          "Frenzy",
+          "Leap Slam"
+        ],
         "minimum_leader": 1,
         "reason": "Whirlwind is the leading proc skill"
       }
@@ -485,8 +570,19 @@
     ],
     "required_skill_leaders_all": [
       {
-        "leader_names": ["Double Throw", "Ethereal Throw"],
-        "competitor_names": ["Whirlwind", "Cleave", "Bash", "Stun", "Concentrate", "Frenzy", "Leap Slam"],
+        "leader_names": [
+          "Double Throw",
+          "Ethereal Throw"
+        ],
+        "competitor_names": [
+          "Whirlwind",
+          "Cleave",
+          "Bash",
+          "Stun",
+          "Concentrate",
+          "Frenzy",
+          "Leap Slam"
+        ],
         "minimum_leader": 2,
         "reason": "Throw skills are the leading proc shell"
       }
@@ -539,8 +635,19 @@
     ],
     "required_skill_leaders_all": [
       {
-        "leader_names": ["Cleave"],
-        "competitor_names": ["Whirlwind", "Double Throw", "Ethereal Throw", "Bash", "Stun", "Concentrate", "Frenzy", "Leap Slam"],
+        "leader_names": [
+          "Cleave"
+        ],
+        "competitor_names": [
+          "Whirlwind",
+          "Double Throw",
+          "Ethereal Throw",
+          "Bash",
+          "Stun",
+          "Concentrate",
+          "Frenzy",
+          "Leap Slam"
+        ],
         "minimum_leader": 2,
         "reason": "Cleave is the leading proc skill"
       }
@@ -583,8 +690,19 @@
     ],
     "required_skill_leaders_all": [
       {
-        "leader_names": ["Bash"],
-        "competitor_names": ["Whirlwind", "Double Throw", "Ethereal Throw", "Cleave", "Stun", "Concentrate", "Frenzy", "Leap Slam"],
+        "leader_names": [
+          "Bash"
+        ],
+        "competitor_names": [
+          "Whirlwind",
+          "Double Throw",
+          "Ethereal Throw",
+          "Cleave",
+          "Stun",
+          "Concentrate",
+          "Frenzy",
+          "Leap Slam"
+        ],
         "minimum_leader": 2,
         "reason": "Bash is the leading proc skill"
       }
@@ -632,8 +750,19 @@
     ],
     "required_skill_leaders_all": [
       {
-        "leader_names": ["Stun"],
-        "competitor_names": ["Whirlwind", "Double Throw", "Ethereal Throw", "Cleave", "Bash", "Concentrate", "Frenzy", "Leap Slam"],
+        "leader_names": [
+          "Stun"
+        ],
+        "competitor_names": [
+          "Whirlwind",
+          "Double Throw",
+          "Ethereal Throw",
+          "Cleave",
+          "Bash",
+          "Concentrate",
+          "Frenzy",
+          "Leap Slam"
+        ],
         "minimum_leader": 2,
         "reason": "Stun is the leading proc skill"
       }
@@ -681,8 +810,19 @@
     ],
     "required_skill_leaders_all": [
       {
-        "leader_names": ["Concentrate"],
-        "competitor_names": ["Whirlwind", "Double Throw", "Ethereal Throw", "Cleave", "Bash", "Stun", "Frenzy", "Leap Slam"],
+        "leader_names": [
+          "Concentrate"
+        ],
+        "competitor_names": [
+          "Whirlwind",
+          "Double Throw",
+          "Ethereal Throw",
+          "Cleave",
+          "Bash",
+          "Stun",
+          "Frenzy",
+          "Leap Slam"
+        ],
         "minimum_leader": 2,
         "reason": "Concentrate is the leading proc skill"
       }
@@ -730,8 +870,19 @@
     ],
     "required_skill_leaders_all": [
       {
-        "leader_names": ["Frenzy"],
-        "competitor_names": ["Whirlwind", "Double Throw", "Ethereal Throw", "Cleave", "Bash", "Stun", "Concentrate", "Leap Slam"],
+        "leader_names": [
+          "Frenzy"
+        ],
+        "competitor_names": [
+          "Whirlwind",
+          "Double Throw",
+          "Ethereal Throw",
+          "Cleave",
+          "Bash",
+          "Stun",
+          "Concentrate",
+          "Leap Slam"
+        ],
         "minimum_leader": 2,
         "reason": "Frenzy is the leading proc skill"
       }
@@ -774,8 +925,19 @@
     ],
     "required_skill_leaders_all": [
       {
-        "leader_names": ["Leap Slam"],
-        "competitor_names": ["Whirlwind", "Double Throw", "Ethereal Throw", "Cleave", "Bash", "Stun", "Concentrate", "Frenzy"],
+        "leader_names": [
+          "Leap Slam"
+        ],
+        "competitor_names": [
+          "Whirlwind",
+          "Double Throw",
+          "Ethereal Throw",
+          "Cleave",
+          "Bash",
+          "Stun",
+          "Concentrate",
+          "Frenzy"
+        ],
         "minimum_leader": 2,
         "reason": "Leap Slam is the leading proc skill"
       }
@@ -823,8 +985,12 @@
     ],
     "required_gear_rules_all": [
       {
-        "title_contains": ["Templar's Might"],
-        "worn_slots": ["body"],
+        "title_contains": [
+          "Templar's Might"
+        ],
+        "worn_slots": [
+          "body"
+        ],
         "reason": "Templar's Might is equipped"
       }
     ],
@@ -864,8 +1030,12 @@
     ],
     "supporting_gear_rules": [
       {
-        "title_contains": ["Templar's Might"],
-        "worn_slots": ["body"],
+        "title_contains": [
+          "Templar's Might"
+        ],
+        "worn_slots": [
+          "body"
+        ],
         "weight": 3.0,
         "reason": "Templar's Might defines the Charge proc setup"
       }
@@ -1178,8 +1348,12 @@
     "description": "Barbarian using Wolfhowl to fight in werewolf form.",
     "required_gear_rules_all": [
       {
-        "title_contains": ["wolfhowl"],
-        "worn_slots": ["helmet"],
+        "title_contains": [
+          "wolfhowl"
+        ],
+        "worn_slots": [
+          "helmet"
+        ],
         "reason": "Wolfhowl is equipped"
       }
     ],
@@ -1246,15 +1420,29 @@
     "description": "Barbarian with a Ball Lightning weapon equipped.",
     "required_gear_rules_all": [
       {
-        "property_contains": ["ball lightning"],
-        "worn_slots": ["weapon1", "weapon2", "sweapon1", "sweapon2"],
+        "property_contains": [
+          "ball lightning"
+        ],
+        "worn_slots": [
+          "weapon1",
+          "weapon2",
+          "sweapon1",
+          "sweapon2"
+        ],
         "reason": "Ball Lightning weapon is equipped"
       }
     ],
     "supporting_gear_rules": [
       {
-        "property_contains": ["ball lightning"],
-        "worn_slots": ["weapon1", "weapon2", "sweapon1", "sweapon2"],
+        "property_contains": [
+          "ball lightning"
+        ],
+        "worn_slots": [
+          "weapon1",
+          "weapon2",
+          "sweapon1",
+          "sweapon2"
+        ],
         "weight": 5.0,
         "reason": "Ball Lightning weapon is equipped"
       }
@@ -1262,5 +1450,5 @@
     "notes": [
       "This requires a weapon with the Ball Lightning."
     ]
-  }  
+  }
 ]

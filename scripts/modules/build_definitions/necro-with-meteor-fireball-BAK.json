@@ -14,7 +14,12 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Weaken", "Iron Maiden", "Life Tap", "Hemorrhage"],
+        "names": [
+          "Weaken",
+          "Iron Maiden",
+          "Life Tap",
+          "Hemorrhage"
+        ],
         "minimum_total": 50,
         "reason": "Hemorrhage and core curse support reach the combined threshold"
       }
@@ -74,7 +79,11 @@
     "description": "Necromancer centered on the bone spell package.",
     "required_skill_sums": [
       {
-        "names": ["Teeth", "Bone Spear", "Bone Spirit"],
+        "names": [
+          "Teeth",
+          "Bone Spear",
+          "Bone Spirit"
+        ],
         "minimum_total": 45,
         "reason": "Bone spell investment reaches the combined threshold"
       }
@@ -149,48 +158,84 @@
     "required_gear_rule_groups_any": [
       [
         {
-          "tag_contains": ["bow"],
-          "worn_slots": ["weapon1"],
+          "tag_contains": [
+            "bow"
+          ],
+          "worn_slots": [
+            "weapon1"
+          ],
           "reason": "Primary weapon is a bow"
         },
         {
-          "tag_contains": ["crossbow"],
-          "worn_slots": ["weapon1"],
+          "tag_contains": [
+            "crossbow"
+          ],
+          "worn_slots": [
+            "weapon1"
+          ],
           "reason": "Primary weapon is a crossbow"
         },
         {
-          "tag_contains": ["sword"],
-          "worn_slots": ["weapon1"],
+          "tag_contains": [
+            "sword"
+          ],
+          "worn_slots": [
+            "weapon1"
+          ],
           "reason": "Primary weapon is a melee weapon"
         },
         {
-          "tag_contains": ["axe"],
-          "worn_slots": ["weapon1"],
+          "tag_contains": [
+            "axe"
+          ],
+          "worn_slots": [
+            "weapon1"
+          ],
           "reason": "Primary weapon is a melee weapon"
         },
         {
-          "tag_contains": ["mace"],
-          "worn_slots": ["weapon1"],
+          "tag_contains": [
+            "mace"
+          ],
+          "worn_slots": [
+            "weapon1"
+          ],
           "reason": "Primary weapon is a melee weapon"
         },
         {
-          "tag_contains": ["club"],
-          "worn_slots": ["weapon1"],
+          "tag_contains": [
+            "club"
+          ],
+          "worn_slots": [
+            "weapon1"
+          ],
           "reason": "Primary weapon is a melee weapon"
         },
         {
-          "tag_contains": ["dagger"],
-          "worn_slots": ["weapon1"],
+          "tag_contains": [
+            "dagger"
+          ],
+          "worn_slots": [
+            "weapon1"
+          ],
           "reason": "Primary weapon is a melee weapon"
         },
         {
-          "tag_contains": ["knife"],
-          "worn_slots": ["weapon1"],
+          "tag_contains": [
+            "knife"
+          ],
+          "worn_slots": [
+            "weapon1"
+          ],
           "reason": "Primary weapon is a melee weapon"
         },
         {
-          "tag_contains": ["scepter"],
-          "worn_slots": ["weapon1"],
+          "tag_contains": [
+            "scepter"
+          ],
+          "worn_slots": [
+            "weapon1"
+          ],
           "reason": "Primary weapon is a melee weapon"
         }
       ]
@@ -261,14 +306,22 @@
     "description": "Weapon Necromancer using Templar's Might and a poison package, with Charge acting as the defining gear-granted attack.",
     "required_gear_rules_all": [
       {
-        "title_contains": ["Templar's Might"],
-        "worn_slots": ["body"],
+        "title_contains": [
+          "Templar's Might"
+        ],
+        "worn_slots": [
+          "body"
+        ],
         "reason": "Templar's Might is equipped"
       }
     ],
     "required_skill_sums": [
       {
-        "names": ["Deadly Poison", "Desecrate", "Poison Nova"],
+        "names": [
+          "Deadly Poison",
+          "Desecrate",
+          "Poison Nova"
+        ],
         "minimum_total": 35,
         "reason": "Poison investment reaches the Charger threshold"
       }
@@ -316,14 +369,29 @@
     ],
     "supporting_gear_rules": [
       {
-        "property_contains": ["increased attack speed"],
-        "worn_slots": ["weapon1"],
+        "property_contains": [
+          "increased attack speed"
+        ],
+        "worn_slots": [
+          "weapon1"
+        ],
         "weight": 0.75,
         "reason": "Weapon setup includes attack speed for Charge"
       },
       {
-        "property_contains": ["life stolen per hit"],
-        "worn_slots": ["weapon1", "ring1", "ring2", "helm", "gloves", "belt", "boots", "amulet"],
+        "property_contains": [
+          "life stolen per hit"
+        ],
+        "worn_slots": [
+          "weapon1",
+          "ring1",
+          "ring2",
+          "helm",
+          "gloves",
+          "belt",
+          "boots",
+          "amulet"
+        ],
         "weight": 0.5,
         "reason": "Weapon setup includes life leech support"
       }
@@ -342,14 +410,22 @@
     ],
     "penalty_gear_rules": [
       {
-        "tag_contains": ["bow"],
-        "worn_slots": ["weapon1"],
+        "tag_contains": [
+          "bow"
+        ],
+        "worn_slots": [
+          "weapon1"
+        ],
         "weight": 1.0,
         "reason": "Primary bow users fit the Melee / Bow bucket instead"
       },
       {
-        "tag_contains": ["crossbow"],
-        "worn_slots": ["weapon1"],
+        "tag_contains": [
+          "crossbow"
+        ],
+        "worn_slots": [
+          "weapon1"
+        ],
         "weight": 1.0,
         "reason": "Primary crossbow users fit the Melee / Bow bucket instead"
       }
@@ -373,7 +449,11 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Deadly Poison", "Desecrate", "Poison Nova"],
+        "names": [
+          "Deadly Poison",
+          "Desecrate",
+          "Poison Nova"
+        ],
         "minimum_total": 40,
         "reason": "Poison spell investment reaches the combined threshold"
       }
@@ -409,20 +489,32 @@
     ],
     "penalty_gear_rules": [
       {
-        "tag_contains": ["bow"],
-        "worn_slots": ["weapon1"],
+        "tag_contains": [
+          "bow"
+        ],
+        "worn_slots": [
+          "weapon1"
+        ],
         "weight": 2.0,
         "reason": "Primary bow users fit the Melee / Bow bucket instead"
       },
       {
-        "tag_contains": ["crossbow"],
-        "worn_slots": ["weapon1"],
+        "tag_contains": [
+          "crossbow"
+        ],
+        "worn_slots": [
+          "weapon1"
+        ],
         "weight": 2.0,
         "reason": "Primary crossbow users fit the Melee / Bow bucket instead"
       },
       {
-        "title_contains": ["Templar's Might"],
-        "worn_slots": ["body"],
+        "title_contains": [
+          "Templar's Might"
+        ],
+        "worn_slots": [
+          "body"
+        ],
         "weight": 1.5,
         "reason": "Templar's Might poison weapon users fit Charger instead"
       }
@@ -532,7 +624,16 @@
     "description": "Necromancer centered on skeletons, revives, and golem support.",
     "required_skill_sums": [
       {
-        "names": ["Raise Skeleton Warrior", "Raise Skeletal Mage", "Summon Mastery", "Revive", "Fire Golem", "Clay Golem", "Blood Golem", "Iron Golem"],
+        "names": [
+          "Raise Skeleton Warrior",
+          "Raise Skeletal Mage",
+          "Summon Mastery",
+          "Revive",
+          "Fire Golem",
+          "Clay Golem",
+          "Blood Golem",
+          "Iron Golem"
+        ],
         "minimum_total": 45,
         "reason": "Summoning investment reaches the combined threshold"
       }
@@ -614,15 +715,29 @@
     "description": "Necromancer with a Ball Lightning weapon equipped.",
     "required_gear_rules_all": [
       {
-        "property_contains": ["ball lightning"],
-        "worn_slots": ["weapon1", "weapon2", "sweapon1", "sweapon2"],
+        "property_contains": [
+          "ball lightning"
+        ],
+        "worn_slots": [
+          "weapon1",
+          "weapon2",
+          "sweapon1",
+          "sweapon2"
+        ],
         "reason": "Ball Lightning weapon is equipped"
       }
     ],
     "supporting_gear_rules": [
       {
-        "property_contains": ["ball lightning"],
-        "worn_slots": ["weapon1", "weapon2", "sweapon1", "sweapon2"],
+        "property_contains": [
+          "ball lightning"
+        ],
+        "worn_slots": [
+          "weapon1",
+          "weapon2",
+          "sweapon1",
+          "sweapon2"
+        ],
         "weight": 5.0,
         "reason": "Ball Lightning weapon is equipped"
       }
@@ -640,26 +755,80 @@
     "required_gear_rule_groups_any": [
       {
         "rules": [
-          { "title_contains": ["Trang"], "worn_slots": ["helmet", "helm"], "reason": "Trang-Oul's helm equipped" },
-          { "title_contains": ["Trang"], "worn_slots": ["body"], "reason": "Trang-Oul's armor equipped" },
-          { "title_contains": ["Trang"], "worn_slots": ["gloves"], "reason": "Trang-Oul's gloves equipped" },
-          { "title_contains": ["Trang"], "worn_slots": ["belt"], "reason": "Trang-Oul's belt equipped" },
-          { "title_contains": ["Trang"], "worn_slots": ["weapon1", "weapon2", "sweapon1", "sweapon2"], "reason": "Trang-Oul's wing equipped" }
+          {
+            "title_contains": [
+              "Trang"
+            ],
+            "worn_slots": [
+              "helmet",
+              "helm"
+            ],
+            "reason": "Trang-Oul's helm equipped"
+          },
+          {
+            "title_contains": [
+              "Trang"
+            ],
+            "worn_slots": [
+              "body"
+            ],
+            "reason": "Trang-Oul's armor equipped"
+          },
+          {
+            "title_contains": [
+              "Trang"
+            ],
+            "worn_slots": [
+              "gloves"
+            ],
+            "reason": "Trang-Oul's gloves equipped"
+          },
+          {
+            "title_contains": [
+              "Trang"
+            ],
+            "worn_slots": [
+              "belt"
+            ],
+            "reason": "Trang-Oul's belt equipped"
+          },
+          {
+            "title_contains": [
+              "Trang"
+            ],
+            "worn_slots": [
+              "weapon1",
+              "weapon2",
+              "sweapon1",
+              "sweapon2"
+            ],
+            "reason": "Trang-Oul's wing equipped"
+          }
         ],
         "minimum_count": 4
       }
     ],
     "supporting_gear_rules": [
       {
-        "title_contains": ["Trang"],
-        "worn_slots": ["helmet", "helm", "body", "gloves", "belt"],
+        "title_contains": [
+          "Trang"
+        ],
+        "worn_slots": [
+          "helmet",
+          "helm",
+          "body",
+          "gloves",
+          "belt"
+        ],
         "weight": 5.0,
         "reason": "Trang-Oul's set pieces are equipped"
       }
     ],
     "required_gear_rules_all": [
       {
-        "property_contains": ["enemy fire"],
+        "property_contains": [
+          "enemy fire"
+        ],
         "minimum_count": 1,
         "reason": "At least one item has -% Enemy Fire Resist"
       }

@@ -14,7 +14,11 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Ice Blast", "Shiver Armor", "Cold Mastery"],
+        "names": [
+          "Ice Blast",
+          "Shiver Armor",
+          "Cold Mastery"
+        ],
         "minimum_total": 39,
         "reason": "Frost Nova support investment reaches the combined threshold"
       }
@@ -104,7 +108,12 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Ice Bolt", "Ice Blast", "Glacial Spike", "Cold Mastery"],
+        "names": [
+          "Ice Bolt",
+          "Ice Blast",
+          "Glacial Spike",
+          "Cold Mastery"
+        ],
         "minimum_total": 40,
         "reason": "Freezing Pulse support investment reaches the combined threshold"
       }
@@ -664,7 +673,12 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Fire Bolt", "Fire Ball", "Inferno", "Fire Mastery"],
+        "names": [
+          "Fire Bolt",
+          "Fire Ball",
+          "Inferno",
+          "Fire Mastery"
+        ],
         "minimum_total": 40,
         "reason": "Meteor support investment reaches the combined threshold"
       }
@@ -800,14 +814,23 @@
     ],
     "penalty_gear_rules": [
       {
-        "tag_contains": ["bow"],
-        "worn_slots": ["weapon1", "sweapon1"],
+        "tag_contains": [
+          "bow"
+        ],
+        "worn_slots": [
+          "weapon1",
+          "sweapon1"
+        ],
         "weight": 4.0,
         "reason": "Bow or crossbow users fit the Bow Sorc bucket instead"
       },
       {
-        "title_contains": ["Templar's Might"],
-        "worn_slots": ["body"],
+        "title_contains": [
+          "Templar's Might"
+        ],
+        "worn_slots": [
+          "body"
+        ],
         "weight": 4.0,
         "reason": "Templar's Might users fit the Charge Sorc bucket instead"
       }
@@ -824,15 +847,23 @@
     "description": "Weapon Sorceress using Templar's Might for the gear-granted Charge attack.",
     "required_gear_rules_all": [
       {
-        "title_contains": ["Templar's Might"],
-        "worn_slots": ["body"],
+        "title_contains": [
+          "Templar's Might"
+        ],
+        "worn_slots": [
+          "body"
+        ],
         "reason": "Templar's Might is equipped"
       }
     ],
     "supporting_gear_rules": [
       {
-        "title_contains": ["Templar's Might"],
-        "worn_slots": ["body"],
+        "title_contains": [
+          "Templar's Might"
+        ],
+        "worn_slots": [
+          "body"
+        ],
         "weight": 3.0,
         "reason": "Templar's Might defines the Charge Sorc setup"
       }
@@ -883,15 +914,25 @@
     "description": "Sorceress using a bow or crossbow as the primary weapon.",
     "required_gear_rules_all": [
       {
-        "tag_contains": ["bow"],
-        "worn_slots": ["weapon1", "sweapon1"],
+        "tag_contains": [
+          "bow"
+        ],
+        "worn_slots": [
+          "weapon1",
+          "sweapon1"
+        ],
         "reason": "Bow or crossbow is equipped in either weapon set"
       }
     ],
     "supporting_gear_rules": [
       {
-        "tag_contains": ["bow"],
-        "worn_slots": ["weapon1", "sweapon1"],
+        "tag_contains": [
+          "bow"
+        ],
+        "worn_slots": [
+          "weapon1",
+          "sweapon1"
+        ],
         "weight": 3.0,
         "reason": "Bow or crossbow setup supports Bow Sorc"
       }
@@ -935,7 +976,9 @@
     "description": "Gear-defined lightning Sorceress using an item with Ball Lightning.",
     "required_gear_rules_all": [
       {
-        "property_contains": ["Ball Lightning"],
+        "property_contains": [
+          "Ball Lightning"
+        ],
         "reason": "An item with Ball Lightning is equipped"
       }
     ],
@@ -980,8 +1023,12 @@
     ],
     "supporting_gear_rules": [
       {
-        "title_contains": ["Arachnid Mesh"],
-        "property_contains": ["Faster Cast Rate"],
+        "title_contains": [
+          "Arachnid Mesh"
+        ],
+        "property_contains": [
+          "Faster Cast Rate"
+        ],
         "weight": 0.75,
         "reason": "Arachnid Mesh supports the Ball Lightning caster setup"
       }
@@ -1175,7 +1222,11 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Lightning Surge", "Lightning Mastery", "Chain Lightning"],
+        "names": [
+          "Lightning Surge",
+          "Lightning Mastery",
+          "Chain Lightning"
+        ],
         "minimum_total": 35,
         "reason": "Lightning support investment reaches the combined threshold"
       }
@@ -1260,8 +1311,12 @@
     ],
     "required_gear_rules_all": [
       {
-        "title_contains": ["Memory"],
-        "property_contains": ["Energy Shield"],
+        "title_contains": [
+          "Memory"
+        ],
+        "property_contains": [
+          "Energy Shield"
+        ],
         "reason": "Memory staff with Energy Shield support is equipped"
       }
     ],
@@ -1309,8 +1364,12 @@
     ],
     "supporting_gear_rules": [
       {
-        "title_contains": ["Arachnid Mesh"],
-        "property_contains": ["Faster Cast Rate"],
+        "title_contains": [
+          "Arachnid Mesh"
+        ],
+        "property_contains": [
+          "Faster Cast Rate"
+        ],
         "weight": 0.75,
         "reason": "Arachnid Mesh supports the Energy Shield caster setup"
       }
@@ -1339,7 +1398,9 @@
     "description": "Thunder Storm Sorceress builds, include Warpspear's item-specific effect.",
     "supporting_gear_rules": [
       {
-        "property_contains": ["Thunder Storm"],
+        "property_contains": [
+          "Thunder Storm"
+        ],
         "reason": "Warpspear or synth with the Thunder Storm modifier is equipped"
       }
     ],
@@ -1420,17 +1481,35 @@
     "description": "Sorceress with a Beast runeword weapon equipped.",
     "required_gear_rules_all": [
       {
-        "title_contains": ["beast"],
-        "property_contains": ["fanaticism aura when equipped"],
-        "worn_slots": ["weapon1", "weapon2", "sweapon1", "sweapon2"],
+        "title_contains": [
+          "beast"
+        ],
+        "property_contains": [
+          "fanaticism aura when equipped"
+        ],
+        "worn_slots": [
+          "weapon1",
+          "weapon2",
+          "sweapon1",
+          "sweapon2"
+        ],
         "reason": "Beast runeword weapon is equipped"
       }
     ],
     "supporting_gear_rules": [
       {
-        "title_contains": ["beast"],
-        "property_contains": ["fanaticism aura when equipped"],
-        "worn_slots": ["weapon1", "weapon2", "sweapon1", "sweapon2"],
+        "title_contains": [
+          "beast"
+        ],
+        "property_contains": [
+          "fanaticism aura when equipped"
+        ],
+        "worn_slots": [
+          "weapon1",
+          "weapon2",
+          "sweapon1",
+          "sweapon2"
+        ],
         "weight": 5.0,
         "reason": "Beast runeword weapon is equipped (signature for werebear)"
       }
@@ -1438,5 +1517,5 @@
     "notes": [
       "This requires a Beast runeword weapon match, so it will stay empty until ladder data contains a Sorceress actually using Beast."
     ]
-  }  
+  }
 ]

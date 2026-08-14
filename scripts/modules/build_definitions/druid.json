@@ -7,7 +7,14 @@
     "description": "Druid centered on the summon package with wolves, grizzly, and spirit support.",
     "required_skill_sums": [
       {
-        "names": ["Summon Spirit Wolf", "Summon Dire Wolf", "Summon Grizzly", "Oak Sage", "Heart of Wolverine", "Raven"],
+        "names": [
+          "Summon Spirit Wolf",
+          "Summon Dire Wolf",
+          "Summon Grizzly",
+          "Oak Sage",
+          "Heart of Wolverine",
+          "Raven"
+        ],
         "minimum_total": 50,
         "reason": "Summoning investment reaches the combined threshold"
       }
@@ -198,7 +205,12 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Rabies", "Poison Creeper", "Summon Dire Wolf", "Lycanthropy"],
+        "names": [
+          "Rabies",
+          "Poison Creeper",
+          "Summon Dire Wolf",
+          "Lycanthropy"
+        ],
         "minimum_total": 45,
         "reason": "Rabies support investment reaches the combined threshold"
       }
@@ -290,7 +302,13 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Shock Wave", "Werebear", "Lycanthropy", "Maul", "Hunger"],
+        "names": [
+          "Shock Wave",
+          "Werebear",
+          "Lycanthropy",
+          "Maul",
+          "Hunger"
+        ],
         "minimum_total": 40,
         "reason": "Shock Wave support investment reaches the combined threshold"
       }
@@ -372,7 +390,13 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Maul", "Werebear", "Lycanthropy", "Hunger", "Heart of Wolverine"],
+        "names": [
+          "Maul",
+          "Werebear",
+          "Lycanthropy",
+          "Hunger",
+          "Heart of Wolverine"
+        ],
         "minimum_total": 40,
         "reason": "Maul support investment reaches the combined threshold"
       }
@@ -462,7 +486,13 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Fire Claws", "Firestorm", "Molten Boulder", "Volcano", "Armageddon"],
+        "names": [
+          "Fire Claws",
+          "Firestorm",
+          "Molten Boulder",
+          "Volcano",
+          "Armageddon"
+        ],
         "minimum_total": 40,
         "reason": "Fire Claws and its fire support package reach a meaningful combined threshold"
       }
@@ -586,7 +616,13 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Firestorm", "Molten Boulder", "Fissure", "Volcano", "Armageddon"],
+        "names": [
+          "Firestorm",
+          "Molten Boulder",
+          "Fissure",
+          "Volcano",
+          "Armageddon"
+        ],
         "minimum_total": 55,
         "reason": "Fire caster investment reaches the combined threshold"
       }
@@ -690,7 +726,11 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Flame Dash", "Molten Boulder", "Firestorm"],
+        "names": [
+          "Flame Dash",
+          "Molten Boulder",
+          "Firestorm"
+        ],
         "minimum_total": 40,
         "reason": "Flame Dash fire support investment reaches the combined threshold"
       }
@@ -817,7 +857,13 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Flame Dash", "Molten Boulder", "Hurricane", "Tornado", "Cyclone Armor"],
+        "names": [
+          "Flame Dash",
+          "Molten Boulder",
+          "Hurricane",
+          "Tornado",
+          "Cyclone Armor"
+        ],
         "minimum_total": 70,
         "reason": "Avatar fire and wind investment reaches the combined threshold"
       }
@@ -906,7 +952,12 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Hurricane", "Tornado", "Twister", "Cyclone Armor"],
+        "names": [
+          "Hurricane",
+          "Tornado",
+          "Twister",
+          "Cyclone Armor"
+        ],
         "minimum_total": 45,
         "reason": "Wind skill investment reaches the combined threshold"
       }

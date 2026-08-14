@@ -330,7 +330,12 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Fists of Fire", "Claws of Thunder", "Blades of Ice", "Cobra Strike"],
+        "names": [
+          "Fists of Fire",
+          "Claws of Thunder",
+          "Blades of Ice",
+          "Cobra Strike"
+        ],
         "minimum_total": 40,
         "reason": "Elemental Martial Arts investment reaches the combined threshold"
       }
@@ -431,7 +436,12 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Tiger Strike", "Dragon Claw", "Dragon Talon", "Dragon Flight"],
+        "names": [
+          "Tiger Strike",
+          "Dragon Claw",
+          "Dragon Talon",
+          "Dragon Flight"
+        ],
         "minimum_total": 25,
         "reason": "Physical martial-arts investment reaches the hybrid threshold"
       }
@@ -555,16 +565,30 @@
     "required_gear_rule_groups_any": [
       [
         {
-          "title_contains": ["Chaos"],
-          "worn_slots": ["weapon1", "weapon2", "sweapon1", "sweapon2"],
+          "title_contains": [
+            "Chaos"
+          ],
+          "worn_slots": [
+            "weapon1",
+            "weapon2",
+            "sweapon1",
+            "sweapon2"
+          ],
           "reason": "Chaos claw is equipped"
         }
       ]
     ],
     "supporting_gear_rules": [
       {
-        "title_contains": ["Chaos"],
-        "worn_slots": ["weapon1", "weapon2", "sweapon1", "sweapon2"],
+        "title_contains": [
+          "Chaos"
+        ],
+        "worn_slots": [
+          "weapon1",
+          "weapon2",
+          "sweapon1",
+          "sweapon2"
+        ],
         "weight": 3.0,
         "reason": "Chaos defines the Whirlwind Assassin setup"
       }
@@ -658,7 +682,11 @@
     ],
     "required_skill_sums": [
       {
-        "names": ["Blade Fury", "Blade Throw", "Blade Shield"],
+        "names": [
+          "Blade Fury",
+          "Blade Throw",
+          "Blade Shield"
+        ],
         "minimum_total": 30,
         "reason": "Blade skills reach a meaningful combined threshold"
       }
@@ -726,13 +754,23 @@
     "required_gear_rule_groups_any": [
       [
         {
-          "tag_contains": ["bow"],
-          "worn_slots": ["weapon1", "sweapon1"],
+          "tag_contains": [
+            "bow"
+          ],
+          "worn_slots": [
+            "weapon1",
+            "sweapon1"
+          ],
           "reason": "Primary weapon is a bow"
         },
         {
-          "tag_contains": ["crossbow"],
-          "worn_slots": ["weapon1", "sweapon1"],
+          "tag_contains": [
+            "crossbow"
+          ],
+          "worn_slots": [
+            "weapon1",
+            "sweapon1"
+          ],
           "reason": "Primary weapon is a crossbow"
         }
       ]
@@ -823,7 +861,13 @@
     "description": "Assassin leaning heavily on shadow summons and self-buff support.",
     "required_skill_sums": [
       {
-        "names": ["Shadow Master", "Shadow Warrior", "Fade", "Burst of Speed", "Venom"],
+        "names": [
+          "Shadow Master",
+          "Shadow Warrior",
+          "Fade",
+          "Burst of Speed",
+          "Venom"
+        ],
         "minimum_total": 40,
         "reason": "Shadow and self-buff investment reaches the combined threshold"
       }
