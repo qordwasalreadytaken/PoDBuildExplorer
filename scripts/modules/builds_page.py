@@ -154,8 +154,10 @@ def summarize_builds_by_class(
     ordered_classes = list(class_order or CLASS_ORDER)
     characters_by_class: Dict[str, List[Dict[str, Any]]] = {class_name: [] for class_name in ordered_classes}
     definition_counts = defaultdict(int)
+    definition_labels = defaultdict(list)
     for definition in definitions:
         definition_counts[definition.class_name] += 1
+        definition_labels[definition.class_name].append(definition.label)
         if definition.class_name not in characters_by_class:
             characters_by_class[definition.class_name] = []
             ordered_classes.append(definition.class_name)
@@ -248,6 +250,7 @@ def summarize_builds_by_class(
                 "matched_characters": len(matched_character_names),
                 "unmatched_characters": unmatched_class_characters,
                 "definition_count": definition_counts[class_name],
+                "definition_labels": definition_labels[class_name],
                 "builds": builds,
             }
         )
@@ -350,6 +353,7 @@ class BuildsHTMLGenerator:
             section["class_name"],
             unmatched_characters,
         )
+        definition_labels = "\n".join(section.get("definition_labels", []))
 
         return f"""
         <h2 id="builds-{class_slug}">
@@ -360,7 +364,7 @@ class BuildsHTMLGenerator:
         </h2>
         <p>
             {section['matched_characters']:,} of {section['total_characters']:,} characters matched a defined build.
-            {section['definition_count']} build definitions currently exist for this class.
+            <span title="{escape(definition_labels)}" style="cursor: help; text-decoration: underline dotted;">{section['definition_count']} build definitions</span> currently exist for this class.
         </p>
         {builds_html}
         {unmatched_html}
